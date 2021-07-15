@@ -1,0 +1,130 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+  <title>Arky's Portfolio</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+   <!-- Stylesheets-->
+   <link href="index.css" rel="stylesheet"> 
+   <script src="https://use.fontawesome.com/c46e63e46f.js"></script>
+
+  </head>
+  <body class="lightMode">
+    <nav id = "navbar" class="lightMode">
+
+      <a id="name" class="lightMode" href="index.html">Portfolio</a>
+      
+      <div id="navLinkContainer" class="lightMode hidden">
+
+        <a class="nav_links lightMode hidden" href="#project1">Project 1</a>
+
+        <a class="nav_links lightMode hidden" href="#project2">Project 2</a>
+
+        <a class="nav_links lightMode hidden" href="#project3">Project 3</a>
+
+        <a class="nav_links lightMode hidden" href="#project4">Project 4</a>
+
+        <a class="nav_links lightMode hidden" href="#about">About</a>
+      </div>
+
+      <div id = "themeBtn"> 
+        <button class="themeToggler lightMode nav_links">
+          <i class="fa fa-sun-o" aria-hidden="true" style="display:none"></i>
+          <i class="fa fa-moon-o" aria-hidden="true" style="display:inline"></i>
+        </button>
+      </div>
+
+      <button id="navToggler" class = "lightMode">
+        <span><i class="fa fa-bars" aria-hidden="true"></i></span>
+      </button>
+    </nav>
+
+    <div id="content">
+      
+      <div id="bgProfilePic" class ="lightMode"> 
+
+        <div id="profilePic"> 
+          <p> Hi, This Is Arky </p>
+        </div>
+        
+      </div>
+
+      <div id = "about" class="lightMode"> 
+        <p>About Me</p>
+      </div>
+
+      <!-- Carousel -->
+      
+      <div id="carousel">
+        <button id = "back-arrow" class="caro-btns lightMode">
+          <i class="fa fa-angle-left" aria-hidden="true"></i>
+        </button>
+
+        <div id="caroContainer">
+          <div id="carousel-items"> 
+              <div id="project1" class="projects caro-item show">
+                <p>1</p>
+                <button></button>
+              </div>
+          
+              <div id="project2"  class="projects caro-item hidden">
+                <p>2</p>
+              </div>
+          
+              <div id = "project3" class="projects caro-item hidden">
+                <p>3</p>
+              </div>
+          
+              <div id = "project4" class="projects caro-item hidden">
+                <p>4</p>
+              </div>
+          </div>
+          <div id="caroIndicators" class="lightMode">
+          </div>
+        </div>
+
+        <button id="front-arrow" class="caro-btns lightMode">
+          <i class="fa fa-angle-right" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      
+      
+      <div id="skillsBtn" class="lightMode">
+        <a>Show List of Skills</a>
+      </div>
+      <div id="skills" class="lightMode hidden">
+          <p>HTML5</p>
+          <p>SCSS(SASS)</p>
+          <p>CSS3</p>
+          <p>Bootstrap 4 + 5</p>
+          <p>JavaScript</p>
+          <p>React</p>
+          <p>ES6</p>
+          <p>Redux</p>
+          <p>jQuery</p>
+          <p>Python</p>
+          
+      </div>
+
+      <div id = "userInput">
+        
+      </div>
+
+    </div>
+
+  <footer id="footer" class="lightMode">
+      <p> Built with HTML5, SCSS, and Vanilla JS</p>
+      <p> By Arky A. Asmal</p>
+  </footer>
+
+  <script src="./js/navbar.js"></script>
+  <script src="./js/carousel.js"></script>
+  <script src="./js/techSkills.js"></script>
+  <script src="./js/footer.js"></script>
+  <script src="./js/darkPopup.js"></script>
+  </body>
+</html>

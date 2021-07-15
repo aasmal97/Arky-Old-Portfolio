@@ -1,0 +1,32 @@
+
+
+#bgProfilePic{
+    display: flex;
+    height: calc(100vh - 90px);
+    width: 100%;
+    z-index: 1;
+    @include box-shadow(0px, 0.5px, 0.5px, 0.5px, $bg-dark-color);
+}
+
+#bgProfilePic.lightMode{
+    background-color: rgb(212, 212, 212);
+}
+
+#bgProfilePic.darkMode{
+    background-color: rgb(15, 15, 15);
+
+}
+
+#profilePic{
+    background-image: url(images/vogue.png);
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+}
+
+#about{
+    @include fullSize;
+    @include centerElement;
+}
+

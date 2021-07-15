@@ -1,0 +1,81 @@
+
+$bg-light-color: rgb(233, 231, 231) ;
+
+$bg-dark-color:  rgb(78, 77, 77);
+
+$primary-light-color:rgb(94, 43, 212);
+
+$primary-dark-color: rgba(51, 51, 51);
+
+$font:  Helvetica, sans-serif;
+
+$font-size: 1.25em;
+
+$font-color: white;
+
+$dark-mode :true;
+
+@mixin border-radius($top, $left){
+    border-radius: $top $left;
+    -webkit-border-radius:$top $left;
+    -moz-border-radius:$top $left;
+    -ms-border-radius:$top $left;
+}
+
+@mixin box-shadow($x, $y, $blur, $spread, $color){
+    box-shadow: $x $y $blur $spread $color;
+    -webkit-box-shadow:$x $y $blur $spread $color;
+    -moz-box-shadow:$x $y $blur $spread $color;
+    -ms-box-shadow:$x $y $blur $spread $color;
+}
+
+@mixin bg-theme-colors ($dark-mode) {
+    @if $dark-mode {
+        background-color: $bg-dark-color;
+        color: $bg-light-color;
+    } @else {
+        background-color: $bg-light-color;
+        color: $bg-dark-color;
+    }
+}
+@mixin lightModeBtns{
+    background-color: $primary-light-color;
+    border: 1.5px solid $primary-light-color;
+    color: white;
+}
+
+@mixin darkModeBtns{
+    background-color: $primary-dark-color;
+    border:1.5px solid $primary-dark-color;
+}
+
+@mixin transition ($props, $time , $behavior) {
+    -webkit-transition: $props $time $behavior;
+    -moz-transition: $props $time $behavior;
+    transition: $props $time $behavior;
+}
+
+@mixin absPosition($top, $left){
+    position: absolute;
+    top: $top;
+    bottom: $top;
+    left: $left;
+    right: $left;
+}
+
+@mixin transform ($a) {
+    -webkit-transform: translateX($a);
+    -ms-transform: translateX($a);
+    transform: translateX($a);
+}
+
+@mixin centerElement{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin fullSize {
+    height: 100%;
+    width: 100%
+}

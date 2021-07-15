@@ -1,0 +1,10 @@
+#footer{
+    flex-direction: column;
+    @include centerElement;
+    padding: 0;
+}
+
+#footer.lightMode{
+    background-color: $primary-light-color;
+    color: white;
+}

@@ -1,0 +1,112 @@
+@media screen and (min-width: 1024px){
+    #name{
+        text-align: center;
+    }
+    #navToggler{
+        display: none;
+    }
+
+    #navLinkContainer{
+        @include fullSize;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        background-color: rgba(255,255,255,0);
+    }
+
+    #navLinkContainer>a{
+        @include fullSize;
+        @include border-radius(30px, 30px);
+        margin: 10px;
+    }
+    
+    //profile background
+    
+    #profilePic{
+        background-size: contain;
+    }
+}
+
+@media screen and (max-width: 1024px){ 
+    //hides the nav links into a column 
+    #navbar{
+        justify-content: flex-end;
+    }
+
+    #navLinkContainer{
+        @include border-radius(0,0);
+        position: absolute;
+        top: 85px;
+        flex-direction: column;
+        width: 100%;
+        
+    }
+    #navLinkContainer.lightMode{
+        @include lightModeBtns;
+        border: 0px;
+    }
+    #navLinkContainer.darkMode{
+        @include darkModeBtns;
+        border: 0px;
+    }
+    #navLinkContainer>a{
+        @include border-radius(0px, 0px);
+        margin: 5px 0;
+        border: 0px;
+        height: 40px;
+    }
+    #navLinkContainer>a:last-child{
+        margin-bottom: 40px;
+    }
+
+    #navLinkContainer.show{
+        max-height: 300px;
+        overflow: visible;
+    }
+    
+    #navLinkContainer.hidden{
+        overflow: hidden;
+        max-height: 0px;
+    }
+    #navLinkContainer>a.show{
+        visibility: visible;
+        opacity: 1;
+    }
+    #navLinkContainer>a.hidden{
+        visibility: hidden;
+        opacity: 0;
+        @include transition(all, 0.3s ,linear);
+    }
+
+    //profile background
+    #profilePic{
+        background-size: cover;
+    }
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+    position: relative;
+  }
+  
+  .lightMode{
+      @include bg-theme-colors($dark-mode:false);
+      @include transition(all, 0.3s, ease);
+  }
+  
+  .darkMode{
+      @include bg-theme-colors($dark-mode);
+      @include transition(all, 0.3s, ease);
+  }
+  
+  #content{
+      @include centerElement;
+      @include fullSize;
+      flex-direction: column;
+      justify-content: center;
+  }
+
+
+    

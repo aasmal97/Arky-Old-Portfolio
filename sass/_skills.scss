@@ -1,0 +1,67 @@
+#skillsBtn{
+    margin-top: 10vh;
+    flex-direction: column;
+    @include centerElement;
+}
+
+#skillsBtn.darkMode{
+    background-color: rgb(78, 77, 77);
+}
+
+#skillsBtn.darkMode>a{
+    background-color: rgb(78, 77, 77);
+    border: 1.5px solid white;
+}
+
+#skillsBtn>a{
+    @include centerElement;
+    cursor: pointer;
+    border-radius: 30px;
+    padding: 10px 15px;
+}
+
+#skillsBtn.lightMode>a{
+    background-color:$bg-light-color;
+    color:$primary-light-color;
+    border: 1.5px solid $primary-light-color; 
+}
+
+
+#skillsBtn.lightMode>a:hover{
+    background-color: $primary-light-color;
+    color: $bg-light-color;
+    border: 1.5px solid $primary-light-color; 
+}
+
+#skillsBtn.darkMode>a:hover{
+    background-color:$bg-light-color;
+    color:$bg-dark-color;
+    border: 1.5px solid $bg-light-color; 
+}
+
+#skills{
+    padding: 5vh 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 0;
+    text-align: center;
+    width: 70%;
+    @include transition(all, 0.5s, ease-in);
+}
+
+#skills.show{
+    max-height: 600px;
+    overflow: visible;
+}
+
+#skills.hidden{
+    max-height: 0;
+    overflow: hidden;
+}
+
+#skills.hidden>p{
+    opacity: 0;
+    visibility: hidden;
+    @include transition(all, 0.5s, ease-in);
+}
+    
