@@ -1,7 +1,9 @@
-@media screen and (min-width: 1024px){
+@media screen and (min-width: 1026px){
+    //navbar
     #name{
         text-align: center;
     }
+
     #navToggler{
         display: none;
     }
@@ -15,19 +17,26 @@
     }
 
     #navLinkContainer>a{
-        @include fullSize;
+        width: 100%;
+        height: 40px;
         @include border-radius(30px, 30px);
         margin: 10px;
     }
     
     //profile background
-    
+    #bgProfilePic{
+        height: calc(100vh - 90px);
+    }
     #profilePic{
-        background-size: contain;
+        background-size: cover;
+    }
+    #bgProfilePic>div:first-child{
+        font-size: 300%;
     }
 }
 
-@media screen and (max-width: 1024px){ 
+@media screen and (max-width: 1025px){ 
+    //navbar
     //hides the nav links into a column 
     #navbar{
         justify-content: flex-end;
@@ -79,16 +88,27 @@
     }
 
     //profile background
-    #profilePic{
-        background-size: cover;
+    #bgProfilePic{
+        height: calc(100vw - 90px);
+    }
+    #bgProfilePic>div:first-child{
+        font-size: 250%;
+    }
+}
+@media screen and (max-width: 768px){
+    #bgProfilePic>div:first-child{
+        font-size: 150%;
     }
 }
 
+
 body{
+    position: relative;
     padding: 0;
     margin: 0;
-    overflow-x: hidden;
-    position: relative;
+    width: 100%;
+    overflow-x: hidden;  
+    -ms-overflow-x: hidden;
   }
   
   .lightMode{
@@ -107,6 +127,7 @@ body{
       flex-direction: column;
       justify-content: center;
   }
+  
 
 
     

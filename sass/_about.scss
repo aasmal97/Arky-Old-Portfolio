@@ -1,0 +1,48 @@
+@include keyframes(y-line){
+    0%{transform: scaleY(0)}
+    100%{transform: scaleY(1)}
+}
+
+@include keyframes(x-line){
+    0%{transform: scaleX(0)}
+    100%{transform: scaleX(1)}
+}
+
+#about{
+    width: 100%;
+    height: calc(100vh - 60px);
+    @include centerElement;
+    flex-direction: column;
+}
+#about>p{
+    margin-bottom: 4%;
+    padding: 0;
+}
+#timeline>p{
+    margin: 0 10%;
+}
+
+.lines.hidden{
+    opacity:0;
+}
+
+.verLines{
+    @include lines;
+    transform-origin: top;
+}
+.verLines.show{
+    @include animation("y-line 1.2s 1")
+}
+
+.leftHorLines{
+    @include lines;
+    transform-origin: left;
+}
+.rightHorLines{
+    @include lines;
+    transform-origin: right;
+}
+
+.leftHorLines.show, .rightHorLines.show{
+    @include animation("x-line 1.2s 1")
+}

@@ -2,31 +2,68 @@
 
 #bgProfilePic{
     display: flex;
-    height: calc(100vh - 90px);
     width: 100%;
-    z-index: 1;
     @include box-shadow(0px, 0.5px, 0.5px, 0.5px, $bg-dark-color);
 }
 
 #bgProfilePic.lightMode{
-    background-color: rgb(212, 212, 212);
+    background-color: rgb(211, 211, 211);
 }
 
 #bgProfilePic.darkMode{
-    background-color: rgb(15, 15, 15);
+    background-color: rgb(34, 34, 34);
+}
 
+#bgProfilePic>div:first-child{
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 700;
+    background-color: rgba(0,0,0,0);
+    @include centerElement;
+    width:50%;
+    flex-direction: column;
+    text-align: center;
+}
+
+#bgProfilePic>div:first-child>a{
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 550;
+    font-size: 50%;
+    text-decoration: none;
+    color: rgb(209, 5, 5);
+    border: 1.5px solid rgb(209, 5, 5);
+    padding: 1.2vw;
+    @include border-radius(30px, 30px);
+}
+
+#bgProfilePic>div:first-child>a:hover, #bgProfilePic>div:first-child>a:active{
+    background-color: white;
+    color: $primary-light-color;
+    border: 1.5px solid $primary-light-color;
+}
+
+#bgProfilePic>div:first-child.lightMode{
+    color: $primary-dark-color;
+}
+#bgProfilePic>div:first-child>hr{
+    padding:0;
+    margin: 0;
+    width: 30%;
 }
 
 #profilePic{
-    background-image: url(images/vogue.png);
-    background-position: center bottom;
+    background-color: rgba(0,0,0,0);
+    background-size: cover;
     background-repeat: no-repeat;
-    width: 100%;
+    background-position: bottom center;
+    width: 50%;
     height: 100%;
 }
 
-#about{
-    @include fullSize;
-    @include centerElement;
+#profilePic.darkMode{
+    background-image: url(images/vogue.png);
+}
+
+#profilePic.lightMode{
+    background-image: url(images/color.png);
 }
 

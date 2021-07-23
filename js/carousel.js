@@ -72,13 +72,12 @@ function caroMoveRight(e=0){
     }
 }
 
-
 /* Note, setInterval must be defined as variable (lets clearInterval work)
 variable containing setInterval should also be defined within 
 a variable. This is due to scope, else if this doesnt happen 
 it causes the creation of multiple timers, breaking the carousel */
 let caroTimerInterval;
-const timerSpeed = 7000;
+const timerSpeed = 6000;
 
 let caroTimer = () => { 
     caroTimerInterval = setInterval(() => {
@@ -86,36 +85,45 @@ let caroTimer = () => {
     }, timerSpeed);
 };
 
-//resets timer. 
-const resetCaroTimer = () => {
-    clearInterval(caroTimerInterval);
-    caroTimer();
-}
-
 //starts timer for caro items to move right
-
 caroTimer(); 
 
+/* wrote the following to restart timer after a click.
+    however, determined this would not be good because it may not give user
+    time to focus on content. Opted for restarting timer when user left div
 
-//moves carousel when arrows are clicked
-caroBtns[0].addEventListener("click", function(e){
-    caroMoveLeft(e)
-    resetCaroTimer()
-})
+    const resetCaroTimer = () => {
+    clearInterval(caroTimerInterval);
+    caroTimer();
+}*/
 
-caroBtns[1].addEventListener("click", function(e){
-    caroMoveRight(e)
-    resetCaroTimer()
-})
+//stops movement when mouse enters
+const caroContainer = document.getElementById("carousel")
+const carouselNodes = caroContainer.children
+for (i in Object.keys(carouselNodes)){
+    carouselNodes[i].addEventListener("mouseenter", () => {
+        clearInterval(caroTimerInterval);
+    })
+}
 
-//stop automatic carousel movement when mouse is over it
-carousel.addEventListener("mouseenter", () => {
+caroContainer.addEventListener("mouseenter", () => {
     clearInterval(caroTimerInterval);
 })
 
 //restores movement when mouse leaves
-carousel.addEventListener("mouseleave", () => {
-    caroTimer()
+caroContainer.addEventListener("mouseleave", () => {
+    caroTimer();
+})
+
+//Carousel Behavior when arrows are clicked
+caroBtns[0].addEventListener("click", function(e){
+    caroMoveLeft(e)
+    
+})
+
+caroBtns[1].addEventListener("click", function(e){
+    caroMoveRight(e)
+    
 })
 
 //Carousel Indicator Behavior
@@ -141,6 +149,17 @@ for (i in Object.keys(allCaroIndicators)){
         if(allCaroIndicators[prevCaroIndex]!=this){
             allCaroIndicators[prevCaroIndex].firstChild.classList.remove("active")
         }
-        resetCaroTimer()
+        
     })
 }
+
+//makes indicators reappear
+caroContainer.addEventListener("mouseenter", () => {
+        caroBtns[0].classList.remove("hidden")
+        caroBtns[1].classList.remove("hidden")
+})
+
+caroContainer.addEventListener("mouseleave", ()=>{
+    caroBtns[0].classList.add("hidden")
+    caroBtns[1].classList.add("hidden")
+})

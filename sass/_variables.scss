@@ -49,12 +49,6 @@ $dark-mode :true;
     border:1.5px solid $primary-dark-color;
 }
 
-@mixin transition ($props, $time , $behavior) {
-    -webkit-transition: $props $time $behavior;
-    -moz-transition: $props $time $behavior;
-    transition: $props $time $behavior;
-}
-
 @mixin absPosition($top, $left){
     position: absolute;
     top: $top;
@@ -79,3 +73,41 @@ $dark-mode :true;
     height: 100%;
     width: 100%
 }
+
+@mixin transition ($props, $time , $behavior) {
+    -webkit-transition: $props $time $behavior;
+    -moz-transition: $props $time $behavior;
+    transition: $props $time $behavior;
+}
+
+@mixin animation($str) {
+    -webkit-animation: #{$str};
+    -moz-animation: #{$str};
+    -ms-animation: #{$str};
+    -o-animation: #{$str};
+    animation: #{$str};      
+  }
+
+@mixin keyframes($animation-name) {
+    @-webkit-keyframes #{$animation-name} {
+      @content;
+    }
+    @-moz-keyframes #{$animation-name} {
+      @content;
+    }  
+    @-ms-keyframes #{$animation-name} {
+      @content;
+    }
+    @-o-keyframes #{$animation-name} {
+      @content;
+    }  
+    @keyframes #{$animation-name} {
+      @content;
+    }
+  }
+
+  @mixin lines {
+    height: 15vw;
+    width: 1px;
+    background-color: black;
+  }

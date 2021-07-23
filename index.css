@@ -1,4 +1,5 @@
-@media screen and (min-width: 1024px) {
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+@media screen and (min-width: 1026px) {
   #name {
     text-align: center;
   }
@@ -17,8 +18,8 @@
   }
 
   #navLinkContainer > a {
-    height: 100%;
     width: 100%;
+    height: 40px;
     border-radius: 30px 30px;
     -webkit-border-radius: 30px 30px;
     -moz-border-radius: 30px 30px;
@@ -26,11 +27,19 @@
     margin: 10px;
   }
 
+  #bgProfilePic {
+    height: calc(100vh - 90px);
+  }
+
   #profilePic {
-    background-size: contain;
+    background-size: cover;
+  }
+
+  #bgProfilePic > div:first-child {
+    font-size: 300%;
   }
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1025px) {
   #navbar {
     justify-content: flex-end;
   }
@@ -96,15 +105,26 @@
     transition: all 0.3s linear;
   }
 
-  #profilePic {
-    background-size: cover;
+  #bgProfilePic {
+    height: calc(100vw - 90px);
+  }
+
+  #bgProfilePic > div:first-child {
+    font-size: 250%;
+  }
+}
+@media screen and (max-width: 768px) {
+  #bgProfilePic > div:first-child {
+    font-size: 150%;
   }
 }
 body {
+  position: relative;
   padding: 0;
   margin: 0;
+  width: 100%;
   overflow-x: hidden;
-  position: relative;
+  -ms-overflow-x: hidden;
 }
 
 .lightMode {
@@ -151,6 +171,10 @@ body {
   border: 1.5px solid #5e2bd4;
   color: white;
   border: 0px;
+  box-shadow: 0px 0.5px 0.5px 0.5px #4c24aa;
+  -webkit-box-shadow: 0px 0.5px 0.5px 0.5px #4c24aa;
+  -moz-box-shadow: 0px 0.5px 0.5px 0.5px #4c24aa;
+  -ms-box-shadow: 0px 0.5px 0.5px 0.5px #4c24aa;
 }
 
 #navbar.darkMode {
@@ -175,7 +199,6 @@ body {
   margin: 10px;
   text-decoration: none;
   font-size: 1.25em;
-  text-align: center;
   flex-grow: 2;
   padding: 40px;
   color: white;
@@ -236,7 +259,7 @@ body {
 
 #popupContainer {
   position: absolute;
-  top: 75px;
+  top: 65px;
   width: 80px;
   left: -10px;
   z-index: 10;
@@ -244,6 +267,11 @@ body {
 
 .focusContainer {
   background-color: #4e4d4d;
+  border: 1px solid white;
+  border-radius: 5px 5px;
+  -webkit-border-radius: 5px 5px;
+  -moz-border-radius: 5px 5px;
+  -ms-border-radius: 5px 5px;
   -webkit-transition: all ease-in 0.3;
   -moz-transition: all ease-in 0.3;
   transition: all ease-in 0.3;
@@ -262,11 +290,17 @@ body {
   margin: 0;
 }
 
+#popupContainer.hidden {
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all ease-out 0.4s;
+  -moz-transition: all ease-out 0.4s;
+  transition: all ease-out 0.4s;
+}
+
 #bgProfilePic {
   display: flex;
-  height: calc(100vh - 90px);
   width: 100%;
-  z-index: 1;
   box-shadow: 0px 0.5px 0.5px 0.5px #4e4d4d;
   -webkit-box-shadow: 0px 0.5px 0.5px 0.5px #4e4d4d;
   -moz-box-shadow: 0px 0.5px 0.5px 0.5px #4e4d4d;
@@ -274,27 +308,209 @@ body {
 }
 
 #bgProfilePic.lightMode {
-  background-color: #d4d4d4;
+  background-color: lightgray;
 }
 
 #bgProfilePic.darkMode {
-  background-color: #0f0f0f;
+  background-color: #222222;
 }
 
-#profilePic {
-  background-image: url(images/vogue.png);
-  background-position: center bottom;
-  background-repeat: no-repeat;
-  width: 100%;
-  height: 100%;
-}
-
-#about {
-  height: 100%;
-  width: 100%;
+#bgProfilePic > div:first-child {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 700;
+  background-color: rgba(0, 0, 0, 0);
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 50%;
+  flex-direction: column;
+  text-align: center;
+}
+
+#bgProfilePic > div:first-child > a {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 550;
+  font-size: 50%;
+  text-decoration: none;
+  color: #d10505;
+  border: 1.5px solid #d10505;
+  padding: 1.2vw;
+  border-radius: 30px 30px;
+  -webkit-border-radius: 30px 30px;
+  -moz-border-radius: 30px 30px;
+  -ms-border-radius: 30px 30px;
+}
+
+#bgProfilePic > div:first-child > a:hover, #bgProfilePic > div:first-child > a:active {
+  background-color: white;
+  color: #5e2bd4;
+  border: 1.5px solid #5e2bd4;
+}
+
+#bgProfilePic > div:first-child.lightMode {
+  color: #333333;
+}
+
+#bgProfilePic > div:first-child > hr {
+  padding: 0;
+  margin: 0;
+  width: 30%;
+}
+
+#profilePic {
+  background-color: rgba(0, 0, 0, 0);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  width: 50%;
+  height: 100%;
+}
+
+#profilePic.darkMode {
+  background-image: url(images/vogue.png);
+}
+
+#profilePic.lightMode {
+  background-image: url(images/color.png);
+}
+
+@-webkit-keyframes y-line {
+  0% {
+    transform: scaleY(0);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+@-moz-keyframes y-line {
+  0% {
+    transform: scaleY(0);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+@-ms-keyframes y-line {
+  0% {
+    transform: scaleY(0);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+@-o-keyframes y-line {
+  0% {
+    transform: scaleY(0);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+@keyframes y-line {
+  0% {
+    transform: scaleY(0);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+@-webkit-keyframes x-line {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+@-moz-keyframes x-line {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+@-ms-keyframes x-line {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+@-o-keyframes x-line {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+@keyframes x-line {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+#about {
+  width: 100%;
+  height: calc(100vh - 60px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#about > p {
+  margin-bottom: 4%;
+  padding: 0;
+}
+
+#timeline > p {
+  margin: 0 10%;
+}
+
+.lines.hidden {
+  opacity: 0;
+}
+
+.verLines {
+  height: 15vw;
+  width: 1px;
+  background-color: black;
+  transform-origin: top;
+}
+
+.verLines.show {
+  -webkit-animation: y-line 1.2s 1;
+  -moz-animation: y-line 1.2s 1;
+  -ms-animation: y-line 1.2s 1;
+  -o-animation: y-line 1.2s 1;
+  animation: y-line 1.2s 1;
+}
+
+.leftHorLines {
+  height: 15vw;
+  width: 1px;
+  background-color: black;
+  transform-origin: left;
+}
+
+.rightHorLines {
+  height: 15vw;
+  width: 1px;
+  background-color: black;
+  transform-origin: right;
+}
+
+.leftHorLines.show, .rightHorLines.show {
+  -webkit-animation: x-line 1.2s 1;
+  -moz-animation: x-line 1.2s 1;
+  -ms-animation: x-line 1.2s 1;
+  -o-animation: x-line 1.2s 1;
+  animation: x-line 1.2s 1;
 }
 
 #carousel {
@@ -305,7 +521,15 @@ body {
   -webkit-transition: all linear 0.3s;
   -moz-transition: all linear 0.3s;
   transition: all linear 0.3s;
-  background-color: green;
+  color: white;
+}
+
+#carousel.lightMode {
+  background-color: #4a22a8;
+}
+
+#carousel.darkMode {
+  background-color: #222222;
 }
 
 #caroContainer {
@@ -321,12 +545,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  -webkit-transition: all linear 0.95s;
+  -moz-transition: all linear 0.95s;
+  transition: all linear 0.95s;
   height: 100%;
   width: 100%;
   overflow-x: hidden;
-  -webkit-transition: all linear 0.8s;
-  -moz-transition: all linear 0.8s;
-  transition: all linear 0.8s;
 }
 
 .caro-item {
@@ -395,6 +619,14 @@ body {
   margin-bottom: 3vh;
 }
 
+.caro-btns.hidden {
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all ease-out 1s;
+  -moz-transition: all ease-out 1s;
+  transition: all ease-out 1s;
+}
+
 .dot {
   height: 10px;
   width: 10px;
@@ -403,30 +635,16 @@ body {
   display: inline-block;
 }
 
-#caroIndicators.lightMode > .caroIndicators > .dot {
-  border: 1.5px solid #4e4d4d;
-}
-
-#caroIndicators.darkMode > .caroIndicators > .dot {
+#caroIndicators > .caroIndicators > .dot {
   border: 1.5px solid #e9e7e7;
 }
 
-#caroIndicators.lightMode > .caroIndicators > .active {
-  background-color: gray;
-  border: 1.5px solid gray;
-}
-
-#caroIndicators.darkMode > .caroIndicators > .active {
+#caroIndicators > .caroIndicators > .active {
   background-color: white;
   border: 1.5px solid white;
 }
 
-#caroIndicators.lightMode > .caroIndicators > .dot:hover {
-  background-color: gray;
-  border: 1.5px solid gray;
-}
-
-#caroIndicators.darkMode > .caroIndicators > .dot:hover {
+#caroIndicators > .caroIndicators > .dot:hover {
   background-color: white;
   border: 1.5px solid white;
 }
@@ -437,18 +655,15 @@ body {
   cursor: pointer;
   font-size: 300%;
   width: 15vw;
+  color: white;
 }
 
-.caro-btns.lightMode:hover {
-  color: #5e2bd4;
-}
-
-.caro-btns.darkMode:hover {
-  color: #a8a8a8;
+.caro-btns:hover {
+  color: #aaa9a9;
 }
 
 #skillsBtn {
-  margin-top: 10vh;
+  margin-top: 7vw;
   flex-direction: column;
   display: flex;
   justify-content: center;
@@ -492,7 +707,7 @@ body {
 }
 
 #skills {
-  padding: 5vh 0;
+  margin-bottom: 7vw;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 0;
@@ -503,9 +718,14 @@ body {
   transition: all 0.5s ease-in;
 }
 
+#skills > p {
+  -webkit-transition: all 0.4s ease-in;
+  -moz-transition: all 0.4s ease-in;
+  transition: all 0.4s ease-in;
+}
+
 #skills.show {
   max-height: 600px;
-  overflow: visible;
 }
 
 #skills.hidden {
@@ -516,9 +736,6 @@ body {
 #skills.hidden > p {
   opacity: 0;
   visibility: hidden;
-  -webkit-transition: all 0.5s ease-in;
-  -moz-transition: all 0.5s ease-in;
-  transition: all 0.5s ease-in;
 }
 
 #footer {
@@ -531,6 +748,11 @@ body {
 
 #footer.lightMode {
   background-color: #5e2bd4;
+  color: white;
+}
+
+#footer.darkMode {
+  background-color: #333333;
   color: white;
 }
 

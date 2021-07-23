@@ -14,6 +14,7 @@
 #navbar.lightMode{
     @include lightModeBtns;
     border: 0px;
+    @include box-shadow(0px, 0.5px, 0.5px, 0.5px, rgb(76, 36, 170));
 }
 #navbar.darkMode{
     @include darkModeBtns;
@@ -30,13 +31,13 @@
     margin: 10px;
     text-decoration: none;
     font-size: $font-size;
-    text-align: center;
 
     flex-grow: 2;
     padding: 40px;
     color: white;
     background-color: rgba(63, 4, 201, 0);
 }
+
 
 .nav_links.lightMode{
     background-color: rgba(63, 4, 201, 0);

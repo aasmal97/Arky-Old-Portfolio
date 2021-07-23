@@ -5,7 +5,15 @@
     width: 100%;
     justify-content: space-between;
     @include transition(all, linear, 0.3s);
-    background-color: green         
+    color: white;    
+}
+
+#carousel.lightMode{
+    background-color: rgb(74, 34, 168);
+}
+
+#carousel.darkMode{
+    background-color: rgb(34, 34, 34);
 }
 
 #caroContainer{
@@ -17,11 +25,13 @@
 
 #carousel-items{
     @include centerElement;
+    @include transition (all, linear, 0.95s);
     height: 100%;
     width: 100%;
     overflow-x: hidden;
-    @include transition (all, linear, 0.8s)
+    
 }
+
 
 //slides
 .caro-item{
@@ -83,6 +93,12 @@
     margin-bottom: 3vh;
 }
 
+.caro-btns.hidden{
+    opacity: 0;
+    visibility: hidden;
+    @include transition(all, ease-out, 1s)
+}
+
 .dot{
     height: 10px;
     width: 10px;
@@ -91,28 +107,16 @@
     display: inline-block;
 }
 
-#caroIndicators.lightMode>.caroIndicators>.dot{
-    border: 1.5px solid $bg-dark-color;
-}
-#caroIndicators.darkMode>.caroIndicators>.dot{
+#caroIndicators>.caroIndicators>.dot{
     border: 1.5px solid $bg-light-color;
 }
 
-#caroIndicators.lightMode>.caroIndicators>.active{
-    background-color: gray;
-    border: 1.5px solid gray;
-}
-#caroIndicators.darkMode>.caroIndicators>.active{
+#caroIndicators>.caroIndicators>.active{
     background-color: white;
     border: 1.5px solid white;
 }
 
-#caroIndicators.lightMode>.caroIndicators>.dot:hover{
-    background-color: gray;
-    border: 1.5px solid gray;
-}
-
-#caroIndicators.darkMode>.caroIndicators>.dot:hover{
+#caroIndicators>.caroIndicators>.dot:hover{
     background-color: white;
     border: 1.5px solid white;
 }
@@ -124,14 +128,11 @@
     cursor: pointer;
     font-size: 300%;
     width: 15vw;
-    
-}
-.caro-btns.lightMode:hover{
-    color: $primary-light-color;
+    color: white;
 }
 
-.caro-btns.darkMode:hover{
-    color: rgb(168, 168, 168);
+.caro-btns:hover{
+    color: rgb(170, 169, 169)
 }
 
 

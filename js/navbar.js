@@ -34,9 +34,10 @@ function(e){
 )
 
 //navToggler for dropdown navigation
+const navbar = document.querySelector("#navbar")
 const navToggler = document.querySelector("#navToggler")
 const navLinkContainer = document.querySelector("#navLinkContainer")
-const navLinks = document.querySelectorAll(".nav_links")
+const navLinks = navLinkContainer.children
 
 function showNav(){
     navLinkContainer.classList.add("show")
@@ -63,7 +64,7 @@ function hideNav(){
 }
 
 function navBehavior(){
-    if(this.innerWidth>1024){
+    if(this.innerWidth>1025){
         showNav()
     } else{
         hideNav()
@@ -91,13 +92,17 @@ window.addEventListener("resize",function(){
 })
 
 // navbar resizing on scroll
-const navbar = document.querySelector("#navbar")
 window.addEventListener("scroll", function(e){
     if (window.scrollY>0){
         navLinkContainer.style.top = "60px"
-       navbar.style.height = "30px"
+        navbar.style.height = "30px"
     } else {
         navLinkContainer.style.top = "90px"
-       navbar.style.height = "60px"
+        navbar.style.height = "60px"
     }
 });
+
+//navbar collapsing when scrolling
+window.addEventListener("scroll", function(){
+    hideNav();
+})
