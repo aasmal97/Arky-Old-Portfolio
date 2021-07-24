@@ -106,7 +106,7 @@
   }
 
   #bgProfilePic {
-    height: calc(100vw - 90px);
+    height: calc(100vh - 90px);
   }
 
   #bgProfilePic > div:first-child {
@@ -125,6 +125,11 @@ body {
   width: 100%;
   overflow-x: hidden;
   -ms-overflow-x: hidden;
+}
+
+html.stopScroll, body.stopScroll {
+  height: 100%;
+  overflow: hidden;
 }
 
 .lightMode {
@@ -468,8 +473,15 @@ body {
   padding: 0;
 }
 
+#timeline {
+  display: flex;
+  margin: 0 4%;
+  height: 100%;
+  width: 100%;
+}
+
 #timeline > p {
-  margin: 0 10%;
+  display: flex;
 }
 
 .lines.hidden {
@@ -481,6 +493,8 @@ body {
   width: 1px;
   background-color: black;
   transform-origin: top;
+  height: 100px;
+  width: 1px;
 }
 
 .verLines.show {
@@ -496,6 +510,8 @@ body {
   width: 1px;
   background-color: black;
   transform-origin: left;
+  height: 1px;
+  width: 100px;
 }
 
 .rightHorLines {
@@ -503,6 +519,8 @@ body {
   width: 1px;
   background-color: black;
   transform-origin: right;
+  height: 1px;
+  width: 100px;
 }
 
 .leftHorLines.show, .rightHorLines.show {

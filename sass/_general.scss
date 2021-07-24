@@ -89,7 +89,7 @@
 
     //profile background
     #bgProfilePic{
-        height: calc(100vw - 90px);
+        height: calc(100vh - 90px);
     }
     #bgProfilePic>div:first-child{
         font-size: 250%;
@@ -110,7 +110,11 @@ body{
     overflow-x: hidden;  
     -ms-overflow-x: hidden;
   }
-  
+
+  html.stopScroll,body.stopScroll{
+    height: 100%;
+    overflow: hidden;
+}
   .lightMode{
       @include bg-theme-colors($dark-mode:false);
       @include transition(all, 0.3s, ease);

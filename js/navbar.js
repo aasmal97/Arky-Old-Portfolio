@@ -100,9 +100,6 @@ window.addEventListener("scroll", function(e){
         navLinkContainer.style.top = "90px"
         navbar.style.height = "60px"
     }
-});
-
-//navbar collapsing when scrolling
-window.addEventListener("scroll", function(){
+    //navbar collapsing when scrolling
     hideNav();
-})
+});

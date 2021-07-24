@@ -18,8 +18,13 @@
     margin-bottom: 4%;
     padding: 0;
 }
+#timeline{
+    display: flex;
+    margin: 0 4%;
+    @include fullSize;
+}
 #timeline>p{
-    margin: 0 10%;
+    display: flex;
 }
 
 .lines.hidden{
@@ -29,6 +34,8 @@
 .verLines{
     @include lines;
     transform-origin: top;
+    height: 100px;
+    width: 1px;
 }
 .verLines.show{
     @include animation("y-line 1.2s 1")
@@ -37,10 +44,14 @@
 .leftHorLines{
     @include lines;
     transform-origin: left;
+    height: 1px;
+    width: 100px;
 }
 .rightHorLines{
     @include lines;
     transform-origin: right;
+    height: 1px;
+    width: 100px;
 }
 
 .leftHorLines.show, .rightHorLines.show{
