@@ -5,6 +5,8 @@ const lightMode = document.querySelectorAll(".lightMode")
 const darkMode = document.querySelectorAll(".darkMode")
 const themeBtn = document.querySelector("#themeBtn")
 const themeToggler = document.querySelector(".themeToggler")
+//For changing images accordingly
+
 themeToggler.addEventListener("click", 
 function(e){
     e.preventDefault();
@@ -33,11 +35,12 @@ function(e){
 }
 )
 
+
 //navToggler for dropdown navigation
 const navbar = document.querySelector("#navbar")
 const navToggler = document.querySelector("#navToggler")
 const navLinkContainer = document.querySelector("#navLinkContainer")
-const navLinks = navLinkContainer.children
+const navLinks = navbar.querySelectorAll("a")
 
 function showNav(){
     navLinkContainer.classList.add("show")

@@ -31,6 +31,6 @@ function toggleSkills(e=0){
     }, 500)
 }
 
-skillsBtn.addEventListener("click", function(e){    
+skillsBtn.addEventListener("click", function(e){  
     toggleSkills(e);
 })

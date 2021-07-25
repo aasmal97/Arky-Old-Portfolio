@@ -14,7 +14,9 @@ function smoothScroll(e=0){
 for(key in Object.keys(navLinks)){
     navLinks[key].addEventListener("click", function(e){
         if(this.href.match(hrefRegex)[0] !== "#about"){
+            //Allows for scrolling smoothly without scroll being disabled
             document.querySelector("body").classList.remove("stopScroll")
+            scrollLock.unobserve(document.querySelector("#about"));
             scrollDisabled = false
         }
         //For skill btn only, it unhides the list first since its under a .4s transition
@@ -28,6 +30,10 @@ for(key in Object.keys(navLinks)){
         }
         //hides Navbar
         hideNav();
+        //restores observer function after scroll
+        setTimeout(function(){
+            scrollLock.observe(document.querySelector("#about"));
+        },500)
     })
 }
 

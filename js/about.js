@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 let scrollDisabled = false;
-const observer = new IntersectionObserver(function(entries) {
+const scrollLock = new IntersectionObserver(function(entries) {
     let el = entries[0].target.getBoundingClientRect()
 	// isIntersecting is true when element and viewport are overlapping
 	// isIntersecting is false when element and viewport don't overlap
@@ -55,7 +55,7 @@ function timelineAnimate(){
         //continue scrolling, and stop observing, if animations are done
         if(timelineCounter>=timeItemsLength){
             document.querySelector("body").classList.remove("stopScroll")
-            observer.unobserve(document.querySelector("#about"));
+            scrollLock.unobserve(document.querySelector("#about"));
         }
 
         //disable firing too fast, for performance and animation complete
@@ -66,7 +66,7 @@ function timelineAnimate(){
     }
 }
 
-observer.observe(document.querySelector("#about"));
+scrollLock.observe(document.querySelector("#about"));
 
 document.addEventListener("wheel", function(e){
     timelineAnimate()
