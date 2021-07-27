@@ -1,16 +1,17 @@
 "use-strict";
 
 //Dark mode toggler
-
 const themeBtn = document.querySelector("#themeBtn")
 const themeToggler = document.querySelector(".themeToggler")
+const lightMode = document.querySelectorAll(".lightMode")
+
 //For changing images accordingly
 let darkBtnDisabled  = false
 themeBtn.addEventListener("click", function(e){
-    const lightMode = document.querySelectorAll(".lightMode")
-    const darkMode = document.querySelectorAll(".darkMode")
     e.preventDefault();
     if(darkBtnDisabled!=true){
+        //disabling Button for performance
+        darkBtnDisabled = true;
         //changing classes for dark or light mode
         if (lightMode[0].classList.contains("lightMode")){
             for (key in lightMode){
@@ -39,8 +40,20 @@ themeBtn.addEventListener("click", function(e){
 
         //popContainer
         popupContent(e)
-        //disabling Button for performance
-        darkBtnDisabled = true;
+
+        //adding classes to js generated lines for timeline
+        //This is because variable assignment of lightMode to capture this, 
+        //does not work since querySelectorAll only returns a static list
+        let timeLines = document.querySelectorAll(".lines")
+        for (line in Object.keys(timeLines)){
+            if (timeLines[line].classList.contains("lightMode")){
+                timeLines[line].classList.add("darkMode")
+                timeLines[line].classList.remove("lightMode")
+            } else {
+                timeLines[line].classList.remove("darkMode")
+                timeLines[line].classList.add("lightMode")
+            }
+        }
     }
     setTimeout(function(){
         darkBtnDisabled = false;
