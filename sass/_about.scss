@@ -13,47 +13,78 @@
     height: calc(100vh - 60px);
     @include centerElement;
     flex-direction: column;
+    font-size: 120%;
 }
 #about>p{
-    margin-bottom: 4%;
+    margin-top: 5vw;
     padding: 0;
+    font-family: $font;
 }
 #timeline{
-    display: flex;
-    margin: 0 4%;
+    @include centerElement;
+    flex-direction: column;
+    margin: 0 5vw;
     @include fullSize;
 }
-#timeline>p{
-    display: flex;
+
+#timeline>.itemRow{
+    @include centerElement;
+}
+
+.item{
+    width: 30vw;
+    text-align: justify;
+    @include transition(opacity, ease, 1s);
+}
+.item.hidden{
+    opacity: 0;
+}
+.linesContainer{
+    @include centerElement;
+}
+
+.lines.lightMode{
+    background-color: $primary-light-color;
+}
+.lines.darkMode{
+    background-color: $bg-light-color;
 }
 
 .lines.hidden{
     opacity:0;
 }
 
+//vertical
 .verLines{
-    @include lines;
-    transform-origin: top;
-    height: 100px;
-    width: 1px;
+    //change this to change positon of top marker
+    align-self: flex-end;
+    width: 42.5vw;
 }
-.verLines.show{
+
+.verLines>.lines{
+    transform-origin: top;
+    height: calc(10vw / 2);
+    width: $line-thickness;
+}
+.verLines>.show{
     @include animation("y-line 1.2s 1")
 }
 
-.leftHorLines{
-    @include lines;
-    transform-origin: left;
-    height: 1px;
-    width: 100px;
+//horizontal
+.leftHorLines, .rightHorLines{
+    padding: 0 5vw;
+    width:$line-length;
 }
-.rightHorLines{
-    @include lines;
+.leftHorLines>.lines{
     transform-origin: right;
-    height: 1px;
-    width: 100px;
 }
-
-.leftHorLines.show, .rightHorLines.show{
+.rightHorLines>.lines{
+    transform-origin: left;
+}
+.leftHorLines>.lines, .rightHorLines>.lines{
+    height: $line-thickness;
+    width: $line-length;
+}
+.leftHorLines>.show, .rightHorLines>.show{
     @include animation("x-line 1.2s 1")
 }

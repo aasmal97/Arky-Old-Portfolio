@@ -1,4 +1,11 @@
+/*Google Fonts*/
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@-moz-document url-prefix() {
+  body {
+    font-size: 120%;
+  }
+}
 @media screen and (min-width: 1026px) {
   #name {
     text-align: center;
@@ -468,22 +475,55 @@ img.blur {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  font-size: 120%;
 }
 
 #about > p {
-  margin-bottom: 4%;
+  margin-top: 5vw;
   padding: 0;
+  font-family: "Roboto", sans-serif;
 }
 
 #timeline {
   display: flex;
-  margin: 0 4%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 5vw;
   height: 100%;
   width: 100%;
 }
 
-#timeline > p {
+#timeline > .itemRow {
   display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.item {
+  width: 30vw;
+  text-align: justify;
+  -webkit-transition: opacity ease 1s;
+  -moz-transition: opacity ease 1s;
+  transition: opacity ease 1s;
+}
+
+.item.hidden {
+  opacity: 0;
+}
+
+.linesContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lines.lightMode {
+  background-color: #5e2bd4;
+}
+
+.lines.darkMode {
+  background-color: #e9e7e7;
 }
 
 .lines.hidden {
@@ -491,15 +531,17 @@ img.blur {
 }
 
 .verLines {
-  height: 15vw;
-  width: 1px;
-  background-color: black;
-  transform-origin: top;
-  height: 100px;
-  width: 1px;
+  align-self: flex-end;
+  width: 42.5vw;
 }
 
-.verLines.show {
+.verLines > .lines {
+  transform-origin: top;
+  height: calc(10vw / 2);
+  width: 3px;
+}
+
+.verLines > .show {
   -webkit-animation: y-line 1.2s 1;
   -moz-animation: y-line 1.2s 1;
   -ms-animation: y-line 1.2s 1;
@@ -507,25 +549,25 @@ img.blur {
   animation: y-line 1.2s 1;
 }
 
-.leftHorLines {
-  height: 15vw;
-  width: 1px;
-  background-color: black;
-  transform-origin: left;
-  height: 1px;
-  width: 100px;
+.leftHorLines, .rightHorLines {
+  padding: 0 5vw;
+  width: 15vw;
 }
 
-.rightHorLines {
-  height: 15vw;
-  width: 1px;
-  background-color: black;
+.leftHorLines > .lines {
   transform-origin: right;
-  height: 1px;
-  width: 100px;
 }
 
-.leftHorLines.show, .rightHorLines.show {
+.rightHorLines > .lines {
+  transform-origin: left;
+}
+
+.leftHorLines > .lines, .rightHorLines > .lines {
+  height: 3px;
+  width: 15vw;
+}
+
+.leftHorLines > .show, .rightHorLines > .show {
   -webkit-animation: x-line 1.2s 1;
   -moz-animation: x-line 1.2s 1;
   -ms-animation: x-line 1.2s 1;
@@ -696,6 +738,7 @@ img.blur {
 
 #skillsBtn.darkMode > a {
   background-color: #4e4d4d;
+  color: #e9e7e7;
   border: 1.5px solid white;
 }
 
@@ -706,6 +749,7 @@ img.blur {
   cursor: pointer;
   border-radius: 30px;
   padding: 10px 15px;
+  text-decoration: none;
 }
 
 #skillsBtn.lightMode > a {

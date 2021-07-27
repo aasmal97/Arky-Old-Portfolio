@@ -7,7 +7,7 @@ $primary-light-color:rgb(94, 43, 212);
 
 $primary-dark-color: rgba(51, 51, 51);
 
-$font:  Helvetica, sans-serif;
+$font: 'Roboto', sans-serif;
 
 $font-size: 1.25em;
 
@@ -15,6 +15,9 @@ $font-color: white;
 
 $dark-mode :true;
 
+$line-length: 15vw;
+
+$line-thickness : 3px;
 @mixin border-radius($top, $left){
     border-radius: $top $left;
     -webkit-border-radius:$top $left;
@@ -106,8 +109,3 @@ $dark-mode :true;
     }
   }
 
-  @mixin lines {
-    height: 15vw;
-    width: 1px;
-    background-color: black;
-  }

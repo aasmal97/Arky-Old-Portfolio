@@ -14,9 +14,7 @@ function showSkills(){
 }
 
 function toggleSkills(e=0){
-    if(e!==0){
         e.preventDefault()
-    }
     if (skillClickDisabled){    
         if(skills.classList.contains("show")){
             hideSkills()

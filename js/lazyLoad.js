@@ -6,43 +6,36 @@ const allImages = document.querySelectorAll("img")
 const lazyLoad = new IntersectionObserver(function(entries) {
         if(entries[0].isIntersecting === true){
             let el = entries[0].target
-            let photo = el.src.match(lowResRegex)[1];
+            
+            let photo 
+            lazyLoad.unobserve(el);
             //High res image directory added
             setTimeout(function(){
+                photo = el.src.match(lowResRegex)[1];
                 el.src = "images" + photo
                 //tells me if image loaded
                 el.onload = function(){
                     el.classList.remove("blur")
                 }
-            },150)
-            lazyLoad.unobserve(entries[0].target);
+            }, 150)
         } 
     }, { threshold: [0] });
 
-//Adding observer function at the start
-window.addEventListener("load", function(){
-    for (i in Object.keys(allImages)){
-        allImages[i].classList.add("blur")
-        lazyLoad.observe(allImages[i]);
-    }    
-})
-
 //Changes images if they have a dark version to them.
-themeToggler.addEventListener("click", () => {
+//checks for image state, and matches new image appropriately. 
+function imgThemeLoad(){
     for(i in Object.keys(allImages)){
         let parentElClass = allImages[i].parentElement.classList
         let photo = allImages[i].src;
 
         //checks if two versions exist since they will have light or dark at the beginning
         if(lightImgRegex.test(photo)||darkImgRegex.test(photo)){
-            
             //variables only have correct value when correct class is active
             let lightPair =  parentElClass.contains("darkMode")? "imgBlur"+"/dark"+photo.match(lightImgRegex)[1] : 0
             let darkPair = parentElClass.contains("lightMode") ? "imgBlur"+"/light"+photo.match(darkImgRegex)[1] : 0
             const addBlur = setTimeout(function(){
-                allImages[i].classList.add("blur")}
-                ,10)
-
+                allImages[i].classList.add("blur")},10)
+            
             switch(true){
                 //Simply replaces low res image. No blur, because they already have it. 
                 case lightImgRegex.test(photo) && lowResRegex.test(photo):
@@ -68,5 +61,13 @@ themeToggler.addEventListener("click", () => {
                 lazyLoad.observe(allImages[i]);
             }, 150)
         }
-    }
+    }     
+}
+
+//Adding observer function at the start
+window.addEventListener("load", function(){
+    for (i in Object.keys(allImages)){
+        allImages[i].classList.add("blur")
+        lazyLoad.observe(allImages[i]);
+    }    
 })

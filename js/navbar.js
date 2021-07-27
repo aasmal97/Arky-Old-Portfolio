@@ -1,39 +1,51 @@
 "use-strict";
 
 //Dark mode toggler
-const lightMode = document.querySelectorAll(".lightMode")
-const darkMode = document.querySelectorAll(".darkMode")
+
 const themeBtn = document.querySelector("#themeBtn")
 const themeToggler = document.querySelector(".themeToggler")
 //For changing images accordingly
-
-themeToggler.addEventListener("click", 
-function(e){
+let darkBtnDisabled  = false
+themeBtn.addEventListener("click", function(e){
+    const lightMode = document.querySelectorAll(".lightMode")
+    const darkMode = document.querySelectorAll(".darkMode")
     e.preventDefault();
-    if (lightMode[0].classList.contains("lightMode")){
-        for (key in lightMode){
-            if (parseInt(key)>=0){
-                lightMode[key].classList.add("darkMode")
-                lightMode[key].classList.remove("lightMode")
+    if(darkBtnDisabled!=true){
+        //changing classes for dark or light mode
+        if (lightMode[0].classList.contains("lightMode")){
+            for (key in lightMode){
+                if (parseInt(key)>=0){
+                    lightMode[key].classList.add("darkMode")
+                    lightMode[key].classList.remove("lightMode")
+                }
             }
+            //to change icon on toggler
+                this.querySelector(".fa-sun-o").style.display= "inline"
+                this.querySelector(".fa-moon-o").style.display= "none"
+        } else {
+            for (key in lightMode){
+                if (parseInt(key)>=0){
+                    lightMode[key].classList.remove("darkMode")
+                    lightMode[key].classList.add("lightMode")
+                }
+            }
+            //to change icon on toggler
+                this.querySelector(".fa-sun-o").style.display= "none"
+                this.querySelector(".fa-moon-o").style.display= "inline"
         }
-        //to change icon on toggler
-            this.querySelector(".fa-sun-o").style.display= "inline"
-            this.querySelector(".fa-moon-o").style.display= "none"
 
-    } else {
-        for (key in lightMode){
-            if (parseInt(key)>=0){
-                lightMode[key].classList.remove("darkMode")
-                lightMode[key].classList.add("lightMode")
-            }
-        }
-        //to change icon on toggler
-            this.querySelector(".fa-sun-o").style.display= "none"
-            this.querySelector(".fa-moon-o").style.display= "inline"
+        //lazyLoading new images
+        imgThemeLoad()
+
+        //popContainer
+        popupContent(e)
+        //disabling Button for performance
+        darkBtnDisabled = true;
     }
-}
-)
+    setTimeout(function(){
+        darkBtnDisabled = false;
+    }, 1000)
+})
 
 
 //navToggler for dropdown navigation

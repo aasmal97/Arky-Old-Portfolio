@@ -1,20 +1,33 @@
 const timeline = document.getElementById("timeline")
-const timelineBlock= timeline.querySelectorAll("div")
+const timelineBlock= timeline.querySelectorAll(".itemRow")
+const timeItems = timeline.querySelectorAll(".item")
 
 //inserts lines connecting timeline automatically 
 document.addEventListener("DOMContentLoaded", function() {
-    for (key in Object.keys(timelineBlock)){
+
+    for (i = 0; i<Object.keys(timelineBlock).length*2-1; i++){
+        let linesContainer = document.createElement("div")
         let lines = document.createElement("div")
-        lines.classList.add("lines", "hidden")
-        if((parseInt(key)+1)%2 === 0){
-            lines.classList.add("verLines")
-        } else if((parseInt(key))%4 === 0){
-            lines.classList.add("rightHorLines")
+        linesContainer.classList.add("linesContainer")
+        lines.classList.add("lines", "hidden", "lightMode")
+        linesContainer.append(lines)
+        if((i+1)%2 === 0){
+            linesContainer.classList.add("verLines")
+            timeline.insertBefore(linesContainer, timelineBlock[(i+1)/2])
+        } else if((i)%4 === 0){
+            linesContainer.classList.add("rightHorLines")
+            timelineBlock[i/2].insertBefore(linesContainer, timelineBlock[i/2].firstElementChild.nextElementSibling)
+
         } else {
-            lines.classList.add("leftHorLines")
+            linesContainer.classList.add("leftHorLines")
+            timelineBlock[i/2].insertBefore(linesContainer, timelineBlock[i/2].firstElementChild.nextElementSibling)
         }
-        timeline.insertBefore(lines, timelineBlock[key].nextElementSibling)
+        //reverses direction for odd number rows
+        if(i<Object.keys(timelineBlock).length && i%2!= 0){
+            timelineBlock[i].style = "flex-direction: row-reverse"
+        }
     }
+    
 });
 
 let scrollDisabled = false;
@@ -36,42 +49,56 @@ const scrollLock = new IntersectionObserver(function(entries) {
                     behavior: 'smooth',
                 }) 
             },100)
-
+            //Show first timeline item
+            timeItems[timelineCounter].classList.remove("hidden")
+            timeItems[timelineCounter].classList.add("show")
             //signal timeline animations can start playing
             scrollDisabled = true
-        } 
+        }
     }, { threshold: [1] });
 
 let timelineCounter = 0
-let timeItems = document.getElementById("timeline").querySelectorAll(".item")
-let timeItemsLength = Object.keys(timeItems).length
+let timeItemsLength = Object.keys(timeItems).length 
 
 function timelineAnimate(){
-    
-    if (scrollDisabled === true){
+    let timeLines = document.querySelectorAll(".lines")
+    //activates only when about section is in viewport
+    if (scrollDisabled){
         //tracks how many animations
         timelineCounter = timelineCounter + 1
-
         //continue scrolling, and stop observing, if animations are done
         if(timelineCounter>=timeItemsLength){
             document.querySelector("body").classList.remove("stopScroll")
             scrollLock.unobserve(document.querySelector("#about"));
+            scrollDisabled = false;
+        } else{
+            //reveals the next timeline item
+            timeItems[timelineCounter].classList.remove("hidden")
+            timeItems[timelineCounter].classList.add("show")
+            //reveals the line
+            timeLines[timelineCounter-1].classList.remove("hidden")
+            timeLines[timelineCounter-1].classList.add("show")
+            //disable firing too fast, for performance and animation complete
+            scrollDisabled = false
+            setTimeout(function(){
+                scrollDisabled = true
+            },500)
         }
-
-        //disable firing too fast, for performance and animation complete
-        scrollDisabled = false
-        setTimeout(function(){
-            scrollDisabled = true
-        },400)
     }
 }
 
 scrollLock.observe(document.querySelector("#about"));
 
 document.addEventListener("wheel", function(e){
-    timelineAnimate()
+    timelineAnimate(e)
 })
 
 document.addEventListener("touchend", function(e){
-    timelineAnimate()
+    timelineAnimate(e)
+})
+
+document.addEventListener("keyup", (e)=>{
+    if(e.key==="ArrowDown"||"ArrowUp"){
+        timelineAnimate(e)
+    }
 })

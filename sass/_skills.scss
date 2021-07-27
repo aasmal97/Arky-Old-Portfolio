@@ -10,6 +10,7 @@
 
 #skillsBtn.darkMode>a{
     background-color: rgb(78, 77, 77);
+    color: $bg-light-color;
     border: 1.5px solid white;
 }
 
@@ -18,6 +19,7 @@
     cursor: pointer;
     border-radius: 30px;
     padding: 10px 15px;
+    text-decoration: none;
 }
 
 #skillsBtn.lightMode>a{
