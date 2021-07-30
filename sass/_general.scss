@@ -20,11 +20,12 @@
         display: flex;
         flex-direction: row;
         align-items: center;
+        justify-content: flex-end;
         background-color: rgba(255,255,255,0);
     }
 
     #navLinkContainer>a{
-        width: 100%;
+        width: 12%;
         height: 40px;
         @include border-radius(30px, 30px);
         margin: 10px;
@@ -34,6 +35,27 @@
     
     #bgProfilePic>div:first-child{
         font-size: 300%;
+    }
+
+    //timeline padding
+    #about{
+        font-size: 200%;
+    }
+    #timeline{
+        padding: 0 15vw;
+        font-size: 60%;
+    }
+
+    .item{
+        width: 25vw;
+    }
+    .verLines{
+        //center vertical line
+        padding: 0 17.5vw;
+        width: 25vw;
+    }
+    .verLines>.lines{
+        height: 5vw;
     }
 }
 
@@ -86,17 +108,39 @@
     #navLinkContainer>a.hidden{
         visibility: hidden;
         opacity: 0;
-        @include transition(all, 0.3s ,linear);
+        @include transition(all 0.3s linear);
     }
 
     //profile background
     #bgProfilePic>div:first-child{
         font-size: 250%;
     }
+    //timeline padding
+    #about{
+        font-size: 150%;
+    }
+    #timeline{
+        font-size: 60%;
+    }
+    .item{
+        width: 35vw;
+    }
+    .verLines{
+        //center vertical line
+        padding: 0 10vw;
+        width: 30vw;
+    }
+    .verLines>.lines{
+        height: 4vw;
+    }
 }
 @media screen and (max-width: 768px){
     #bgProfilePic>div:first-child{
         font-size: 150%;
+    }
+
+    #timeline{
+        font-size: 55%;
     }
 }
 
@@ -126,12 +170,12 @@ body{
 }
   .lightMode{
       @include bg-theme-colors($dark-mode:false);
-      @include transition(all, 0.3s, ease);
+      @include transition(all 0.3s ease);
   }
   
   .darkMode{
       @include bg-theme-colors($dark-mode);
-      @include transition(all, 0.3s, ease);
+      @include transition(all 0.3s ease);
   }
     img{
         object-fit: cover;

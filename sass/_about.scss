@@ -10,32 +10,90 @@
 
 #about{
     width: 100%;
-    height: calc(100vh - 60px);
+    height: calc(100% - 60px);
     @include centerElement;
     flex-direction: column;
-    font-size: 120%;
-}
-#about>p{
-    margin-top: 5vw;
-    padding: 0;
     font-family: $font;
+    padding: 2vw 0;
 }
+
 #timeline{
     @include centerElement;
-    flex-direction: column;
-    margin: 0 5vw;
     @include fullSize;
+    flex-direction: column;
+    padding: 2vw 0;
 }
-
 #timeline>.itemRow{
     @include centerElement;
+    align-items: stretch;
 }
-
 .item{
-    width: 30vw;
-    text-align: justify;
-    @include transition(opacity, ease, 1s);
+    //required since we're using absolute elements
+    position: relative;
+    text-align: center;
+    padding: 1vw 4vw;
+    box-sizing: border-box;
+    @include transition(opacity ease 0.5s);
 }
+.item::before, .item::after{
+    box-sizing: inherit;
+    content: '';
+    position: absolute;
+    border: 2.5px solid transparent;
+    width: 0;
+    height: 0;
+}
+.item::before{
+    top: 0;
+    left: 0;
+}
+.item::after{
+    bottom: 0;
+    right: 0;
+}
+//psuedo elements expand
+ .item.show::before,
+ .item.show::after {
+    @include border-radius (10px, 10px);
+    width: 100%;
+    height: 100%;
+ }
+ //transition elements
+ .item.show::before {
+   @include transition(
+     border-color 0s ease-out 0.5s, 
+     width 0.25s ease-out 0.5s, 
+     height 0.25s ease-out 0.75s,
+     border-radius 0.5s ease-out 1.5s,
+     )
+     
+ }
+ .item.show::after {
+   @include transition(
+     border-color 0s ease-out 1s, 
+     width 0.25s ease-out 1s,
+     height 0.25s ease-out 1.25s,
+     border-radius 0.5s ease-out 1.5s,
+     )
+ }
+ //border colors
+ .item.lightMode.show::before{
+    border-top-color: $primary-light-color; 
+    border-right-color: $primary-light-color;
+ }
+ .item.lightMode.show::after{
+    border-left-color: $primary-light-color; 
+    border-bottom-color: $primary-light-color;
+ }
+ .item.darkMode.show::after{
+    border-left-color: $bg-light-color; 
+    border-bottom-color: $bg-light-color;
+ }  
+ .item.darkMode.show::before{
+    border-top-color: $bg-light-color; 
+    border-right-color: $bg-light-color;
+ }
+
 .item.hidden{
     opacity: 0;
 }
@@ -55,24 +113,16 @@
 }
 
 //vertical
-.verLines{
-    //change this to change positon of top marker
-    align-self: flex-end;
-    width: 42.5vw;
-}
-
 .verLines>.lines{
     transform-origin: top;
-    height: calc(10vw / 2);
     width: $line-thickness;
 }
 .verLines>.show{
-    @include animation("y-line 1.2s 1")
+    @include animation("y-line 0.5s 1")
 }
 
 //horizontal
 .leftHorLines, .rightHorLines{
-    padding: 0 5vw;
     width:$line-length;
 }
 .leftHorLines>.lines{
@@ -86,5 +136,5 @@
     width: $line-length;
 }
 .leftHorLines>.show, .rightHorLines>.show{
-    @include animation("x-line 1.2s 1")
+    @include animation("x-line 0.5s 1")
 }

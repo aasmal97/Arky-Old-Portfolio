@@ -4,12 +4,7 @@
     @include centerElement;
 }
 
-#skillsBtn.darkMode{
-    background-color: rgb(78, 77, 77);
-}
-
 #skillsBtn.darkMode>a{
-    background-color: rgb(78, 77, 77);
     color: $bg-light-color;
     border: 1.5px solid white;
 }
@@ -49,11 +44,11 @@
     grid-gap: 0;
     text-align: center;
     width: 70%;
-    @include transition(all, 0.5s, ease-in);
+    @include transition(all 0.5s ease-in);
 }
 
 #skills>p{
-    @include transition(all, 0.4s, ease-in);
+    @include transition(all 0.4s ease-in);
 }
     
 #skills.show{

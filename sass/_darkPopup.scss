@@ -12,7 +12,7 @@
     background-color: $bg-dark-color;
     border: 1px solid white;
     @include border-radius(5px, 5px);
-    @include transition (all, ease-in, 0.3);
+    @include transition (all ease-in 0.3);
     
 }
 
@@ -30,5 +30,5 @@
 #popupContainer.hidden{
     opacity: 0;
     visibility: hidden;
-    @include transition (all, ease-out, 0.4s);
+    @include transition (all ease-out 0.4s);
 }

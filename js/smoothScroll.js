@@ -17,7 +17,11 @@ function smoothScroll(e=0){
 //updating page url for backspace, and focus accessibility
 function urlUpdate(newFocus=0, e=0){
     document.querySelector(newFocus).tabIndex = 0
-    document.querySelector(newFocus).focus()
+    document.querySelector(newFocus).focus({
+        //prevent scrolling, since smooth scroll will handle this
+        preventScroll: true
+      })
+    
     window.history.pushState("", newFocus, e.target.href)
 }
 function navLinksScroll(e=0){
@@ -42,7 +46,7 @@ function navLinksScroll(e=0){
         smoothScroll(e);
         setTimeout(()=>{
             urlUpdate(newFocus, e)
-        }, 500)
+        }, 1000)
     }
     //hides Navbar
     hideNav();
@@ -54,7 +58,7 @@ function navLinksScroll(e=0){
         } else{
             scrollLock.observe(document.querySelector("#about"));
         }
-    },500)
+    },1500)
 }
 
 //Event Listeners

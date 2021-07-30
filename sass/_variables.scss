@@ -1,7 +1,7 @@
 
 $bg-light-color: rgb(233, 231, 231) ;
 
-$bg-dark-color:  rgb(78, 77, 77);
+$bg-dark-color:  rgb(41, 41, 41);
 
 $primary-light-color:rgb(94, 43, 212);
 
@@ -18,6 +18,7 @@ $dark-mode :true;
 $line-length: 15vw;
 
 $line-thickness : 3px;
+
 @mixin border-radius($top, $left){
     border-radius: $top $left;
     -webkit-border-radius:$top $left;
@@ -63,6 +64,8 @@ $line-thickness : 3px;
 @mixin transform ($a) {
     -webkit-transform: translateX($a);
     -ms-transform: translateX($a);
+    -o-animation: translateX($a);
+    -moz-transition: translateX($a);
     transform: translateX($a);
 }
 
@@ -77,11 +80,14 @@ $line-thickness : 3px;
     width: 100%
 }
 
-@mixin transition ($props, $time , $behavior) {
-    -webkit-transition: $props $time $behavior;
-    -moz-transition: $props $time $behavior;
-    transition: $props $time $behavior;
+@mixin transition ($str...) {
+    -webkit-transition: $str;
+    -ms-transition: $str;
+    -o-transition: $str;
+    -moz-transition: $str; 
+    transition: $str;
 }
+
 
 @mixin animation($str) {
     -webkit-animation: #{$str};

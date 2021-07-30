@@ -6,7 +6,6 @@ const allImages = document.querySelectorAll("img")
 const lazyLoad = new IntersectionObserver(function(entries) {
         if(entries[0].isIntersecting === true){
             let el = entries[0].target
-            
             let photo 
             lazyLoad.unobserve(el);
             //High res image directory added
@@ -67,7 +66,11 @@ function imgThemeLoad(){
 //Adding observer function at the start
 window.addEventListener("load", function(){
     for (i in Object.keys(allImages)){
-        allImages[i].classList.add("blur")
-        lazyLoad.observe(allImages[i]);
+        //only observes images that are initally loaded in as Low Resolution
+        if(lowResRegex.test(allImages[i].src)){
+            allImages[i].classList.add("blur")
+            lazyLoad.observe(allImages[i]);
+        }
+        
     }    
 })
