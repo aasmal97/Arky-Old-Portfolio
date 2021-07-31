@@ -16,8 +16,11 @@ let timeItemsLength = Object.keys(timeItems).length
 
 const scrollLock = new IntersectionObserver(function(entries) {
     let el = entries[0].target.getBoundingClientRect()
-    let remainder = timelineCounter%4
-    let nearFourth = timelineCounter - remainder 
+    let remainder = (timelineCounter+1)%4
+    let nearFourth = timelineCounter - remainder + 1
+    let row = timelineRow[nearFourth/2].getBoundingClientRect()
+    
+    console.log(timelineCounter)
 	// isIntersecting is true when element and viewport are overlapping
 	// isIntersecting is false when element and viewport don't overlap
         if(entries[0].isIntersecting === true){
@@ -27,7 +30,7 @@ const scrollLock = new IntersectionObserver(function(entries) {
             // If not, the accuracy of offset diminshes
             //setTimeout is set to 100 for the same reason. 
             let offset = window.pageYOffset
-            if(timelineCounter<4){
+            if(timelineCounter+1<4){
                 setTimeout(function(){
                     window.scrollTo({
                         top: el.top + offset - navbar.offsetHeight,
@@ -35,7 +38,6 @@ const scrollLock = new IntersectionObserver(function(entries) {
                     }) 
                 },100)
             } else {
-                let row = timelineRow[nearFourth/2].getBoundingClientRect()
                 setTimeout(()=>{
                     window.scrollTo({
                         top: row.top + offset - navbar.offsetHeight-10,
@@ -44,8 +46,8 @@ const scrollLock = new IntersectionObserver(function(entries) {
                 }, 100)
             }
             //Show first timeline item
-            timeItems[timelineCounter].classList.remove("hidden")
-            timeItems[timelineCounter].classList.add("show")
+            timeItems[0].classList.remove("hidden")
+            timeItems[0].classList.add("show")
             //signal timeline animations can start playing
             scrollDisabled = true
         }

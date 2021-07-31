@@ -14,7 +14,9 @@ const lazyLoad = new IntersectionObserver(function(entries) {
                 el.src = "images" + photo
                 //tells me if image loaded
                 el.onload = function(){
-                    el.classList.remove("blur")
+                    if(highResRegex.test(el.src)){
+                        el.classList.remove("blur")
+                    }
                 }
             }, 150)
         } 
@@ -32,25 +34,28 @@ function imgThemeLoad(){
             //variables only have correct value when correct class is active
             let lightPair =  parentElClass.contains("darkMode")? "imgBlur"+"/dark"+photo.match(lightImgRegex)[1] : 0
             let darkPair = parentElClass.contains("lightMode") ? "imgBlur"+"/light"+photo.match(darkImgRegex)[1] : 0
-            const addBlur = setTimeout(function(){
-                allImages[i].classList.add("blur")},10)
+            const addBlur = allImages[i].classList.add("blur")
             
             switch(true){
                 //Simply replaces low res image. No blur, because they already have it. 
                 case lightImgRegex.test(photo) && lowResRegex.test(photo):
-                    allImages[i].src = lightPair
+                        allImages[i].src = lightPair
                     break;
                 case darkImgRegex.test(photo) && lowResRegex.test(photo):
                     allImages[i].src = darkPair
                     break;
                 //Blurs high res images again while replacing them
                 case lightImgRegex.test(photo) && highResRegex.test(photo):
-                    allImages[i].src = lightPair
                     addBlur
+                    setTimeout(()=>{
+                        allImages[i].src = lightPair
+                    },10)
                     break;
                 case darkImgRegex.test(photo) && highResRegex.test(photo):
-                    allImages[i].src = darkPair
                     addBlur
+                    setTimeout(()=>{
+                        allImages[i].src = darkPair
+                    },10)
                     break;
                 default:
                     console.log("something went wrong")

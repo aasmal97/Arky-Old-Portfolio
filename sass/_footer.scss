@@ -3,6 +3,9 @@
     @include centerElement;
     padding: 0;
 }
+#footer{
+    font-size: 80%;
+}
 
 #footer.lightMode{
     background-color: $primary-light-color;
