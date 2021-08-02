@@ -550,7 +550,6 @@ img.blur {
   }
 }
 #about {
-  padding: 2vw 0;
   width: 100%;
   height: calc(100% - 60px);
   display: flex;
@@ -558,6 +557,7 @@ img.blur {
   align-items: center;
   flex-direction: column;
   font-family: "Roboto", sans-serif;
+  padding: 2vw 0;
 }
 
 #timeline {
@@ -596,7 +596,6 @@ img.blur {
   border: 2.5px solid transparent;
   width: 0;
   height: 0;
-  z-index: 0;
 }
 
 .item::before {
@@ -657,11 +656,6 @@ img.blur {
 
 .item.hidden {
   opacity: 0;
-}
-
-.item > p {
-  position: relative;
-  z-index: 1;
 }
 
 .linesContainer {
@@ -880,7 +874,6 @@ img.blur {
 }
 
 #skillsBtn {
-  width: 100%;
   padding-top: 7vw;
   flex-direction: column;
   display: flex;
@@ -922,25 +915,25 @@ img.blur {
 }
 
 #skills {
-  padding-bottom: 7vw;
+  margin-bottom: 7vw;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 0;
   text-align: center;
-  width: 100%;
-  -webkit-transition: all 0.3s ease-in;
-  -ms-transition: all 0.3s ease-in;
-  -o-transition: all 0.3s ease-in;
-  -moz-transition: all 0.3s ease-in;
-  transition: all 0.3s ease-in;
-}
-
-#skills > p {
+  width: 70%;
   -webkit-transition: all 0.5s ease-in;
   -ms-transition: all 0.5s ease-in;
   -o-transition: all 0.5s ease-in;
   -moz-transition: all 0.5s ease-in;
   transition: all 0.5s ease-in;
+}
+
+#skills > p {
+  -webkit-transition: all 0.4s ease-in;
+  -ms-transition: all 0.4s ease-in;
+  -o-transition: all 0.4s ease-in;
+  -moz-transition: all 0.4s ease-in;
+  transition: all 0.4s ease-in;
 }
 
 #skills.show {
@@ -955,14 +948,6 @@ img.blur {
 #skills.hidden > p {
   opacity: 0;
   visibility: hidden;
-}
-
-#skills.lightMode, #skillsBtn.lightMode {
-  background-color: lightgray;
-}
-
-#skills.darkMode, #skillsBtn.darkMode {
-  background-color: #222222;
 }
 
 #footer {

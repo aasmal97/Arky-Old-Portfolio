@@ -1,5 +1,4 @@
 #skillsBtn{
-    width: 100%;
     padding-top: 7vw;
     flex-direction: column;
     @include centerElement;
@@ -38,17 +37,18 @@
 }
 
 #skills{
-    padding-bottom: 7vw;
+    
+    margin-bottom: 7vw;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 0;
     text-align: center;
-    width: 100%;
-    @include transition(all 0.3s ease-in);
+    width: 70%;
+    @include transition(all 0.5s ease-in);
 }
 
 #skills>p{
-    @include transition(all 0.5s ease-in);
+    @include transition(all 0.4s ease-in);
 }
     
 #skills.show{
@@ -63,12 +63,4 @@
 #skills.hidden>p{
     opacity: 0;
     visibility: hidden;
-}
-
-#skills.lightMode, #skillsBtn.lightMode{
-    background-color: rgb(211, 211, 211);
-}
-
-#skills.darkMode, #skillsBtn.darkMode{
-    background-color: rgb(34, 34, 34);
 }

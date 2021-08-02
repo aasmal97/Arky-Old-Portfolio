@@ -9,12 +9,12 @@
 }
 
 #about{
+    padding: 2vw 0;
     width: 100%;
     height: calc(100% - 60px);
     @include centerElement;
     flex-direction: column;
     font-family: $font;
-    padding: 2vw 0;
 }
 
 #timeline{
@@ -42,6 +42,7 @@
     border: 2.5px solid transparent;
     width: 0;
     height: 0;
+    z-index: 0;
 }
 .item::before{
     top: 0;
@@ -96,6 +97,11 @@
 
 .item.hidden{
     opacity: 0;
+}
+.item>p{
+    //necessary for links to be clickable
+    position: relative;
+    z-index: 1;
 }
 .linesContainer{
     @include centerElement;
