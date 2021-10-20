@@ -1,0 +1,137 @@
+@include keyframes(y-line){
+    0%{transform: scaleY(0)}
+    100%{transform: scaleY(1)}
+}
+
+@include keyframes(x-line){
+    0%{transform: scaleX(0)}
+    100%{transform: scaleX(1)}
+}
+
+#timeline{
+    @include centerElement;
+    @include fullSize;
+    flex-direction: column;
+    padding: 2vw 0;
+}
+#timeline>.itemRow{
+    @include centerElement;
+    align-items: stretch;
+}
+.item{
+    //required since we're using absolute elements
+    position: relative;
+    text-align: center;
+    padding: 1vw 4vw;
+    box-sizing: border-box;
+    @include transition(opacity ease 0.5s);
+}
+.item::before, .item::after{
+    box-sizing: inherit;
+    content: '';
+    position: absolute;
+    border: 2.5px solid transparent;
+    width: 0;
+    height: 0;
+    z-index: 0;
+}
+.item::before{
+    top: 0;
+    left: 0;
+}
+.item::after{
+    bottom: 0;
+    right: 0;
+}
+//psuedo elements expand
+ .item.show::before,
+ .item.show::after {
+    @include border-radius (10px, 10px);
+    width: 100%;
+    height: 100%;
+ }
+ //transition elements
+ .item.show::before {
+   @include transition(
+     border-color 0s ease-out 0.5s, 
+     width 0.25s ease-out 0.5s, 
+     height 0.25s ease-out 0.75s,
+     border-radius 0.5s ease-out 1.5s,
+     )
+     
+ }
+ .item.show::after {
+   @include transition(
+     border-color 0s ease-out 1s, 
+     width 0.25s ease-out 1s,
+     height 0.25s ease-out 1.25s,
+     border-radius 0.5s ease-out 1.5s,
+     )
+ }
+ //border colors
+ .item.lightMode.show::before{
+    border-top-color: $primary-light-color; 
+    border-right-color: $primary-light-color;
+ }
+ .item.lightMode.show::after{
+    border-left-color: $primary-light-color; 
+    border-bottom-color: $primary-light-color;
+ }
+ .item.darkMode.show::after{
+    border-left-color: $bg-light-color; 
+    border-bottom-color: $bg-light-color;
+ }  
+ .item.darkMode.show::before{
+    border-top-color: $bg-light-color; 
+    border-right-color: $bg-light-color;
+ }
+
+.item.hidden{
+    opacity: 0;
+}
+.item>p{
+    //necessary for links to be clickable
+    position: relative;
+    z-index: 1;
+}
+.linesContainer{
+    @include centerElement;
+}
+
+.lines.lightMode{
+    background-color: $primary-light-color;
+}
+.lines.darkMode{
+    background-color: $bg-light-color;
+}
+
+.lines.hidden{
+    opacity:0;
+}
+
+//vertical
+.verLines>.lines{
+    transform-origin: top;
+    width: $line-thickness;
+}
+.verLines>.show{
+    @include animation("y-line 0.5s 1")
+}
+
+//horizontal
+.leftHorLines, .rightHorLines{
+    width:$line-length;
+}
+.leftHorLines>.lines{
+    transform-origin: right;
+}
+.rightHorLines>.lines{
+    transform-origin: left;
+}
+.leftHorLines>.lines, .rightHorLines>.lines{
+    height: $line-thickness;
+    width: $line-length;
+}
+.leftHorLines>.show, .rightHorLines>.show{
+    @include animation("x-line 0.5s 1")
+}
