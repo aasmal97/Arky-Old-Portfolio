@@ -470,7 +470,6 @@ img.blur {
 }
 
 #about {
-  padding: 2vw 0;
   width: 100%;
   height: calc(100% - 60px);
   display: flex;
@@ -478,6 +477,7 @@ img.blur {
   align-items: center;
   flex-direction: column;
   font-family: "Roboto", sans-serif;
+  padding: 2vw 0;
 }
 
 #timeline {
@@ -497,10 +497,43 @@ img.blur {
   align-items: stretch;
 }
 
-.timeItemContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.item {
+  position: relative;
+  text-align: center;
+  padding: 1vw 4vw;
+  box-sizing: border-box;
+  -webkit-transition: opacity ease 0.5s;
+  -ms-transition: opacity ease 0.5s;
+  -o-transition: opacity ease 0.5s;
+  -moz-transition: opacity ease 0.5s;
+  transition: opacity ease 0.5s;
+}
+
+.item::before, .item::after {
+  box-sizing: inherit;
+  content: "";
+  position: absolute;
+  border: 2.5px solid transparent;
+  width: 0;
+  height: 0;
+}
+
+.item::before {
+  top: 0;
+  left: 0;
+}
+
+.item::after {
+  bottom: 0;
+  right: 0;
+}
+
+.item.show::before,
+.item.show::after {
+  border-radius: 10px 10px;
+  -webkit-border-radius: 10px 10px;
+  -moz-border-radius: 10px 10px;
+  -ms-border-radius: 10px 10px;
   width: 100%;
 }
 
@@ -512,15 +545,7 @@ img.blur {
   width: 100%;
 }
 
-.vertLineContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  justify-content: flex-end;
-}
-
-.emptyContainer {
+.linesContainer {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -711,7 +736,6 @@ img.blur {
 }
 
 #skillsBtn {
-  width: 100%;
   padding-top: 7vw;
   flex-direction: column;
   display: flex;
@@ -753,25 +777,25 @@ img.blur {
 }
 
 #skills {
-  padding-bottom: 7vw;
+  margin-bottom: 7vw;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 0;
   text-align: center;
-  width: 100%;
-  -webkit-transition: all 0.3s ease-in;
-  -ms-transition: all 0.3s ease-in;
-  -o-transition: all 0.3s ease-in;
-  -moz-transition: all 0.3s ease-in;
-  transition: all 0.3s ease-in;
-}
-
-#skills > p {
+  width: 70%;
   -webkit-transition: all 0.5s ease-in;
   -ms-transition: all 0.5s ease-in;
   -o-transition: all 0.5s ease-in;
   -moz-transition: all 0.5s ease-in;
   transition: all 0.5s ease-in;
+}
+
+#skills > p {
+  -webkit-transition: all 0.4s ease-in;
+  -ms-transition: all 0.4s ease-in;
+  -o-transition: all 0.4s ease-in;
+  -moz-transition: all 0.4s ease-in;
+  transition: all 0.4s ease-in;
 }
 
 #skills.show {
@@ -786,14 +810,6 @@ img.blur {
 #skills.hidden > p {
   opacity: 0;
   visibility: hidden;
-}
-
-#skills.lightMode, #skillsBtn.lightMode {
-  background-color: lightgray;
-}
-
-#skills.darkMode, #skillsBtn.darkMode {
-  background-color: #222222;
 }
 
 #footer {

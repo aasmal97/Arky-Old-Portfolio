@@ -1,10 +1,10 @@
 #about{
-    padding: 2vw 0;
     width: 100%;
     height: calc(100% - 60px);
     @include centerElement;
     flex-direction: column;
     font-family: $font;
+    padding: 2vw 0;
 }
 #timeline{
     @include centerElement;
@@ -16,11 +16,37 @@
     @include fullSize;
     align-items: stretch;
 }
-.timeItemContainer{
-    @include centerElement;
+.item{
+    //required since we're using absolute elements
+    position: relative;
+    text-align: center;
+    padding: 1vw 4vw;
+    box-sizing: border-box;
+    @include transition(opacity ease 0.5s);
+}
+.item::before, .item::after{
+    box-sizing: inherit;
+    content: '';
+    position: absolute;
+    border: 2.5px solid transparent;
+    width: 0;
+    height: 0;
+}
+.item::before{
+    top: 0;
+    left: 0;
+}
+.item::after{
+    bottom: 0;
+    right: 0;
+}
+//psuedo elements expand
+ .item.show::before,
+ .item.show::after {
+    @include border-radius (10px, 10px);
     width: 100%;
 }
-.timeItemContent{
+.linesContainer{
     @include centerElement;
     @include fullSize;
 }
