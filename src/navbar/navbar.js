@@ -1,8 +1,8 @@
-import urlUpdate from "./urlUpdate.js"
-import { smoothScroll, hrefRegex } from "./smoothScroll.js"
-import { imgThemeLoad } from "./lazyLoad.js"
-import { aboutScrollLock, timelineObserver } from "./about.js"
-import {toggleSkills, skills} from "./techSkills.js"
+import urlUpdate from "../general/urlUpdate.js"
+import { smoothScroll, hrefRegex } from "../general/smoothScroll.js"
+import { imgThemeLoad } from "../general/lazyLoad.js"
+import { aboutScrollLock, timelineObserver } from "../about/about.js"
+import {toggleSkills, skills} from "../skills/techSkills.js"
 //Dark mode toggler
 const themeBtn = document.querySelector("#themeBtn")
 const lightMode = document.querySelectorAll(".lightMode")

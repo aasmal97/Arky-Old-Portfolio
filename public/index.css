@@ -247,6 +247,96 @@ img.blur {
   justify-content: center;
 }
 
+#bgProfilePic {
+  position: relative;
+  box-shadow: 0px 0.5px 2px 0.5px #2b2b2b;
+  -webkit-box-shadow: 0px 0.5px 2px 0.5px #2b2b2b;
+  -moz-box-shadow: 0px 0.5px 2px 0.5px #2b2b2b;
+  -ms-box-shadow: 0px 0.5px 2px 0.5px #2b2b2b;
+  display: flex;
+  width: 100%;
+  height: calc(100vh - 70px);
+  min-height: 500px;
+}
+
+#bgProfilePic.lightMode {
+  background-color: lightgray;
+}
+
+#bgProfilePic.darkMode {
+  background-color: #222222;
+}
+
+#bgProfilePic > div:first-child {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 700;
+  background-color: rgba(0, 0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  flex-direction: column;
+  text-align: center;
+}
+
+#bgProfilePic > div:first-child > p {
+  padding: 0;
+  margin: 1rem;
+}
+
+#bgProfilePic > div:first-child > a {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 550;
+  font-size: 50%;
+  text-decoration: none;
+  color: #d10505;
+  border: 1.5px solid #d10505;
+  padding: 0.7rem 1rem;
+  margin-bottom: 1.7rem;
+  border-radius: 30px 30px;
+  -webkit-border-radius: 30px 30px;
+  -moz-border-radius: 30px 30px;
+  -ms-border-radius: 30px 30px;
+}
+
+#bgProfilePic > div:first-child > a:hover, #bgProfilePic > div:first-child > a:active {
+  background-color: white;
+  color: #3b416b;
+  border: 1.5px solid #3b416b;
+}
+
+#bgProfilePic > div:first-child.lightMode {
+  color: #333333;
+}
+
+#bgProfilePic > div:first-child > hr {
+  padding: 0;
+  margin: 0;
+  width: 30%;
+}
+
+#socialMedia {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-around;
+  width: 11rem;
+}
+
+#socialMedia > a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.5rem;
+  height: 100%;
+}
+
+#profilePic {
+  width: 50%;
+  height: 100%;
+}
+
 #navbar {
   display: flex;
   justify-content: center;
@@ -386,96 +476,6 @@ img.blur {
   opacity: 0;
   visibility: hidden;
   transition: all ease-out 0.4s;
-}
-
-#bgProfilePic {
-  position: relative;
-  box-shadow: 0px 0.5px 2px 0.5px #2b2b2b;
-  -webkit-box-shadow: 0px 0.5px 2px 0.5px #2b2b2b;
-  -moz-box-shadow: 0px 0.5px 2px 0.5px #2b2b2b;
-  -ms-box-shadow: 0px 0.5px 2px 0.5px #2b2b2b;
-  display: flex;
-  width: 100%;
-  height: calc(100vh - 70px);
-  min-height: 500px;
-}
-
-#bgProfilePic.lightMode {
-  background-color: lightgray;
-}
-
-#bgProfilePic.darkMode {
-  background-color: #222222;
-}
-
-#bgProfilePic > div:first-child {
-  font-family: "Ubuntu", sans-serif;
-  font-weight: 700;
-  background-color: rgba(0, 0, 0, 0);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 50%;
-  flex-direction: column;
-  text-align: center;
-}
-
-#bgProfilePic > div:first-child > p {
-  padding: 0;
-  margin: 1rem;
-}
-
-#bgProfilePic > div:first-child > a {
-  font-family: "Ubuntu", sans-serif;
-  font-weight: 550;
-  font-size: 50%;
-  text-decoration: none;
-  color: #d10505;
-  border: 1.5px solid #d10505;
-  padding: 0.7rem 1rem;
-  margin-bottom: 1.7rem;
-  border-radius: 30px 30px;
-  -webkit-border-radius: 30px 30px;
-  -moz-border-radius: 30px 30px;
-  -ms-border-radius: 30px 30px;
-}
-
-#bgProfilePic > div:first-child > a:hover, #bgProfilePic > div:first-child > a:active {
-  background-color: white;
-  color: #3b416b;
-  border: 1.5px solid #3b416b;
-}
-
-#bgProfilePic > div:first-child.lightMode {
-  color: #333333;
-}
-
-#bgProfilePic > div:first-child > hr {
-  padding: 0;
-  margin: 0;
-  width: 30%;
-}
-
-#socialMedia {
-  margin-top: 1.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  justify-content: space-around;
-  width: 11rem;
-}
-
-#socialMedia > a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 2.5rem;
-  height: 100%;
-}
-
-#profilePic {
-  width: 50%;
-  height: 100%;
 }
 
 @-webkit-keyframes y-line {
