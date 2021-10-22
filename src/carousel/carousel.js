@@ -77,14 +77,14 @@ it causes the creation of multiple timers, breaking the carousel */
 let caroTimerInterval;
 const timerSpeed = 6000;
 
-let caroTimer = () => { 
-    caroTimerInterval = setInterval(() => {
-        caroMoveRight()
-    }, timerSpeed);
-};
+// let caroTimer = () => { 
+//     caroTimerInterval = setInterval(() => {
+//         caroMoveRight()
+//     }, timerSpeed);
+// };
 
-//starts timer for caro items to move right
-caroTimer(); 
+// //starts timer for caro items to move right
+// // caroTimer(); 
 
 /* wrote the following to restart timer after a click.
     however, determined this would not be good because it may not give user

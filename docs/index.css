@@ -181,6 +181,31 @@
   #bgProfilePic > div:first-child {
     font-size: 1.2rem;
   }
+
+  .caro-item div {
+    height: 50%;
+    text-align: center;
+    flex-direction: column;
+    padding: 0 20vw;
+  }
+  .caro-item div img {
+    min-height: 150px;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  .caro-item h1 {
+    font-size: 1.5rem !important;
+    margin-top: 3rem !important;
+    margin-bottom: 2rem !important;
+    text-align: center;
+    align-items: flex-start;
+  }
+  .caro-item .caro-item-content {
+    width: 100%;
+  }
+  .caro-item .caro-item-content div {
+    width: 100%;
+  }
 }
 @-moz-document url-prefix() {
   body {
@@ -680,7 +705,7 @@ img.blur {
   position: relative;
   display: flex;
   height: calc(100vh - 55px);
-  min-height: 500px;
+  min-height: 800px;
   width: 100%;
   justify-content: space-between;
   color: white;
@@ -715,29 +740,46 @@ img.blur {
 
 .caro-item {
   display: flex;
+  align-items: center;
+  flex-direction: column;
+  transition: all linear 0.4s;
+  height: 100%;
+}
+.caro-item div {
+  padding: 0 20vw;
+  display: flex;
   justify-content: center;
   align-items: center;
   transition: all linear 0.4s;
   height: 100%;
 }
-
-.caro-item > p, .caro-item > div {
-  padding: 10vw;
+.caro-item h1 {
+  padding: 0 15vw;
+  font-size: 3rem;
+  margin-top: 5rem;
+  margin-bottom: 4rem;
+  transition: all linear 0.4s;
 }
 
 .caro-item.hidden {
   min-width: 0vw;
   visibility: hidden;
+  opacity: 0;
 }
-
-.caro-item.hidden > p {
+.caro-item.hidden div, .caro-item.hidden h1 {
   opacity: 0;
   visibility: hidden;
-  transition: all ease-out 0.2s;
 }
 
 .caro-item.show {
   min-width: 100vw;
+}
+.caro-item.show div, .caro-item.show h1 {
+  opacity: 1;
+}
+
+.caro-item-content {
+  width: 100%;
 }
 
 #project1 {

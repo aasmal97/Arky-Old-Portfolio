@@ -1,0 +1,28 @@
+
+@mixin carousel-sm{
+    .caro-item{
+        div{
+            height: 50%;
+            text-align: center;
+            flex-direction: column;
+            padding: 0 20vw;
+            img{
+                min-height: 150px;
+                object-fit: contain;
+            }
+        }
+        h1{
+            font-size: 1.5rem !important;
+            margin-top: 3rem!important;
+            margin-bottom: 2rem !important;
+            text-align: center;
+            align-items: flex-start;
+        }
+        .caro-item-content{
+            width: 100%;
+            div{
+                width: 100%;
+            }
+        }
+    }   
+}

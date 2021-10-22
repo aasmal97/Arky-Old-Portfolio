@@ -5,7 +5,7 @@
     position: relative;
     display: flex;
     height: calc(100vh - 55px);
-    min-height: 500px;
+    min-height: 800px;
     width: 100%;
     justify-content: space-between;
     color: white;   
@@ -32,34 +32,49 @@
     height: 100%;
     width: 100%;
     overflow-x: hidden;
-    
 }
-
 
 //slides
 .caro-item{
-    @include centerElement;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     @include transition(all linear 0.4s);
     height: 100%;
+    div{
+        padding: 0 20vw;
+        @include centerElement;
+        @include transition(all linear 0.4s);
+        height: 100%;
+    }
+    h1{
+        padding: 0 15vw;
+        font-size: 3rem;
+        margin-top: 5rem;
+        margin-bottom: 4rem;
+        @include transition(all linear 0.4s);
+    }
 }   
-.caro-item>p, .caro-item>div{
-    padding: 10vw;
-}
 
 .caro-item.hidden{
     min-width: 0vw;
     visibility: hidden;
+    opacity: 0;
+    div, h1{
+        opacity: 0;
+        visibility: hidden;
+    }
 }   
 
-.caro-item.hidden>p{
-    opacity: 0;
-    visibility: hidden;
-    @include transition(all ease-out 0.2s);
-}
- 
 .caro-item.show{
     min-width: 100vw;
+    div,h1{
+        opacity: 1;
+    }
 }   
+.caro-item-content{
+    width: 100%;
+}
 
 #project1{
     font-size: xx-large;
