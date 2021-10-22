@@ -8,12 +8,12 @@
 }
 
 #bgProfilePic.lightMode{
-    background-color: rgb(211, 211, 211);
+    background-color: $bg-secondary-light-color;
 
 }
 
 #bgProfilePic.darkMode{
-    background-color: rgb(34, 34, 34);
+    background-color: $bg-secondary-dark-color;
 }
 
 #bgProfilePic>div:first-child{

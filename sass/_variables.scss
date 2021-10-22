@@ -1,6 +1,7 @@
 
 $bg-light-color: rgb(233, 231, 231) ;
-
+$bg-secondary-light-color: rgb(211, 211, 211);
+$bg-secondary-dark-color:rgb(34, 34, 34);
 $bg-dark-color:  rgb(41, 41, 41);
 
 $primary-light-color:rgb(59, 65, 107);
@@ -11,7 +12,8 @@ $font: 'Roboto', sans-serif;
 
 $font-size: 1.25em;
 
-$font-color: white;
+$font-light-color: white;
+$font-dark-color: black;
 
 $dark-mode :true;
 
@@ -36,16 +38,16 @@ $line-thickness : 3px;
 @mixin bg-theme-colors ($dark-mode) {
     @if $dark-mode {
         background-color: $bg-dark-color;
-        color: $bg-light-color;
+        color: $font-light-color;
     } @else {
         background-color: $bg-light-color;
-        color: $bg-dark-color;
+        color: $font-dark-color;
     }
 }
 @mixin lightModeBtns{
     background-color: $primary-light-color;
     border: 1.5px solid $primary-light-color;
-    color: white;
+    color: $font-dark-color;
 }
 
 @mixin darkModeBtns{
