@@ -1,15 +1,24 @@
+#skills{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    @include box-shadow(0px, -0.5px, 2px, 0.3px, rgb(0, 0, 0));
+
+}
 #skillsBtn{
+    width: 100%;
     padding-top: 7vw;
+    border: none;
     flex-direction: column;
     @include centerElement;
 }
 
-#skillsBtn.darkMode>a{
+#skillsBtn.darkMode>span{
     color: $bg-light-color;
     border: 1.5px solid white;
 }
 
-#skillsBtn>a{
+#skillsBtn>span{
     @include centerElement;
     cursor: pointer;
     border-radius: 30px;
@@ -17,50 +26,62 @@
     text-decoration: none;
 }
 
-#skillsBtn.lightMode>a{
+#skillsBtn.lightMode>span{
     background-color:$bg-light-color;
     color:$primary-light-color;
     border: 1.5px solid $primary-light-color; 
+    font-size: 1rem;
+    font-weight: 550;
+    height: 1.5rem;
 }
 
 
-#skillsBtn.lightMode>a:hover{
+#skillsBtn.lightMode>span:hover{
     background-color: $primary-light-color;
     color: $bg-light-color;
     border: 1.5px solid $primary-light-color; 
 }
 
-#skillsBtn.darkMode>a:hover{
+#skillsBtn.darkMode>span:hover{
     background-color:$bg-light-color;
     color:$bg-dark-color;
     border: 1.5px solid $bg-light-color; 
 }
 
-#skills{
-    
-    margin-bottom: 7vw;
+#skillsList{
+    padding-bottom: 7vw;
+    font-size: 1.1rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 0;
     text-align: center;
-    width: 70%;
-    @include transition(all 0.5s ease-in);
+    width: 100%;
+    @include transition(all 0.3s ease-in);
+
 }
 
-#skills>p{
-    @include transition(all 0.4s ease-in);
+#skillsList>p{
+    @include transition(all 0.5s ease-in);
 }
     
-#skills.show{
+#skillsList.show{
     max-height: 600px;
 }
 
-#skills.hidden{
+#skillsList.hidden{
     max-height: 0;
     overflow:hidden;
 }
 
-#skills.hidden>p{
+#skillsList.hidden>p{
     opacity: 0;
     visibility: hidden;
+}
+
+#skillsList.lightMode, #skillsBtn.lightMode{
+    background-color: $bg-light-color;
+}
+
+#skillsList.darkMode, #skillsBtn.darkMode{
+    background-color: $bg-dark-color;
 }

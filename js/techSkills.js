@@ -1,5 +1,5 @@
-const skillsBtn = document.querySelector("#skillsBtn")
-const skills = document.querySelector("#skills")
+const skillsBtn = document.getElementById("skillsBtn")
+const skills = document.getElementById("skillsList")
 let skillClickDisabled = true;
 function hideSkills(){
     skills.classList.add("hidden")
@@ -13,8 +13,7 @@ function showSkills(){
     skillsBtn.firstElementChild.textContent = "Hide List of Skills"
 }
 
-function toggleSkills(e=0){
-        e.preventDefault()
+function toggleSkills(){
     if (skillClickDisabled){    
         if(skills.classList.contains("show")){
             hideSkills()
@@ -28,7 +27,8 @@ function toggleSkills(e=0){
         skillClickDisabled = true
     }, 500)
 }
-
-skillsBtn.addEventListener("click", function(e){  
-    toggleSkills(e);
-})
+export {
+    toggleSkills as toggleSkills, 
+    skillsBtn as skillsBtn,
+    skills as skills
+}

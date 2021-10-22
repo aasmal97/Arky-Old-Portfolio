@@ -1,6 +1,5 @@
 //equal to jquery document ready
-const body = document.querySelector("body")
-document.addEventListener("DOMContentLoaded", function() {
+const createPopUp = () =>{
     let popupContainer = document.createElement("div")
     let darkPopup = document.createElement("div")
     let paragraph= document.createElement("p")
@@ -14,31 +13,25 @@ document.addEventListener("DOMContentLoaded", function() {
     popupContainer.append(darkPopup)
 
     themeBtn.append(popupContainer)
-});
-
-document.addEventListener("scroll", function() {
-    if (window.scrollY>0){
+    setTimeout(function(){
+        popupContainer.classList.add("hidden") 
+    }, 13000)
+}
+const hidePopUp = (e) => {
+    if (window.scrollY>0 || e.type==="mouseleave"){
         popupContainer.classList.add("hidden")
     } 
-});
-
-themeBtn.addEventListener("mouseenter", function(){
+}
+const showPopUp = () =>{
     popupContainer.classList.remove("hidden")
     if (window.scrollY>0){
         popupContainer.style.top = "40px";
     } else {
         popupContainer.style.top = "65px";
     }
-})
-themeBtn.addEventListener("mouseleave", function(){
-    popupContainer.classList.add("hidden")
-})
-
-setTimeout(function(){
-    popupContainer.classList.add("hidden") 
-}, 13000)
-
-function popupContent(e=0){
+   
+}
+const  generatePopUpContent = (e) =>{
      //target both icon and button
      if(e.target.classList.contains("darkMode")||e.target.classList.contains("fa-moon-o")){
         popupContainer.firstChild.firstChild.textContent = "Back to Normal"
@@ -46,3 +39,11 @@ function popupContent(e=0){
         popupContainer.firstChild.firstChild.textContent = "Try Dark Mode"
     }
 }
+
+export {
+    createPopUp as createPopUp, 
+    hidePopUp as hidePopUp, 
+    showPopUp as showPopUp, 
+    generatePopUpContent as generatePopUpContent
+}
+

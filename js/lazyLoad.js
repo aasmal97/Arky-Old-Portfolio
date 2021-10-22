@@ -68,8 +68,7 @@ function imgThemeLoad(){
     }     
 }
 
-//Adding observer function at the start
-window.addEventListener("load", function(){
+const imagesOnLoad = () =>{
     for (i in Object.keys(allImages)){
         //only observes images that are initally loaded in as Low Resolution
         if(lowResRegex.test(allImages[i].src)){
@@ -78,4 +77,9 @@ window.addEventListener("load", function(){
         }
         
     }    
-})
+}
+
+export {
+    imagesOnLoad as imagesOnLoad, 
+    imgThemeLoad as imgThemeLoad
+}

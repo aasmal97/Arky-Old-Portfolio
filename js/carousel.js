@@ -1,5 +1,3 @@
-"use-strict";
-
 //carousel behavior
 const carousel = document.querySelector("#carousel-items")
 const caroItems = document.querySelectorAll(".caro-item")
@@ -91,7 +89,6 @@ caroTimer();
 /* wrote the following to restart timer after a click.
     however, determined this would not be good because it may not give user
     time to focus on content. Opted for restarting timer when user left div
-
     const resetCaroTimer = () => {
     clearInterval(caroTimerInterval);
     caroTimer();

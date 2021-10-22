@@ -1,19 +1,22 @@
 //Carousel Styling
 #carousel{
+    @include transition(all linear 0.3s);
+    @include box-shadow(0px, -0.5px, 3px, 0.5px, rgb(0, 0, 0));
+    position: relative;
     display: flex;
-    height: 70vh;
+    height: calc(100vh - 55px);
+    min-height: 500px;
     width: 100%;
     justify-content: space-between;
-    @include transition(all linear 0.3s);
-    color: white;    
+    color: white;   
 }
 
 #carousel.lightMode{
-    background-color: rgb(74, 34, 168);
+    background-color: $primary-light-color;
 }
 
 #carousel.darkMode{
-    background-color: rgb(78, 77, 77);
+    background-color: $primary-dark-color;
 }
 
 #caroContainer{
@@ -134,5 +137,4 @@
 .caro-btns:hover{
     color: rgb(170, 169, 169)
 }
-
 

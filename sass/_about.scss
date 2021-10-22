@@ -1,19 +1,33 @@
+@include keyframes(y-line){
+    0%{transform: scaleY(0)}
+    100%{transform: scaleY(1)}
+}
+
+@include keyframes(x-line){
+    0%{transform: scaleX(0)}
+    100%{transform: scaleX(1)}
+}
+
 #about{
+    position: relative;
+    padding: 2vw 0;
     width: 100%;
     height: calc(100% - 60px);
     @include centerElement;
     flex-direction: column;
     font-family: $font;
-    padding: 2vw 0;
+    @include box-shadow(0px, -0.5px, 2px, 0.25px, rgb(0, 0, 0));
+
 }
+
 #timeline{
     @include centerElement;
-    flex-direction: column;
-    margin: 0 10vw;
-}
-.timeItemRow{
-    @include centerElement;
     @include fullSize;
+    flex-direction: column;
+    padding: 2vw 0;
+}
+#timeline>.itemRow{
+    @include centerElement;
     align-items: stretch;
 }
 .item{
@@ -31,6 +45,7 @@
     border: 2.5px solid transparent;
     width: 0;
     height: 0;
+    z-index: 0;
 }
 .item::before{
     top: 0;
@@ -45,36 +60,90 @@
  .item.show::after {
     @include border-radius (10px, 10px);
     width: 100%;
+    height: 100%;
+ }
+ //transition elements
+ .item.show::before {
+   @include transition(
+     border-color 0s ease-out 0.5s, 
+     width 0.25s ease-out 0.5s, 
+     height 0.25s ease-out 0.75s,
+     border-radius 0.5s ease-out 1.5s,
+     )
+     
+ }
+ .item.show::after {
+   @include transition(
+     border-color 0s ease-out 1s, 
+     width 0.25s ease-out 1s,
+     height 0.25s ease-out 1.25s,
+     border-radius 0.5s ease-out 1.5s,
+     )
+ }
+ //border colors
+ .item.lightMode.show::before{
+    border-top-color: $primary-light-color; 
+    border-right-color: $primary-light-color;
+ }
+ .item.lightMode.show::after{
+    border-left-color: $primary-light-color; 
+    border-bottom-color: $primary-light-color;
+ }
+ .item.darkMode.show::after{
+    border-left-color: $bg-light-color; 
+    border-bottom-color: $bg-light-color;
+ }  
+ .item.darkMode.show::before{
+    border-top-color: $bg-light-color; 
+    border-right-color: $bg-light-color;
+ }
+
+.item.hidden{
+    opacity: 0;
+}
+.item>p{
+    //necessary for links to be clickable
+    position: relative;
+    z-index: 1;
 }
 .linesContainer{
     @include centerElement;
-    @include fullSize;
-}
-.vertLineContainer{
-    @include centerElement;
-    flex-direction: column; 
-    justify-content: flex-end;
-}
-.emptyContainer{
-    @include centerElement;
-    width: 100%;
 }
 
-.horzLine, .vertLine{
+.lines.lightMode{
     background-color: $primary-light-color;
 }
+.lines.darkMode{
+    background-color: $bg-light-color;
+}
 
-.horzLine{
-    width: 50%; 
-    height: 3px;
+.lines.hidden{
+    opacity:0;
 }
-.vertLine{
-    width: 3px;
-    height: calc(50% - 7.5px);
+
+//vertical
+.verLines>.lines{
+    transform-origin: top;
+    width: $line-thickness;
 }
-.timeCircle{
-    height: 10px;
-    width: 10px;
-    @include border-radius(10px, 10px);
-    border: 3px solid $primary-light-color;
-}   
+.verLines>.show{
+    @include animation("y-line 0.5s 1")
+}
+
+//horizontal
+.leftHorLines, .rightHorLines{
+    width:$line-length;
+}
+.leftHorLines>.lines{
+    transform-origin: right;
+}
+.rightHorLines>.lines{
+    transform-origin: left;
+}
+.leftHorLines>.lines, .rightHorLines>.lines{
+    height: $line-thickness;
+    width: $line-length;
+}
+.leftHorLines>.show, .rightHorLines>.show{
+    @include animation("x-line 0.5s 1")
+}
