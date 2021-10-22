@@ -4,23 +4,6 @@
         }
     }
 
-@media screen and (min-width: 1026px){
-    @include timeline-lg;
-    @include profilePic-lg;
-    @include navbar-lg;
-}
-
-@media screen and (max-width: 1025px){ 
-    @include timeline-md;
-    @include profilePic-md;
-    @include navbar-md;
-   
-}
-@media screen and (max-width: 650px){
-    @include timeline-sm;
-    @include profilePic-sm;
-}
-
 body{
     position: relative;
     padding: 0;

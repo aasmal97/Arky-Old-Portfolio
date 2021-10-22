@@ -1,0 +1,78 @@
+@mixin navbar-lg {
+    //navbar
+    #name{
+        text-align: center;
+    }
+
+    #navToggler{
+        display: none;
+    }
+
+    #navLinkContainer{
+        @include fullSize;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+        background-color: rgba(255,255,255,0);
+    }
+
+    #navLinkContainer>a{
+        width: 12%;
+        height: 40px;
+        @include border-radius(30px, 30px);
+        margin: 10px;
+    }
+}
+@mixin navbar-md {
+    //navbar
+    //hides the nav links into a column 
+    #navbar{
+        justify-content: flex-end;
+    }
+
+    #navLinkContainer{
+        @include border-radius(0,0);
+        position: absolute;
+        top: 85px;
+        flex-direction: column;
+        width: 100%;
+        
+    }
+    #navLinkContainer.lightMode{
+        @include lightModeBtns;
+        border: 0px;
+    }
+    #navLinkContainer.darkMode{
+        @include darkModeBtns;
+        border: 0px;
+    }
+    #navLinkContainer>a{
+        @include border-radius(0px, 0px);
+        margin: 5px 0;
+        border: 0px;
+        height: 40px;
+    }
+    #navLinkContainer>a:last-child{
+        margin-bottom: 40px;
+    }
+
+    #navLinkContainer.show{
+        max-height: 300px;
+        overflow: visible;
+    }
+    
+    #navLinkContainer.hidden{
+        overflow: hidden;
+        max-height: 0px;
+    }
+    #navLinkContainer>a.show{
+        visibility: visible;
+        opacity: 1;
+    }
+    #navLinkContainer>a.hidden{
+        visibility: hidden;
+        opacity: 0;
+        @include transition(all 0.3s linear);
+    }
+}

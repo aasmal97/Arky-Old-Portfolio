@@ -1,0 +1,48 @@
+@mixin  timeline-lg{
+    //timeline padding
+    #about{
+        font-size: 200%;
+    }
+    #timeline{
+        padding: 0 15vw;
+        font-size: 60%;
+    }
+
+    .item{
+        width: 25vw;
+    }
+    .verLines{
+        //center vertical line
+        padding: 0 17.5vw;
+        width: 25vw;
+    }
+    .verLines>.lines{
+        height: 5vw;
+    }
+}
+@mixin timeline-md {
+    //timeline padding
+    #about{
+       font-size: 150%;
+   }
+   #timeline{
+       font-size: 50%;
+   }
+   .item{
+       width: 35vw;
+   }
+   .verLines{
+       //center vertical line
+       padding: 0 10vw;
+       width: 30vw;
+   }
+   .verLines>.lines{
+       height: 4vw;
+   }
+}
+
+@mixin timeline-sm {
+    #timeline{
+        font-size: 55%;
+    }
+}
