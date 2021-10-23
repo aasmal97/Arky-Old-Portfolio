@@ -61,11 +61,12 @@
         @include transition(all linear 0.4s);
     }
 }   
-
+.caro-item.no-width{
+    width: 0;
+}
 .caro-item.hidden{
-    max-width: 0;
-    visibility: hidden;
-    opacity: 0;
+    visibility: hidden!important;
+    opacity: 0!important;
     div, h2{
         opacity: 0;
         visibility: hidden;

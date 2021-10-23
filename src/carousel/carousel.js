@@ -43,13 +43,17 @@ function caroMoveRight(e=0){
         }
         setTimeout(function(){ 
             caroClassBehavior();
-        }, 350)
+        }, 0)
+        setTimeout(()=>{
+            caroItems[currCaroIndex].classList.remove("no-width");
+            caroItems[prevCaroIndex].classList.add("no-width");
+        },200)
         //append next element to end, and adjust translate value accordingly
         const isMax = currCaroIndex+1 > maxCaroIndex
         caroItems[isMax ? 0: currCaroIndex+1].style.transform = `translate(100vw)`
         setTimeout(()=>{
             carousel.insertBefore(caroItems[isMax ? 0: currCaroIndex+1], caroItems[currCaroIndex].nextElementSibling)
-        }, 200)
+        }, 250)
 
         //disable clicks until animation completes
         setTimeout(function(){caroClickDisabled = false;}, 550)
@@ -72,7 +76,11 @@ function caroMoveLeft(e=0){
         }
         setTimeout(function(){ 
             caroClassBehavior()
-        }, 400)
+        }, 0)
+        setTimeout(()=>{
+            caroItems[currCaroIndex].classList.remove("no-width");
+            caroItems[prevCaroIndex].classList.add("no-width");
+        },250)
         //append next element to start, and adjust translate value accordingly
         //only works when current is not the very first node in the tree 
         //(i.e when user has click right first, then left)
