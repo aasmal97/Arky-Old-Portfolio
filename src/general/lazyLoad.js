@@ -25,10 +25,9 @@ const lazyLoad = new IntersectionObserver(function(entries) {
 //Changes images if they have a dark version to them.
 //checks for image state, and matches new image appropriately. 
 function imgThemeLoad(){
-    for(i in Object.keys(allImages)){
+    for(let i in Object.keys(allImages)){
         let parentElClass = allImages[i].parentElement.classList
         let photo = allImages[i].src;
-
         //checks if two versions exist since they will have light or dark at the beginning
         if(lightImgRegex.test(photo)||darkImgRegex.test(photo)){
             //variables only have correct value when correct class is active
@@ -75,7 +74,6 @@ const imagesOnLoad = () =>{
             allImages[i].classList.add("blur")
             lazyLoad.observe(allImages[i]);
         }
-        
     }    
 }
 
