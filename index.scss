@@ -2,24 +2,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-@import "../sass/variables";
+@import "./sass/variables";
 
-@import "../sass/breakpoints";
+@import "./sass/breakpoints";
 
-@import "../sass/general";
+@import "./sass/general";
 
-@import "../sass/profilePic";
+@import "./sass/profilePic";
 
-@import "../src/navbar/navbar";
+@import "./src/navbar/navbar";
 
-@import "../src/navbar/darkPopup";
+@import "./src/navbar/darkPopup";
 
-@import "../src/about/about";
+@import "./src/about/about";
 
-@import "../src/carousel/carousel";
+@import "./src/carousel/carousel";
 
-@import "../src/skills/skills";
+@import "./src/skills/skills";
 
-@import "../src/footer/footer";
+@import "./src/footer/footer";
 
 

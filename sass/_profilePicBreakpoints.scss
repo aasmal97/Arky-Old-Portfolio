@@ -3,42 +3,42 @@
   
     #bgProfilePic>div:first-child{
       font-size: 300%;
-  }
+    }
 }
 @mixin profilePic-md {
   //profile background
-  #bgProfilePic>div:first-child{
-      font-size: 250%;
-  }
+    #bgProfilePic>div:first-child{
+        font-size: 250%;
+    }
 }
 
 @mixin profilePic-sm {
-  #bgProfilePic{
-      flex-direction: column;
-      div{
-          width: 100% !important;
-          height: 50%
-      }
-      div:first-child{
-          margin: 0.3rem 0;
-          a{
-              font-size: 0.8rem !important;
-              margin-bottom: 1rem !important;
-          };
-      }
-  }
- #socialMedia{
-     margin-top: 1rem !important;
-     height: 2rem !important;
-     justify-content: center !important;
-     a{
-          width: 3rem !important;
-     }
-     img{
-         object-fit: contain;
-     }
- }
-  #bgProfilePic>div:first-child{
-      font-size: 1.2rem;
-  }
+    #bgProfilePic{
+        flex-direction: column;
+        div{
+            width: 100% !important;
+            height: 50%
+        }
+        div:first-child{
+            margin: 0.3rem 0;
+            a{
+                font-size: 0.8rem !important;
+                margin-bottom: 1rem !important;
+            };
+        }
+    }
+    #socialMedia{
+        margin-top: 1rem !important;
+        height: 2rem !important;
+        justify-content: center !important;
+        a{
+            width: 3rem !important;
+        }
+        img{
+            object-fit: contain;
+        }
+    }
+    #bgProfilePic>div:first-child{
+        font-size: 1.7rem;
+    }
 }

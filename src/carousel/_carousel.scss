@@ -8,7 +8,12 @@
     min-height: 800px;
     width: 100%;
     justify-content: space-between;
-    color: white;   
+    color: white; 
+    h1 {
+        margin-top: 3rem;
+        margin-bottom: 0rem;
+        font-size: 2rem;
+    }  
 }
 
 #carousel.lightMode{
@@ -47,11 +52,11 @@
         @include transition(all linear 0.4s);
         height: 100%;
     }
-    h1{
-        padding: 0 15vw;
-        font-size: 3rem;
-        margin-top: 5rem;
-        margin-bottom: 4rem;
+    h2{
+        padding: 0 20vw;
+        font-size: 2rem;
+        margin-top: 1.5rem;
+        margin-bottom: 2rem;
         @include transition(all linear 0.4s);
     }
 }   
@@ -60,7 +65,7 @@
     min-width: 0vw;
     visibility: hidden;
     opacity: 0;
-    div, h1{
+    div, h2{
         opacity: 0;
         visibility: hidden;
     }
@@ -68,7 +73,7 @@
 
 .caro-item.show{
     min-width: 100vw;
-    div,h1{
+    div,h2{
         opacity: 1;
     }
 }   
@@ -76,22 +81,11 @@
     width: 100%;
 }
 
-#project1{
-    font-size: xx-large;
-
-}
-
-#project2{
-    font-size: xx-large;
-}
-
-#project3{
-    font-size: xx-large;
-
-}
-
-#project4{
-    font-size: xx-large;
+.project-description{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 //bottom indicators

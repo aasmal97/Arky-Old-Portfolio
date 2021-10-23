@@ -1,5 +1,11 @@
 
 @mixin carousel-sm{
+    #carousel{
+        h1 {
+            margin-top: 2rem !important;
+            font-size: 1.5rem !important;
+        }  
+    }
     .caro-item{
         div{
             height: 50%;
@@ -11,10 +17,10 @@
                 object-fit: contain;
             }
         }
-        h1{
-            font-size: 1.5rem !important;
-            margin-top: 3rem!important;
-            margin-bottom: 2rem !important;
+        h2{
+            font-size: 1.2rem !important;
+            margin-top: 1.3rem!important;
+            margin-bottom: 1rem !important;
             text-align: center;
             align-items: flex-start;
         }
