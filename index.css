@@ -786,8 +786,8 @@ img.blur {
   opacity: 0 !important;
 }
 .caro-item.hidden div, .caro-item.hidden h2 {
-  opacity: 0;
-  visibility: hidden;
+  opacity: 0 !important;
+  visibility: hidden !important;
 }
 
 .caro-item.show {
