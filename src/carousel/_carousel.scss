@@ -48,13 +48,19 @@
     @include transition(all linear 0.4s);
 
     div{
-        padding: 0 16vw;
         @include centerElement;
         @include transition(all linear 0.4s);
+        width: 70vw;
         height: 100%;
+        img{
+            min-height: 150px;
+            max-height: 500px;
+            height: 50%;
+            object-fit: contain;
+        }
     }
     h2{
-        padding: 0 16vw;
+        padding: 0 17vw;
         font-size: 2rem;
         margin-top: 1.5rem;
         margin-bottom: 2rem;
@@ -84,7 +90,9 @@
 .caro-item-content{
     width: 100%;
 }
-
+.caro-img-container{
+    flex-direction: column;
+}
 .project-description{
     display: flex;
     flex-direction: column;
