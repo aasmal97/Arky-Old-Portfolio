@@ -88,7 +88,7 @@ const timelineAnimate = () =>{
 }
 
 const generateLines = () =>{
-    for (i = 0; i<Object.keys(timelineRow).length*2-1; i++){
+    for (let i = 0; i<Object.keys(timelineRow).length*2-1; i++){
         let linesContainer = document.createElement("div")
         let lines = document.createElement("div")
         linesContainer.classList.add("linesContainer")

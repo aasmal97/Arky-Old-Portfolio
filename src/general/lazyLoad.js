@@ -68,7 +68,7 @@ function imgThemeLoad(){
 }
 
 const imagesOnLoad = () =>{
-    for (i in Object.keys(allImages)){
+    for (let i in Object.keys(allImages)){
         //only observes images that are initally loaded in as Low Resolution
         if(lowResRegex.test(allImages[i].src)){
             allImages[i].classList.add("blur")

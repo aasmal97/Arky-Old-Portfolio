@@ -202,7 +202,6 @@
     height: 50%;
     text-align: center;
     flex-direction: column;
-    padding: 0 20vw;
   }
   .caro-item div img {
     min-height: 150px;
@@ -759,11 +758,11 @@ img.blur {
   display: flex;
   align-items: center;
   flex-direction: column;
-  transition: all linear 0.4s;
   height: 100%;
+  transition: all linear 0.4s;
 }
 .caro-item div {
-  padding: 0 20vw;
+  padding: 0 16vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -771,7 +770,7 @@ img.blur {
   height: 100%;
 }
 .caro-item h2 {
-  padding: 0 20vw;
+  padding: 0 16vw;
   font-size: 2rem;
   margin-top: 1.5rem;
   margin-bottom: 2rem;
@@ -779,7 +778,7 @@ img.blur {
 }
 
 .caro-item.hidden {
-  min-width: 0vw;
+  max-width: 0;
   visibility: hidden;
   opacity: 0;
 }
@@ -789,7 +788,7 @@ img.blur {
 }
 
 .caro-item.show {
-  min-width: 100vw;
+  opacity: 1;
 }
 .caro-item.show div, .caro-item.show h2 {
   opacity: 1;
@@ -826,8 +825,7 @@ img.blur {
 }
 
 .caro-btns.hidden {
-  opacity: 0;
-  visibility: hidden;
+  opacity: 0.2;
   transition: all ease-out 1s;
 }
 
@@ -938,7 +936,7 @@ img.blur {
 }
 
 #skillsList.show {
-  padding-bottom: 2.5rem;
+  padding-bottom: 4rem;
   max-height: 600px;
 }
 
