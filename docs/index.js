@@ -1,9 +1,9 @@
-import {generateLines, timeline, timelineAnimate, aboutScrollLock, determineAge} from "../src/about/about.js"
-import { createPopUp, hidePopUp, showPopUp, generatePopUpContent } from "../src/navbar/darkPopup.js";
-import {toggleSkills, skillsBtn} from "../src/skills/techSkills.js"
-import {navLinks, navLinksScroll, themeBtn, navToggler, navOnClick, navOnLoad, navOnScroll, changeTheme} from "../src/navbar/navbar.js"
-import {imagesOnLoad} from "../src/general/lazyLoad.js"
-import {smoothScroll} from "../src/general/smoothScroll.js"
+import {generateLines, timeline, timelineAnimate, aboutScrollLock, determineAge} from "./src/about/about.js"
+import { createPopUp, hidePopUp, showPopUp, generatePopUpContent } from "./src/navbar/darkPopup.js";
+import {toggleSkills, skillsBtn} from "./src/skills/techSkills.js"
+import {navLinks, navLinksScroll, themeBtn, navToggler, navOnClick, navOnLoad, navOnScroll, changeTheme} from "./src/navbar/navbar.js"
+import {imagesOnLoad} from "./src/general/lazyLoad.js"
+import {smoothScroll} from "./src/general/smoothScroll.js"
 //inserts lines connecting timeline automatically 
 document.addEventListener("DOMContentLoaded", function() {
     createPopUp();
