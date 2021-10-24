@@ -22,10 +22,7 @@ body{
     padding-right: 1px;
   }
 
-  html.stopScroll,body.stopScroll{
-    height: 100%;
-    overflow: hidden;
-}
+
   .lightMode{
       @include bg-theme-colors($dark-mode:false);
       @include transition(all 0.3s ease);

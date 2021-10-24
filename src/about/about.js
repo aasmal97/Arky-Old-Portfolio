@@ -7,12 +7,22 @@ const age = Math.floor(Math.abs(date - birthDate)/31536000000).toString()
 const timeline = document.getElementById("timeline")
 const timelineRow= timeline.querySelectorAll(".itemRow")
 const timeItems = timeline.querySelectorAll(".item")
+const $body = document.querySelector("body");
 
 //Disable scroll
 let scrollDisabled = false;
 let timelineCounter = 0
 let timeItemsLength = Object.keys(timeItems).length 
 
+const disableScoll =()=>{
+    //disable scroll completely
+    $body.style.overflow = "hidden";
+    $body.style.width = "100%";
+}
+const enableScoll = () =>{ 
+    $body.style.removeProperty("overflow");
+    $body.style.removeProperty("width");
+}
 const scrollLock = new IntersectionObserver(function(entries) {
     let el = entries[0].target.getBoundingClientRect()
     let remainder = (timelineCounter+1)%4
@@ -21,8 +31,8 @@ const scrollLock = new IntersectionObserver(function(entries) {
 	// isIntersecting is true when element and viewport are overlapping
 	// isIntersecting is false when element and viewport don't overlap
         if(entries[0].isIntersecting === true){
-            document.querySelector("body").classList.add("stopScroll")
-            //declaring offset here gives the MOST updated number
+            disableScoll()
+            
             //after scrolling is disabled
             // If not, the accuracy of offset diminshes
             //setTimeout is set to 100 for the same reason. 
@@ -59,7 +69,7 @@ const timelineAnimate = () =>{
         timelineCounter = timelineCounter + 1
         //continue scrolling, and stop observing, if animations are done
         if(timelineCounter>=timeItemsLength){
-            document.querySelector("body").classList.remove("stopScroll")
+            enableScoll();
             scrollLock.unobserve(document.querySelector("#about"));
             scrollDisabled = false;
         } else{

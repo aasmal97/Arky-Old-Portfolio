@@ -305,11 +305,6 @@ body::-webkit-scrollbar-thumb {
   padding-right: 1px;
 }
 
-html.stopScroll, body.stopScroll {
-  height: 100%;
-  overflow: hidden;
-}
-
 .lightMode {
   background-color: white;
   color: black;

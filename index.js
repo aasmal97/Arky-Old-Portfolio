@@ -23,7 +23,9 @@ document.addEventListener("scroll", function() {
     hidePopUp();
     navOnScroll();
 });
-
+document.addEventListener("touchmove", function(e){
+    timelineAnimate(e)
+})
 window.addEventListener("load", function(e){
     determineAge()
     navOnLoad()
