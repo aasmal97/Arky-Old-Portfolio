@@ -48,7 +48,7 @@ const scrollLock = new IntersectionObserver(function(entries) {
             //signal timeline animations can start playing
             scrollDisabled = true
         }
-    }, { threshold: [0.6] });
+    }, { threshold: [0.3] });
 
 const timelineAnimate = () =>{
     let timeLines = document.querySelectorAll(".lines")
