@@ -1,3 +1,11 @@
+@mixin carousel-lg {
+    #caroContainer{
+        width: 69vw;
+    }
+    .caro-img{
+        width: 60%;
+    }
+}
 
 @mixin carousel-sm{
     #carousel{
@@ -24,10 +32,24 @@
                     height: 100%;
                 }
             }
+
             .project-description{
+                height: 100%;
                 width: 100%;
                 margin-bottom: 2rem;
             }
         }
+    }
+    #caroContainer{
+        width: 69vw ;
+    }
+    .caro-img{
+        width: 100%;
     }   
+}
+@mixin carousel-md {
+    @include carousel-sm;
+    #caroContainer{
+        width: 40vw ;
+    }
 }

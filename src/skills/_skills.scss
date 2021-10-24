@@ -7,8 +7,8 @@
 }
 #skillsBtn{
     width: 100%;
-    padding-top: 2.5rem;
-    padding-bottom: 2.5rem;
+    padding-top: 3rem;
+    padding-bottom: 4rem;
     border: none;
     flex-direction: column;
     @include centerElement;
@@ -30,7 +30,7 @@
 }
 
 #skillsBtn.lightMode>span{
-    background-color:$bg-secondary-light-color;
+    // background-color:$bg-secondary-light-color;
     color:$primary-light-color;
     border: 1.5px solid $primary-light-color; 
 
@@ -65,7 +65,7 @@
 }
     
 #skillsList.show{
-    padding-bottom: 4rem;
+    padding-bottom: 6rem;
     max-height: 600px;
 }
 
@@ -80,9 +80,9 @@
 }
 
 #skillsList.lightMode, #skillsBtn.lightMode{
-    background-color: $bg-secondary-light-color;
+    // background-color: $bg-secondary-light-color;
 }
 
 #skillsList.darkMode, #skillsBtn.darkMode{
-    background-color: $bg-secondary-dark-color;
+    // background-color: $bg-secondary-dark-color;
 }
