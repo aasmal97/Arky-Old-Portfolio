@@ -109,8 +109,8 @@
   }
 
   #navLinkContainer.lightMode {
-    background-color: #3b416b;
-    border: 1.5px solid #3b416b;
+    background-color: #701727;
+    border: 1.5px solid #701727;
     color: black;
     border: 0px;
   }
@@ -208,11 +208,13 @@
   .caro-item .caro-item-content {
     flex-direction: column;
   }
-  .caro-item .caro-item-content .caro-img-container {
+  .caro-item .caro-item-content .caro-img-container, .caro-item .caro-item-content .project-description {
     height: 40%;
     margin-top: 1.5rem;
-    margin-bottom: 3rem;
     margin-right: 0;
+  }
+  .caro-item .caro-item-content .caro-img-container .caro-img, .project-description .caro-item .caro-item-content .caro-img-container div, .caro-item .caro-item-content .project-description .caro-img, .caro-item .caro-item-content .project-description div {
+    height: 100%;
   }
   .caro-item .caro-item-content .project-description {
     margin-bottom: 2rem;
@@ -337,8 +339,8 @@ img.blur {
 
 #bgProfilePic > div:first-child > a:hover, #bgProfilePic > div:first-child > a:active {
   background-color: white;
-  color: #3b416b;
-  border: 1.5px solid #3b416b;
+  color: #701727;
+  border: 1.5px solid #701727;
 }
 
 #bgProfilePic > div:first-child.lightMode {
@@ -381,14 +383,14 @@ img.blur {
   position: sticky;
   position: -webkit-sticky;
   width: 100%;
-  height: 60px;
+  height: 40px;
   padding: 15px 0px;
   z-index: 4;
 }
 
 #navbar.lightMode {
-  background-color: #3b416b;
-  border: 1.5px solid #3b416b;
+  background-color: #701727;
+  border: 1.5px solid #701727;
   color: black;
   border: 0px;
 }
@@ -397,6 +399,10 @@ img.blur {
   background-color: #333333;
   border: 1.5px solid #333333;
   border: 0px;
+}
+
+#navLinkContainer {
+  top: 70px;
 }
 
 #navLinkContainer > a {
@@ -434,8 +440,8 @@ img.blur {
 
 .nav_links.lightMode:hover, .lightMode#navToggler:hover {
   background-color: white;
-  color: #3b416b;
-  border: 1.5px solid #3b416b;
+  color: #701727;
+  border: 1.5px solid #701727;
 }
 
 .nav_links.darkMode:hover, .darkMode#navToggler:hover {
@@ -465,8 +471,8 @@ img.blur {
 
 .themeToggler:hover, #navToggler:hover {
   background-color: white;
-  color: #3b416b;
-  border: 1.5px solid #3b416b;
+  color: #701727;
+  border: 1.5px solid #701727;
 }
 
 #navToggler {
@@ -625,13 +631,13 @@ img.blur {
 }
 
 .item.lightMode.show::before {
-  border-top-color: #3b416b;
-  border-right-color: #3b416b;
+  border-top-color: #701727;
+  border-right-color: #701727;
 }
 
 .item.lightMode.show::after {
-  border-left-color: #3b416b;
-  border-bottom-color: #3b416b;
+  border-left-color: #701727;
+  border-bottom-color: #701727;
 }
 
 .item.darkMode.show::after {
@@ -660,7 +666,7 @@ img.blur {
 }
 
 .lines.lightMode {
-  background-color: #3b416b;
+  background-color: #701727;
 }
 
 .lines.darkMode {
@@ -724,7 +730,7 @@ img.blur {
 }
 
 #carousel.lightMode {
-  background-color: #3b416b;
+  background-color: #701727;
 }
 
 #carousel.darkMode {
@@ -764,6 +770,9 @@ img.blur {
   margin-bottom: 2rem;
   transition: all linear 0.4s;
 }
+.caro-item div {
+  transition: all linear 0.4s;
+}
 
 .caro-item.no-width {
   width: 0;
@@ -793,16 +802,18 @@ img.blur {
   width: 100%;
   height: 100%;
 }
-.caro-item-content .caro-img-container {
+
+.caro-img-container, .project-description {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  height: 100%;
   width: 100%;
   margin-right: 4rem;
+  height: 70%;
 }
-.caro-item-content .caro-img-container .caro-img {
+
+.caro-img, .project-description div {
   border-radius: 10px 10px 10px 10px;
   -webkit-border-radius: 10px 10px 10px 10px;
   -moz-border-radius: 10px 10px 10px 10px;
@@ -811,7 +822,7 @@ img.blur {
   height: 100%;
   width: 100%;
 }
-.caro-item-content .caro-img-container .caro-img img {
+.caro-img img, .project-description div img {
   display: block;
   border-radius: 10px 10px 0px 0px;
   -webkit-border-radius: 10px 10px 0px 0px;
@@ -821,32 +832,22 @@ img.blur {
   width: calc(100% - 2px);
   min-height: 150px;
   max-height: 400px;
-  height: 70%;
   -o-object-fit: contain;
      object-fit: contain;
+  height: 70%;
 }
-.caro-item-content .caro-img-container .caro-img label {
+.caro-img label, .project-description div label {
   display: block;
   padding: 1rem 0.5rem;
 }
-.caro-item-content .project-description {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+
+.project-description {
+  width: 50%;
+  margin-right: 0;
   height: 100%;
-  width: 100%;
 }
-.caro-item-content .project-description div {
-  border-radius: 10px 10px 10px 10px;
-  -webkit-border-radius: 10px 10px 10px 10px;
-  -moz-border-radius: 10px 10px 10px 10px;
-  -ms-border-radius: 10px 10px 10px 10px;
-  height: 100%;
-  width: 100%;
-  margin-bottom: 2rem;
-}
-.caro-item-content .project-description div h3 {
+
+.project-description div h3 {
   border-radius: 10px 10px 0px 0px;
   -webkit-border-radius: 10px 10px 0px 0px;
   -moz-border-radius: 10px 10px 0px 0px;
@@ -859,15 +860,15 @@ img.blur {
 .caro-item-content.lightMode {
   background: none;
 }
-.caro-item-content.lightMode .caro-img-container .caro-img {
+.caro-item-content.lightMode .caro-img-container .caro-img, .caro-item-content.lightMode .project-description .caro-img, .project-description .caro-item-content.lightMode .caro-img-container div, .caro-item-content.lightMode .project-description div {
   box-shadow: inset 0px 0px 2px 0.3px black;
   -webkit-box-shadow: inset 0px 0px 2px 0.3px black;
   -moz-box-shadow: inset 0px 0px 2px 0.3px black;
   -ms-box-shadow: inset 0px 0px 2px 0.3px black;
   background-color: white;
 }
-.caro-item-content.lightMode .caro-img-container .caro-img img {
-  background-color: #3b416b;
+.caro-item-content.lightMode .caro-img-container .caro-img img, .caro-item-content.lightMode .project-description .caro-img img, .project-description .caro-item-content.lightMode .caro-img-container div img, .caro-item-content.lightMode .project-description div img {
+  background-color: #701727;
 }
 .caro-item-content.lightMode .project-description div {
   box-shadow: inset 0px 0px 2px 0.3px black;
@@ -877,20 +878,20 @@ img.blur {
   background-color: white;
 }
 .caro-item-content.lightMode .project-description div h3 {
-  background-color: #3b416b;
+  background-color: #701727;
 }
 
 .caro-item-content.darkMode {
   background: none;
 }
-.caro-item-content.darkMode .caro-img-container .caro-img {
+.caro-item-content.darkMode .caro-img-container .caro-img, .caro-item-content.darkMode .project-description .caro-img, .project-description .caro-item-content.darkMode .caro-img-container div, .caro-item-content.darkMode .project-description div {
   box-shadow: inset 0px 0px 2px 0.3px white;
   -webkit-box-shadow: inset 0px 0px 2px 0.3px white;
   -moz-box-shadow: inset 0px 0px 2px 0.3px white;
   -ms-box-shadow: inset 0px 0px 2px 0.3px white;
   background-color: #292929;
 }
-.caro-item-content.darkMode .caro-img-container .caro-img img {
+.caro-item-content.darkMode .caro-img-container .caro-img img, .caro-item-content.darkMode .project-description .caro-img img, .project-description .caro-item-content.darkMode .caro-img-container div img, .caro-item-content.darkMode .project-description div img {
   background-color: #333333;
 }
 .caro-item-content.darkMode .project-description div {
@@ -1004,14 +1005,14 @@ img.blur {
 
 #skillsBtn.lightMode > span {
   background-color: lightgray;
-  color: #3b416b;
-  border: 1.5px solid #3b416b;
+  color: #701727;
+  border: 1.5px solid #701727;
 }
 
 #skillsBtn.lightMode > span:hover {
-  background-color: #3b416b;
+  background-color: #701727;
   color: white;
-  border: 1.5px solid #3b416b;
+  border: 1.5px solid #701727;
 }
 
 #skillsBtn.darkMode > span:hover {
@@ -1081,7 +1082,7 @@ img.blur {
 }
 
 #footer.lightMode {
-  background-color: #3b416b;
+  background-color: #701727;
   color: white;
 }
 

@@ -93,13 +93,13 @@ function navOnLoad(){
     } else{
         hideNav()
     }
-    if (window.scrollY>30){
-        navLinkContainer.style.top = "55px"
-        navbar.style.height = "25px"
-    } else {
-        navLinkContainer.style.top = "70px"
-        navbar.style.height = "40px"
-    }
+    // if (window.scrollY>30){
+    //     navLinkContainer.style.top = "55px"
+    //     navbar.style.height = "25px"
+    // } else {
+    //     navLinkContainer.style.top = "70px"
+    //     navbar.style.height = "40px"
+    // }
 }
 function navOnClick () {
     if(navLinkContainer.classList.contains("hidden")){
@@ -110,13 +110,13 @@ function navOnClick () {
 }
 
 function navOnScroll(){
-    if (window.scrollY>30){
-        navLinkContainer.style.top = "55px"
-        navbar.style.height = "25px"
-    } else {
-        navLinkContainer.style.top = "70px"
-        navbar.style.height = "40px"
-    }
+    // if (window.scrollY>30){
+    //     navLinkContainer.style.top = "55px"
+    //     navbar.style.height = "25px"
+    // } else {
+    //     navLinkContainer.style.top = "70px"
+    //     navbar.style.height = "40px"
+    // }
     //navbar collapsing when scrolling
     hideNav();
 }
