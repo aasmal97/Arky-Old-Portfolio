@@ -109,8 +109,8 @@
   }
 
   #navLinkContainer.lightMode {
-    background-color: #701727;
-    border: 1.5px solid #701727;
+    background-color: #851d30;
+    border: 1.5px solid #851d30;
     color: black;
     border: 0px;
   }
@@ -217,6 +217,7 @@
     height: 100%;
   }
   .caro-item .caro-item-content .project-description {
+    width: 100%;
     margin-bottom: 2rem;
   }
 }
@@ -339,8 +340,8 @@ img.blur {
 
 #bgProfilePic > div:first-child > a:hover, #bgProfilePic > div:first-child > a:active {
   background-color: white;
-  color: #701727;
-  border: 1.5px solid #701727;
+  color: #851d30;
+  border: 1.5px solid #851d30;
 }
 
 #bgProfilePic > div:first-child.lightMode {
@@ -389,8 +390,8 @@ img.blur {
 }
 
 #navbar.lightMode {
-  background-color: #701727;
-  border: 1.5px solid #701727;
+  background-color: #851d30;
+  border: 1.5px solid #851d30;
   color: black;
   border: 0px;
 }
@@ -440,8 +441,8 @@ img.blur {
 
 .nav_links.lightMode:hover, .lightMode#navToggler:hover {
   background-color: white;
-  color: #701727;
-  border: 1.5px solid #701727;
+  color: #851d30;
+  border: 1.5px solid #851d30;
 }
 
 .nav_links.darkMode:hover, .darkMode#navToggler:hover {
@@ -471,8 +472,8 @@ img.blur {
 
 .themeToggler:hover, #navToggler:hover {
   background-color: white;
-  color: #701727;
-  border: 1.5px solid #701727;
+  color: #851d30;
+  border: 1.5px solid #851d30;
 }
 
 #navToggler {
@@ -631,13 +632,13 @@ img.blur {
 }
 
 .item.lightMode.show::before {
-  border-top-color: #701727;
-  border-right-color: #701727;
+  border-top-color: #851d30;
+  border-right-color: #851d30;
 }
 
 .item.lightMode.show::after {
-  border-left-color: #701727;
-  border-bottom-color: #701727;
+  border-left-color: #851d30;
+  border-bottom-color: #851d30;
 }
 
 .item.darkMode.show::after {
@@ -666,7 +667,7 @@ img.blur {
 }
 
 .lines.lightMode {
-  background-color: #701727;
+  background-color: #851d30;
 }
 
 .lines.darkMode {
@@ -730,7 +731,7 @@ img.blur {
 }
 
 #carousel.lightMode {
-  background-color: #701727;
+  background-color: #851d30;
 }
 
 #carousel.darkMode {
@@ -868,7 +869,7 @@ img.blur {
   background-color: white;
 }
 .caro-item-content.lightMode .caro-img-container .caro-img img, .caro-item-content.lightMode .project-description .caro-img img, .project-description .caro-item-content.lightMode .caro-img-container div img, .caro-item-content.lightMode .project-description div img {
-  background-color: #701727;
+  background-color: #851d30;
 }
 .caro-item-content.lightMode .project-description div {
   box-shadow: inset 0px 0px 2px 0.3px black;
@@ -878,7 +879,7 @@ img.blur {
   background-color: white;
 }
 .caro-item-content.lightMode .project-description div h3 {
-  background-color: #701727;
+  background-color: #851d30;
 }
 
 .caro-item-content.darkMode {
@@ -893,6 +894,7 @@ img.blur {
 }
 .caro-item-content.darkMode .caro-img-container .caro-img img, .caro-item-content.darkMode .project-description .caro-img img, .project-description .caro-item-content.darkMode .caro-img-container div img, .caro-item-content.darkMode .project-description div img {
   background-color: #333333;
+  border-bottom: 1px solid white;
 }
 .caro-item-content.darkMode .project-description div {
   box-shadow: inset 0px 0px 2px 0.3px white;
@@ -903,6 +905,7 @@ img.blur {
 }
 .caro-item-content.darkMode .project-description div h3 {
   background-color: #333333;
+  border-bottom: 1px solid white;
 }
 
 .caroIndicators {
@@ -1005,14 +1008,14 @@ img.blur {
 
 #skillsBtn.lightMode > span {
   background-color: lightgray;
-  color: #701727;
-  border: 1.5px solid #701727;
+  color: #851d30;
+  border: 1.5px solid #851d30;
 }
 
 #skillsBtn.lightMode > span:hover {
-  background-color: #701727;
+  background-color: #851d30;
   color: white;
-  border: 1.5px solid #701727;
+  border: 1.5px solid #851d30;
 }
 
 #skillsBtn.darkMode > span:hover {
@@ -1055,7 +1058,7 @@ img.blur {
 }
 
 #skillsList.darkMode, #skillsBtn.darkMode {
-  background-color: #292929;
+  background-color: #222222;
 }
 
 #footer {
@@ -1082,7 +1085,7 @@ img.blur {
 }
 
 #footer.lightMode {
-  background-color: #701727;
+  background-color: #851d30;
   color: white;
 }
 

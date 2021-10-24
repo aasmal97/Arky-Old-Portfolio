@@ -14,7 +14,7 @@
     @include centerElement;
 }
 #skillsBtn.darkMode>span{
-    color: $bg-light-color;
+    color: white;
     border: 1.5px solid white;
 }
 
@@ -84,5 +84,5 @@
 }
 
 #skillsList.darkMode, #skillsBtn.darkMode{
-    background-color: $bg-dark-color;
+    background-color: $bg-secondary-dark-color;
 }
