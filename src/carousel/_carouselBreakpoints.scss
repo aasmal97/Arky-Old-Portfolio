@@ -7,11 +7,6 @@
         }  
     }
     .caro-item{
-        div{
-            height: 50%;
-            text-align: center;
-            flex-direction: column;
-        }
         h2{
             font-size: 1.2rem !important;
             margin-top: 1.3rem!important;
@@ -20,9 +15,15 @@
             align-items: flex-start;
         }
         .caro-item-content{
-            width: 100%;
-            div{
-                width: 100%;
+            flex-direction: column;
+            .caro-img-container{
+                height: 40%;
+                margin-top: 1.5rem;
+                margin-bottom: 3rem;
+                margin-right: 0;
+            }
+            .project-description{
+                margin-bottom: 2rem;
             }
         }
     }   

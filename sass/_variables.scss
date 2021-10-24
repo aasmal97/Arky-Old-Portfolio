@@ -1,5 +1,5 @@
 
-$bg-light-color: rgb(233, 231, 231) ;
+$bg-light-color: rgb(255, 255, 255) ;
 $bg-secondary-light-color: rgb(211, 211, 211);
 $bg-secondary-dark-color:rgb(34, 34, 34);
 $bg-dark-color:  rgb(41, 41, 41);
@@ -21,11 +21,11 @@ $line-length: 15vw;
 
 $line-thickness : 3px;
 
-@mixin border-radius($top, $left){
-    border-radius: $top $left;
-    -webkit-border-radius:$top $left;
-    -moz-border-radius:$top $left;
-    -ms-border-radius:$top $left;
+@mixin border-radius($top, $bottom){
+    border-radius: $top $top $bottom $bottom;
+    -webkit-border-radius: $top $top $bottom $bottom;
+    -moz-border-radius: $top $top $bottom $bottom;
+    -ms-border-radius: $top $top $bottom $bottom;
 }
 
 @mixin box-shadow($x, $y, $blur, $spread, $color){

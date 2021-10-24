@@ -4,8 +4,8 @@
     @include box-shadow(0px, -0.5px, 3px, 0.5px, rgb(0, 0, 0));
     position: relative;
     display: flex;
-    height: calc(100vh - 55px);
-    min-height: 800px;
+    min-height: calc(100vh - 55px);
+    height: 100%;
     width: 100%;
     justify-content: space-between;
     color: white; 
@@ -27,8 +27,7 @@
 #caroContainer{
     @include centerElement;
     flex-direction: column;
-    width: 70vw;
-    height: 100%;
+    width: 69vw;
 }
 
 #carousel-items{
@@ -46,21 +45,9 @@
     flex-direction: column;
     height: 100%;
     @include transition(all linear 0.4s);
-
-    div{
-        @include centerElement;
-        @include transition(all linear 0.4s);
-        width: 70vw;
-        height: 100%;
-        img{
-            min-height: 150px;
-            max-height: 500px;
-            height: 50%;
-            object-fit: contain;
-        }
-    }
+    width: 100%;
     h2{
-        padding: 0 17vw;
+        font-weight: 400;
         font-size: 2rem;
         margin-top: 1.5rem;
         margin-bottom: 2rem;
@@ -71,11 +58,11 @@
     width: 0;
 }
 .caro-item.hidden{
-    visibility: hidden!important;
-    opacity: 0!important;
+    visibility: hidden;
+    opacity: 0;
     div, h2{
-        opacity: 0!important;
-        visibility: hidden!important;
+        opacity: 0;
+        visibility: hidden;
     }
 }   
 
@@ -86,19 +73,107 @@
     }
 }   
 
-
 .caro-item-content{
+    @include centerElement;
+    @include transition(all linear 0.4s);
     width: 100%;
+    height: 100%;
+
+    .caro-img-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        height: 100%;
+        width: 100%;
+        margin-right: 4rem;
+        .caro-img{
+            @include border-radius(10px, 10px);
+            margin-bottom: 2rem;
+            height: 100%;
+            width: 100%;
+            img{
+                display: block;
+                @include border-radius(10px, 0px);
+                margin: 1px 0px 1px 1px;
+                width: calc(100% - 2px);
+                min-height: 150px;
+                max-height: 400px;
+                height: 70%;
+                object-fit: contain;
+            }
+            label{
+                display: block;
+                padding: 1rem 0.5rem;
+            }
+        }
+    }
+
+    .project-description{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        height: 100%;
+        width: 100%;
+
+        div{
+            @include border-radius(10px, 10px);
+            height: 100%;
+            width: 100%;
+            margin-bottom: 2rem;
+            h3{
+                @include border-radius(10px, 0px);
+                margin: 1px 1px 0 1px;
+                padding: 0.7rem;
+                color: $font-light-color;
+            }
+        }
+    }
 }
-.caro-img-container{
-    flex-direction: column;
+.caro-item-content.lightMode{
+    background: none;
+    .caro-img-container{
+        .caro-img{
+            @include box-shadow(inset 0px, 0px, 2px, 0.3px, black);
+            background-color: $bg-light-color;
+            img{
+                background-color: $primary-light-color;
+            }
+        }
+    }
+    .project-description{
+        div{
+            @include box-shadow(inset 0px, 0px, 2px, 0.3px, black);
+            background-color: $bg-light-color;
+            h3{
+                background-color: $primary-light-color;
+            }
+        }
+    }
 }
-.project-description{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+.caro-item-content.darkMode{
+    background: none;
+    .caro-img-container{
+        .caro-img{
+            @include box-shadow(inset 0px, 0px, 2px, 0.3px, white);
+            background-color: $bg-dark-color;
+            img{
+                background-color: $primary-dark-color;
+            }
+        }
+    }
+    .project-description{
+        div{
+            @include box-shadow(inset 0px, 0px, 2px, 0.3px, white);
+            background-color: $bg-dark-color;
+            h3{
+                background-color: $primary-dark-color;
+            }
+        }
+    }
 }
+
 
 //bottom indicators
 .caroIndicators{
