@@ -12,5 +12,6 @@ function smoothScroll(e){
         top: targetElement.top + offSet - navbar.offsetHeight,
         behavior: 'smooth',
     })
+    
 }
 export {smoothScroll as smoothScroll, hrefRegex as hrefRegex}
