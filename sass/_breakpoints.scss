@@ -10,18 +10,23 @@
 
 @import "../src/footer/footerBreakpoints";
 
+
 @media screen and (min-width: 1025px){
     @include timeline-lg;
     @include profilePic-lg;
     @include navbar-lg;
     @include carousel-lg;
 }
-
+@media screen and (max-width: 1400px){
+    .caro-img{
+        width: 90%;
+    }
+}
 @media screen and (max-width: 1025px){ 
     @include timeline-md;
     @include profilePic-md;
-    @include navbar-md;
     @include carousel-md;
+    @include navbar-md;
 }
 @media screen and (max-width: 650px){
     @include timeline-sm;

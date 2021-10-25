@@ -2,6 +2,7 @@
 const carousel = document.querySelector("#carousel-items")
 const caroItems = document.querySelectorAll(".caro-item")
 const caroBtns = document.querySelectorAll(".caro-btns")
+const projectDescription = document.querySelectorAll(".project-description")
 const maxCaroIndex = caroItems.length - 1;
 let prevCaroIndex = 0;
 let currCaroIndex = 1;
@@ -179,3 +180,53 @@ caroContainer.addEventListener("mouseleave", ()=>{
     caroBtns[0].classList.add("hidden")
     caroBtns[1].classList.add("hidden")
 })
+
+const containerBehavior = (e, container, expandBtn) => {
+    const icon = expandBtn.querySelector("i")
+    if(container.classList.contains("hide")) {
+        container.classList.remove("hide")
+        setTimeout(()=>{
+            icon.classList.remove("fa-angle-down") 
+            icon.classList.add("fa-angle-up")
+        },300)
+    }
+    else {
+        
+        setTimeout(()=>{
+            icon.classList.remove("fa-angle-up") 
+            if(!icon.classList.contains("fa-angle-down")) icon.classList.add("fa-angle-down")
+        },300)
+        container.classList.add("hide")
+        
+    }
+}
+const createExpandBtns=(containerList)=>{
+    for(let container of containerList){
+        if(container.scrollHeight > container.clientHeight){
+            let expandBtn = document.createElement("button")
+            let btnIcon = document.createElement("i")
+            expandBtn.setAttribute("data-label", "expand")
+            expandBtn.ariaLabel = "expand"
+            expandBtn.classList.add("expand-container-btn")
+            btnIcon.classList.add("fa", "fa-angle-down")
+            btnIcon.ariaHidden="true"
+            expandBtn.append(btnIcon)
+            container.append(expandBtn)
+            expandBtn.addEventListener("click", function(e){
+                containerBehavior(e, container.parentNode,expandBtn)
+            })
+        } else {
+            container.parentNode.classList.remove("hide")
+        }
+    }
+}
+const removeExpandBtns=()=>{
+
+}
+const checkOverflow = () =>{
+    const descriptContainers = projectDescription[currCaroIndex].querySelectorAll("div")
+    createExpandBtns(descriptContainers)
+
+}
+checkOverflow()
+//expand text in cards
