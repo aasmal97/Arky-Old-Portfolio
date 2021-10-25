@@ -4,7 +4,7 @@
     @include box-shadow(0px, -0.5px, 3px, 0.5px, rgb(0, 0, 0));
     position: relative;
     display: flex;
-    min-height: calc(100vh - 55px);
+    min-height: calc(100vh - 70px);
     height: 100%;
     width: 100%;
     justify-content: space-between;
@@ -32,7 +32,7 @@
 #carousel-items{
     @include centerElement;
     @include transition (all linear 0.95s);
-    height: 100%;
+    //height: 100%;
     width: 100%;
     overflow-x: hidden;
 }
@@ -42,27 +42,30 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    height: 100%;
     @include transition(all linear 0.4s);
+    height: 100%;
     width: 100%;
+    overflow: hidden;
     h2{
         font-weight: 400;
         font-size: 2rem;
         margin-top: 1.5rem;
         margin-bottom: 2rem;
-        @include transition(all linear 0.4s);
     }
-    div{
+    div, h2{
         @include transition(all linear 0.4s);
     }
 }   
 .caro-item.no-width{
-    width: 0;
+    width: 0%;
+
 }
 .caro-item.hidden{
     visibility: hidden;
     opacity: 0;
+    overflow: hidden;
     div, h2{
+        white-space: nowrap;
         opacity: 0;
         visibility: hidden;
     }
@@ -135,9 +138,9 @@
     }
     .text-container{
         @include transition(all ease-out 0.4s);
-        max-height: 100%;
         padding: 1rem;
         margin-bottom: 1.5rem;
+        max-height: 900px;
         overflow: hidden;
     }
 }
@@ -145,12 +148,11 @@
 .expand-container-btn{
     position: absolute;
     bottom: 0;
-    left: 0.75px;
-    width: calc(100% - 1.5px) ;
+    left: 1px;
+    width: calc(100% - 2px) ;
     border: none;
     font-size: 1.5rem;
     padding: 0.75rem;
-    @include box-shadow(inset 0px, -1px, 1px, 0.15px, rgba(0, 0, 0, 0.603));
     @include border-radius(0, 5px);
     &:hover,
     &:active{
@@ -161,9 +163,9 @@
 }
 
 .project-description>div.hide{
-    max-height: 240px;
+    max-height: 230px;
     .text-container{
-        max-height: 160px;
+        max-height: 140px;
     }
 }
 
@@ -185,6 +187,7 @@
             background-color: $primary-light-color;
         }
         .expand-container-btn{
+            @include box-shadow(inset 0px, -1.5px, 1px, 0.15px, rgb(0, 0, 0));
             background-color: $bg-light-color;
         }
     }
@@ -209,6 +212,7 @@
             border-bottom: 1px solid white;
         }
         .expand-container-btn{
+            @include box-shadow(inset 0px, -1.5px, 1px, 0.15px, white);
             background-color: $bg-dark-color;
         }
     }

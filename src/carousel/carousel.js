@@ -3,27 +3,15 @@ const carousel = document.querySelector("#carousel-items")
 const caroItems = document.querySelectorAll(".caro-item")
 const caroBtns = document.querySelectorAll(".caro-btns")
 const projectDescription = document.querySelectorAll(".project-description")
+const caroContainer = document.getElementById("carousel")
+const carouselNodes = caroContainer.children
 const maxCaroIndex = caroItems.length - 1;
+const caroIndicators = document.querySelector("#caroIndicators")
+let allCaroIndicators
 let prevCaroIndex = 0;
 let currCaroIndex = 1;
 let caroClickDisabled = false;
 
-
-const caroIndicators = document.querySelector("#caroIndicators")
-for (let i=0; i<=maxCaroIndex; i++){
-    //Carousel Indicator Creation 
-    let node = document.createElement("button")
-    let indicator = document.createElement("span")
-    indicator.classList.add("dot")
-    node.classList.add("caroIndicators")
-    node.append(indicator)
-    caroIndicators.append(node)
-
-    //generate initial translate properties for all items in carousel
-    if(i===prevCaroIndex) caroItems[i].style.transform = `translate(-100vw)`
-    else caroItems[i].style.transform = `translate(${(i-1)*100}vw)`
-}
-const allCaroIndicators = caroIndicators.querySelectorAll(".caroIndicators")
 
 function caroClassBehavior(){
     caroItems[prevCaroIndex].classList.add("hidden");
@@ -117,9 +105,8 @@ const timerSpeed = 6000;
 }*/
 
 //stops movement when mouse enters
-const caroContainer = document.getElementById("carousel")
-const carouselNodes = caroContainer.children
-for (i in Object.keys(carouselNodes)){
+
+for (let i in Object.keys(carouselNodes)){
     carouselNodes[i].addEventListener("mouseenter", () => {
         clearInterval(caroTimerInterval);
     })
@@ -137,37 +124,68 @@ caroContainer.addEventListener("mouseleave", () => {
 //Carousel Behavior when arrows are clicked
 caroBtns[0].addEventListener("click", function(e){
     caroMoveLeft(e)
+    setTimeout(()=>{
+        checkOverflow()
+    }, 400)
+  
 })
 
 caroBtns[1].addEventListener("click", function(e){
     caroMoveRight(e)
+    setTimeout(()=>{
+        checkOverflow()
+    }, 400)
 })
+const caroIndicatorBehavior = () => {
+    const currIndicator = Object.keys(allCaroIndicators).find(key=> allCaroIndicators[key] === this)
+    prevCaroIndex = currCaroIndex
+    currCaroIndex = parseInt(currIndicator);
 
-//Carousel Indicator Behavior
-allCaroIndicators[currCaroIndex].firstChild.classList.add("active")
-for (i in Object.keys(allCaroIndicators)){
-    allCaroIndicators[i].addEventListener("click", function(){
+    //restores orginial order so transitions make sense
+    for (i in Object.keys(caroItems)){
+        carousel.append(caroItems[i])
+    }     
 
-        const currIndicator = Object.keys(allCaroIndicators).find(key=> allCaroIndicators[key] === this)
-        prevCaroIndex = currCaroIndex
-        currCaroIndex = parseInt(currIndicator);
+    setTimeout(function(){
+        caroClassBehavior()
+    },0);
 
-        //restores orginial order so transitions make sense
-        for (i in Object.keys(caroItems)){
-            carousel.append(caroItems[i])
-        }     
+    //selects appropriate indicator
+    this.firstChild.classList.add("active")
+    if(allCaroIndicators[prevCaroIndex]!=this){
+        allCaroIndicators[prevCaroIndex].firstChild.classList.remove("active")
+    }
+}
+const createIndicatorListeners = () =>{
+    //Carousel Indicator Behavior
+    //console.log(allCaroIndicators)
+    allCaroIndicators[currCaroIndex].firstChild.classList.add("active")
+    for (let i in Object.keys(allCaroIndicators)){
+        allCaroIndicators[i].addEventListener("click", function(){
+            caroIndicatorBehavior()
+        })
+    }
+}
+const createCaroIndicators = () =>{
+    for (let i=0; i<=maxCaroIndex; i++){
+        //Carousel Indicator Creation 
+        let node = document.createElement("button")
+        let indicator = document.createElement("span")
+        indicator.classList.add("dot")
+        node.classList.add("caroIndicators")
+        node.append(indicator)
+        caroIndicators.append(node)
+    
+        //generate initial translate properties for all items in carousel
+        if(i===prevCaroIndex) caroItems[i].style.transform = `translate(-100vw)`
+        else caroItems[i].style.transform = `translate(${(i-1)*100}vw)`
 
-        setTimeout(function(){
-            caroClassBehavior()
-        },0);
-
-        //selects appropriate indicator
-        this.firstChild.classList.add("active")
-        if(allCaroIndicators[prevCaroIndex]!=this){
-            allCaroIndicators[prevCaroIndex].firstChild.classList.remove("active")
-        }
-        
-    })
+        //attach event listeners to each caro indicator
+    }
+    //assign variable since they have been created
+    allCaroIndicators = caroIndicators.querySelectorAll(".caroIndicators")
+    //attach event listeners
+    createIndicatorListeners();
 }
 
 //makes indicators reappear
@@ -181,10 +199,11 @@ caroContainer.addEventListener("mouseleave", ()=>{
     caroBtns[1].classList.add("hidden")
 })
 
-const containerBehavior = (e, container, expandBtn) => {
-    const icon = expandBtn.querySelector("i")
-    if(container.classList.contains("hide")) {
-        container.classList.remove("hide")
+const containerBehavior = (e) => {
+    const btn = e.target.closest("button")
+    const icon = btn.querySelector("i")
+    if(btn.parentNode.parentNode.classList.contains("hide")) {
+        btn.parentNode.parentNode.classList.remove("hide")
         setTimeout(()=>{
             icon.classList.remove("fa-angle-down") 
             icon.classList.add("fa-angle-up")
@@ -196,37 +215,48 @@ const containerBehavior = (e, container, expandBtn) => {
             icon.classList.remove("fa-angle-up") 
             if(!icon.classList.contains("fa-angle-down")) icon.classList.add("fa-angle-down")
         },300)
-        container.classList.add("hide")
+        btn.parentNode.parentNode.classList.add("hide")
         
     }
 }
-const createExpandBtns=(containerList)=>{
-    for(let container of containerList){
-        if(container.scrollHeight > container.clientHeight){
-            let expandBtn = document.createElement("button")
-            let btnIcon = document.createElement("i")
-            expandBtn.setAttribute("data-label", "expand")
-            expandBtn.ariaLabel = "expand"
-            expandBtn.classList.add("expand-container-btn")
-            btnIcon.classList.add("fa", "fa-angle-down")
-            btnIcon.ariaHidden="true"
-            expandBtn.append(btnIcon)
-            container.append(expandBtn)
-            expandBtn.addEventListener("click", function(e){
-                containerBehavior(e, container.parentNode,expandBtn)
-            })
-        } else {
-            container.parentNode.classList.remove("hide")
-        }
+const createExpandBtns=(container)=>{
+    //dont create additional buttons when called multiple times, and btn exists
+    if(container.querySelector("expand-container-btn")) return
+
+    let expandBtn = document.createElement("button")
+    let btnIcon = document.createElement("i")
+    expandBtn.setAttribute("data-label", "expand")
+    expandBtn.ariaLabel = "expand"
+    expandBtn.classList.add("expand-container-btn")
+    btnIcon.classList.add("fa", "fa-angle-down")
+    btnIcon.ariaHidden="true"
+    expandBtn.append(btnIcon)
+    container.append(expandBtn)
+    expandBtn.addEventListener("click", containerBehavior)
+}
+
+const removeExpandBtns=(container)=>{
+    //dont remove btns when there are none
+    if(!container.querySelector("expand-container-btn")) return
+
+    const btn = container.querySelector("button")
+    container.parentNode.classList.remove("hide")
+    btn.removeEventListener("click", containerBehavior)
+    btn.remove()
+}
+
+const checkOverflow = () =>{
+    const descriptContainers = projectDescription[currCaroIndex].querySelectorAll(".text-container")
+    for(let container of descriptContainers){
+        if(container.scrollHeight > container.clientHeight) createExpandBtns(container)
+        else removeExpandBtns(container)
     }
 }
-const removeExpandBtns=()=>{
 
+export {
+    checkOverflow as checkOverflow,
+    createCaroIndicators as createCaroIndicators,
+    removeExpandBtns as removeExpandBtns
 }
-const checkOverflow = () =>{
-    const descriptContainers = projectDescription[currCaroIndex].querySelectorAll("div")
-    createExpandBtns(descriptContainers)
 
-}
-checkOverflow()
 //expand text in cards

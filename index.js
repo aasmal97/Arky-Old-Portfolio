@@ -4,10 +4,13 @@ import {toggleSkills, skillsBtn} from "./src/skills/techSkills.js"
 import {navLinks, navLinksScroll, themeBtn, navToggler, navOnClick, navOnLoad, navOnScroll, changeTheme} from "./src/navbar/navbar.js"
 import {imagesOnLoad} from "./src/general/lazyLoad.js"
 import {smoothScroll} from "./src/general/smoothScroll.js"
+import {checkOverflow, createCaroIndicators} from "./src/carousel/carousel.js"
+
 //inserts lines connecting timeline automatically 
 document.addEventListener("DOMContentLoaded", function() {
     createPopUp();
     generateLines();
+    createCaroIndicators();
 });
 
 document.addEventListener("wheel", function(e){
@@ -30,12 +33,16 @@ window.addEventListener("load", function(e){
     determineAge()
     navOnLoad()
     imagesOnLoad();
+    checkOverflow();
 })
-
-window.addEventListener("resize",function(){
+const resize = () =>{
     navOnLoad();
+    checkOverflow();
+}
+const debounceResize = _.debounce(resize, 150)
+window.addEventListener("resize",function(){
+      debounceResize()
 })
-
 
 themeBtn.addEventListener("mouseenter", function(){
     showPopUp();
