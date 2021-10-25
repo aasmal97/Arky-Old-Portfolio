@@ -11,7 +11,7 @@ const caroIndicators = document.querySelector("#caroIndicators")
 variable containing setInterval should also be defined within 
 a variable. This is due to scope, else if this doesnt happen 
 it causes the creation of multiple timers, breaking the carousel */
-const timerSpeed = 10000;
+const timerSpeed = 12000;
 let caroTimerInterval;
 let allCaroIndicators
 let prevCaroIndex = 0;
@@ -27,35 +27,39 @@ function caroClassBehavior(){
     caroItems[prevCaroIndex].classList.add("no-width");
 }
 
-const caroIndicatorBehavior = () => {
-    const currIndicator = Object.keys(allCaroIndicators).find(key=> allCaroIndicators[key] === this)
-    prevCaroIndex = currCaroIndex
-    currCaroIndex = parseInt(currIndicator);
+const caroIndicatorBehavior = (e) => {
+    //find current indicator value
+    const currIndicator = e.target.closest("button")
+    const currIndicatorIndex = Object.keys(allCaroIndicators).find(key => allCaroIndicators[key] === currIndicator)
+    //we dont want to shift caro positions if its the same button 
+    if(parseInt(currIndicatorIndex) === currCaroIndex) return 
 
-    //restores orginial order so transitions make sense
-    for (i in Object.keys(caroItems)){
-        carousel.append(caroItems[i])
-    }     
+    //we shift accroding to how different the clicked value is from the current one. 
+    const translateX = (currCaroIndex - currIndicatorIndex) * 100
+    prevCaroIndex = currCaroIndex;
+    currCaroIndex = parseInt(currIndicatorIndex);
+    //correct animation direction
+    for(let index=0; index<=maxCaroIndex; index++){
+        const currX = caroItems[index].style.transform.replace(/[^-?\d.]/g, '');
+        if(index === currCaroIndex) caroItems[index].style.transform = `translate(0vw)`
+        else caroItems[index].style.transform = `translate(${(index - currCaroIndex)*100}vw)`
+    }
+ 
+    setTimeout(()=>{
+        checkOverflow();
+    }, 400)
 
-    setTimeout(function(){
-        caroClassBehavior()
-    },0);
+    caroClassBehavior()
 
     //selects appropriate indicator
-    this.firstChild.classList.add("active")
-    if(allCaroIndicators[prevCaroIndex]!=this){
-        allCaroIndicators[prevCaroIndex].firstChild.classList.remove("active")
-    }
+    currIndicator.firstChild.classList.add("active")
+    allCaroIndicators[prevCaroIndex].firstChild.classList.remove("active")
 }
 
 const createIndicatorListeners = () =>{
-    //Carousel Indicator Behavior
-    //console.log(allCaroIndicators)
     allCaroIndicators[currCaroIndex].firstChild.classList.add("active")
     for (let i in Object.keys(allCaroIndicators)){
-        allCaroIndicators[i].addEventListener("click", function(){
-            caroIndicatorBehavior()
-        })
+        allCaroIndicators[i].addEventListener("click", caroIndicatorBehavior)
     }
 }
 
@@ -77,6 +81,9 @@ const createCaroIndicators = () =>{
     }
     //assign variable since they have been created
     allCaroIndicators = caroIndicators.querySelectorAll(".caroIndicators")
+
+    //clear auto moving
+    clearInterval(caroTimerInterval);
     //attach event listeners
     createIndicatorListeners();
 }
@@ -158,7 +165,8 @@ function caroMoveRight(e=0){
         //correct animation direction
         for(let index=0; index<=maxCaroIndex; index++){
             const translateX = caroItems[index].style.transform.replace(/[^-?\d.]/g, '');
-            caroItems[index].style.transform = `translate(${translateX-100}vw)`
+            if(index === currCaroIndex) caroItems[index].style.transform = `translate(0vw)`
+            else caroItems[index].style.transform = `translate(${translateX-100}vw)`
         }
         caroClassBehavior();
 
@@ -189,7 +197,8 @@ function caroMoveLeft(e=0){
         //correct animation direction
         for(let index=0; index<=maxCaroIndex; index++){
             const translateX = caroItems[index].style.transform.replace(/[^-?\d.]/g, '');
-            caroItems[index].style.transform = `translate(${parseInt(translateX) + 100}vw)`
+            if(index === currCaroIndex) caroItems[index].style.transform = `translate(0vw)`
+            else caroItems[index].style.transform = `translate(${parseInt(translateX) + 100}vw)`
         }
         caroClassBehavior()
 

@@ -16,8 +16,8 @@ let timeItemsLength = Object.keys(timeItems).length
 
 const disableScoll =()=>{
     //disable scroll completely
-    $body.style.overflow = "hidden";
-    $body.style.width = "100%";
+    // $body.style.overflow = "hidden";
+    // $body.style.width = "100%";
 }
 const enableScoll = () =>{ 
     $body.style.removeProperty("overflow");
