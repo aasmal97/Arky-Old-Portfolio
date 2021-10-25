@@ -131,6 +131,9 @@
     width: 100%;
     margin-bottom: 2rem;
   }
+  .caro-item .caro-item-content .project-description .text-container, .caro-item .caro-item-content .project-description h3 {
+    font-size: 0.9rem;
+  }
 
   #caroContainer {
     width: 69vw;
@@ -275,6 +278,9 @@
     height: 100%;
     width: 100%;
     margin-bottom: 2rem;
+  }
+  .caro-item .caro-item-content .project-description .text-container, .caro-item .caro-item-content .project-description h3 {
+    font-size: 0.9rem;
   }
 
   #caroContainer {

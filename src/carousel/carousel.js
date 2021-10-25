@@ -136,6 +136,7 @@ caroBtns[1].addEventListener("click", function(e){
         checkOverflow()
     }, 400)
 })
+
 const caroIndicatorBehavior = () => {
     const currIndicator = Object.keys(allCaroIndicators).find(key=> allCaroIndicators[key] === this)
     prevCaroIndex = currCaroIndex
@@ -156,6 +157,7 @@ const caroIndicatorBehavior = () => {
         allCaroIndicators[prevCaroIndex].firstChild.classList.remove("active")
     }
 }
+
 const createIndicatorListeners = () =>{
     //Carousel Indicator Behavior
     //console.log(allCaroIndicators)
@@ -166,6 +168,7 @@ const createIndicatorListeners = () =>{
         })
     }
 }
+
 const createCaroIndicators = () =>{
     for (let i=0; i<=maxCaroIndex; i++){
         //Carousel Indicator Creation 
@@ -198,7 +201,8 @@ caroContainer.addEventListener("mouseleave", ()=>{
     caroBtns[0].classList.add("hidden")
     caroBtns[1].classList.add("hidden")
 })
-
+//not to be confused with caroContainer
+//this means the containers next to the images (.ie overview, limitations, etc)
 const containerBehavior = (e) => {
     const btn = e.target.closest("button")
     const icon = btn.querySelector("i")
@@ -219,6 +223,7 @@ const containerBehavior = (e) => {
         
     }
 }
+
 const createExpandBtns=(container)=>{
     //dont create additional buttons when called multiple times, and btn exists
     if(container.querySelector("expand-container-btn")) return
