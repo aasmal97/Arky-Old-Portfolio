@@ -27,6 +27,7 @@
 #caroContainer{
     @include centerElement;
     flex-direction: column;
+    justify-content: flex-start;
 }
 
 #carousel-items{

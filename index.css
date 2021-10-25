@@ -807,6 +807,7 @@ img.blur {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  justify-content: flex-start;
 }
 
 #carousel-items {
