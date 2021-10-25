@@ -13,12 +13,10 @@ a variable. This is due to scope, else if this doesnt happen
 it causes the creation of multiple timers, breaking the carousel */
 const timerSpeed = 10000;
 let caroTimerInterval;
-
 let allCaroIndicators
 let prevCaroIndex = 0;
 let currCaroIndex = 1;
 let caroClickDisabled = false;
-
 
 function caroClassBehavior(){
     caroItems[prevCaroIndex].classList.add("hidden");
@@ -27,13 +25,6 @@ function caroClassBehavior(){
     caroItems[currCaroIndex].classList.add("show");
     caroItems[currCaroIndex].classList.remove("no-width");
     caroItems[prevCaroIndex].classList.add("no-width");
-}
-
-//stops movement when mouse enters
-for (let i in Object.keys(carouselNodes)){
-    carouselNodes[i].addEventListener("mouseenter", () => {
-        clearInterval(caroTimerInterval);
-    })
 }
 
 const caroIndicatorBehavior = () => {
@@ -146,7 +137,13 @@ const checkOverflow = () =>{
         else removeExpandBtns(container)
     }
 }
-
+/* wrote the following to restart timer after a click.
+    however, determined this would not be good because it may not give user
+    time to focus on content. Opted for restarting timer when user left div
+    const resetCaroTimer = () => {
+    clearInterval(caroTimerInterval);
+    caroTimer();
+}*/
 const autoStartCarousel = () =>{
     caroTimerInterval = setInterval(() => {
         caroMoveRight()
@@ -215,20 +212,12 @@ function caroMoveLeft(e=0){
         allCaroIndicators[prevCaroIndex].firstChild.classList.remove("active")
     }
 }
-// let caroTimer = () => { 
-//     
-// };
+const carouselObserver = new IntersectionObserver(function(entries) {
+    if(!entries[0].isIntersecting){
+        setTimeout(()=>{clearInterval(caroTimerInterval)}, 1000)   
+    }
+}, { threshold: [0.4] });
 
-// //starts timer for caro items to move right
-// // caroTimer(); 
-
-/* wrote the following to restart timer after a click.
-    however, determined this would not be good because it may not give user
-    time to focus on content. Opted for restarting timer when user left div
-    const resetCaroTimer = () => {
-    clearInterval(caroTimerInterval);
-    caroTimer();
-}*/
 //makes indicators reappear
 caroContainer.addEventListener("mouseenter", () => {
     caroBtns[0].classList.remove("hidden")
@@ -236,6 +225,7 @@ caroContainer.addEventListener("mouseenter", () => {
 
     clearInterval(caroTimerInterval);
 })
+
 
 caroContainer.addEventListener("mouseleave", ()=>{
     caroBtns[0].classList.add("hidden")
@@ -252,8 +242,24 @@ caroContainer.addEventListener("touchstart", () => {
     clearInterval(caroTimerInterval);
 })
 
+caroContainer.addEventListener("touchmove", () => {
+    caroBtns[0].classList.remove("hidden")
+    caroBtns[1].classList.remove("hidden")
 
-
+    clearInterval(caroTimerInterval);
+})
+//stops movement when mouse enters
+for (let i in Object.keys(carouselNodes)){
+    carouselNodes[i].addEventListener("mouseenter", () => {
+        clearInterval(caroTimerInterval);
+    })
+    carouselNodes[i].addEventListener("touchstart", () => {
+        clearInterval(caroTimerInterval);
+    })
+    carouselNodes[i].addEventListener("touchend", () => {
+        clearInterval(caroTimerInterval);
+    })
+}
 
 //Carousel Behavior when arrows are clicked
 caroBtns[0].addEventListener("click", function(e){
@@ -263,6 +269,8 @@ caroBtns[0].addEventListener("click", function(e){
 caroBtns[1].addEventListener("click", function(e){
     caroMoveRight(e)
 })
+
+carouselObserver.observe(carousel);
 
 export {
     checkOverflow as checkOverflow,

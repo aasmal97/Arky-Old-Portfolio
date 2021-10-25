@@ -24,15 +24,14 @@ const enableScoll = () =>{
     $body.style.removeProperty("width");
 }
 const scrollLock = new IntersectionObserver(function(entries) {
-    let el = entries[0].target.getBoundingClientRect()
     let remainder = (timelineCounter+1)%4
     let nearFourth = timelineCounter - remainder + 1
     let row = timelineRow[nearFourth/2].getBoundingClientRect()
 	// isIntersecting is true when element and viewport are overlapping
 	// isIntersecting is false when element and viewport don't overlap
         if(entries[0].isIntersecting === true){
-            disableScoll()
-            
+            let el = entries[0].target.getBoundingClientRect()
+            disableScoll() 
             //after scrolling is disabled
             // If not, the accuracy of offset diminshes
             //setTimeout is set to 100 for the same reason. 
@@ -57,7 +56,11 @@ const scrollLock = new IntersectionObserver(function(entries) {
             timeItems[0].classList.add("show")
             //signal timeline animations can start playing
             scrollDisabled = true
+        } else {
+            enableScoll();
+            scrollDisabled = false
         }
+        console.log()
     }, { threshold: [0.3] });
 
 const timelineAnimate = () =>{
