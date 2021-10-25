@@ -11,7 +11,7 @@ const caroIndicators = document.querySelector("#caroIndicators")
 variable containing setInterval should also be defined within 
 a variable. This is due to scope, else if this doesnt happen 
 it causes the creation of multiple timers, breaking the carousel */
-const timerSpeed = 9000;
+const timerSpeed = 10000;
 let caroTimerInterval;
 
 let allCaroIndicators
@@ -29,15 +29,12 @@ function caroClassBehavior(){
     caroItems[prevCaroIndex].classList.add("no-width");
 }
 
-
 //stops movement when mouse enters
 for (let i in Object.keys(carouselNodes)){
     carouselNodes[i].addEventListener("mouseenter", () => {
         clearInterval(caroTimerInterval);
     })
 }
-
-
 
 const caroIndicatorBehavior = () => {
     const currIndicator = Object.keys(allCaroIndicators).find(key=> allCaroIndicators[key] === this)
@@ -236,21 +233,27 @@ function caroMoveLeft(e=0){
 caroContainer.addEventListener("mouseenter", () => {
     caroBtns[0].classList.remove("hidden")
     caroBtns[1].classList.remove("hidden")
-})
 
-caroContainer.addEventListener("mouseleave", ()=>{
-caroBtns[0].classList.add("hidden")
-caroBtns[1].classList.add("hidden")
-})
-
-caroContainer.addEventListener("mouseenter", () => {
     clearInterval(caroTimerInterval);
 })
 
-//restores movement when mouse leaves
-caroContainer.addEventListener("mouseleave", () => {
+caroContainer.addEventListener("mouseleave", ()=>{
+    caroBtns[0].classList.add("hidden")
+    caroBtns[1].classList.add("hidden")
+
     autoStartCarousel();
 })
+
+//on phones, carousel is made more static, for UX purposes
+caroContainer.addEventListener("touchstart", () => {
+    caroBtns[0].classList.remove("hidden")
+    caroBtns[1].classList.remove("hidden")
+
+    clearInterval(caroTimerInterval);
+})
+
+
+
 
 //Carousel Behavior when arrows are clicked
 caroBtns[0].addEventListener("click", function(e){
