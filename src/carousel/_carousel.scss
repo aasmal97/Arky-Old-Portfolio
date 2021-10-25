@@ -33,7 +33,7 @@
 #carousel-items{
     @include centerElement;
     @include transition (all linear 0.95s);
-    //height: 100%;
+    height: 100%;
     width: 100%;
     overflow-x: hidden;
 }
