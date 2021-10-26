@@ -10,6 +10,7 @@
     justify-content: space-between;
     color: white; 
     h1 {
+        font-family: 'Ubuntu', sans-serif;
         margin-top: 3rem;
         margin-bottom: 0rem;
         font-size: 2rem;
@@ -48,6 +49,7 @@
     width: 100%;
     overflow: hidden;
     h2{
+        font-family: 'Ubuntu', sans-serif;
         font-weight: 400;
         font-size: 2rem;
         margin-top: 1.5rem;
@@ -132,6 +134,7 @@
     width: 100%;
     max-height: 800px;
     h3{
+        font-family: 'Ubuntu', sans-serif;
         @include border-radius(5px, 0px);
         margin: 1px 1px 0 1px;
         padding: 0.7rem;
@@ -139,10 +142,12 @@
     }
     .text-container{
         @include transition(all ease-out 0.4s);
-        padding: 1rem;
+        font-family: "Lato", sans-serif;
+        padding: 1rem 2rem;
         margin-bottom: 1.5rem;
         max-height: 900px;
         overflow: hidden;
+        text-align: justify;
     }
 }
 
@@ -164,7 +169,7 @@
 }
 
 .project-description>div.hide{
-    max-height: 230px;
+    max-height: 225px;
     .text-container{
         max-height: 140px;
     }
@@ -214,11 +219,11 @@
         }
         .expand-container-btn{
             @include box-shadow(inset 0px, -1.5px, 1px, 0.15px, white);
+            color: $font-light-color;
             background-color: $bg-dark-color;
         }
     }
 }
-
 
 //bottom indicators
 .caroIndicators{

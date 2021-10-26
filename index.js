@@ -4,7 +4,7 @@ import {toggleSkills, skillsBtn} from "./src/skills/techSkills.js"
 import {navLinks, navLinksScroll, themeBtn, navToggler, navOnClick, navOnLoad, navOnScroll, changeTheme} from "./src/navbar/navbar.js"
 import {imagesOnLoad} from "./src/general/lazyLoad.js"
 import {smoothScroll} from "./src/general/smoothScroll.js"
-import {checkOverflow, createCaroIndicators, autoStartCarousel} from "./src/carousel/carousel.js"
+import {checkOverflow, createCaroIndicators} from "./src/carousel/carousel.js"
 
 //inserts lines connecting timeline automatically 
 document.addEventListener("DOMContentLoaded", function() {
@@ -34,7 +34,6 @@ window.addEventListener("load", function(e){
     navOnLoad()
     imagesOnLoad();
     checkOverflow();
-    autoStartCarousel();
 })
 const resize = () =>{
     navOnLoad();

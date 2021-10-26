@@ -222,8 +222,10 @@ function caroMoveLeft(e=0){
     }
 }
 const carouselObserver = new IntersectionObserver(function(entries) {
-    if(!entries[0].isIntersecting){
-        setTimeout(()=>{clearInterval(caroTimerInterval)}, 1000)   
+    if(entries[0].isIntersecting){
+        autoStartCarousel()
+    } else {
+        clearInterval(caroTimerInterval);
     }
 }, { threshold: [0.4] });
 
@@ -239,8 +241,6 @@ caroContainer.addEventListener("mouseenter", () => {
 caroContainer.addEventListener("mouseleave", ()=>{
     caroBtns[0].classList.add("hidden")
     caroBtns[1].classList.add("hidden")
-
-    autoStartCarousel();
 })
 
 //on phones, carousel is made more static, for UX purposes
