@@ -132,9 +132,7 @@
     @include transition(all linear 0.7s);
     position: relative;
     max-height: 800px;
-    min-width: 242px;
     width: 100%;
-   
     h3{
         font-family: 'Ubuntu', sans-serif;
         @include border-radius(5px, 0px);

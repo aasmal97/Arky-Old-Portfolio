@@ -659,7 +659,6 @@ img.blur {
   transition: all linear 0.7s;
   position: relative;
   max-height: 800px;
-  min-width: 242px;
   width: 100%;
 }
 .project-description > div h3 {
@@ -1040,6 +1039,7 @@ img.blur {
 
   .project-description > div {
     width: 100%;
+    min-width: 242px;
   }
 }
 @media screen and (max-width: 1400px) {
@@ -1115,6 +1115,10 @@ img.blur {
 
   #caroContainer {
     width: 40vw;
+  }
+
+  .project-description > div {
+    min-width: 242px;
   }
 
   #navbar {

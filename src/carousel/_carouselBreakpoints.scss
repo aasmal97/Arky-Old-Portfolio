@@ -7,6 +7,7 @@
     }
     .project-description>div{
         width: 100%;
+        min-width: 242px;
     }
 }
 
@@ -62,5 +63,8 @@
     @include carousel-sm;
     #caroContainer{
         width: 40vw ;
+    }
+    .project-description>div{
+        min-width: 242px;
     }
 }
