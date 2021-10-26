@@ -129,7 +129,7 @@
 
 .project-description > div{
     @extend .caro-img;
-    @include transition(all ease-out 0.4s);
+    @include transition(all linear 0.7s);
     position: relative;
     max-height: 800px;
     min-width: 242px;
@@ -144,7 +144,7 @@
         font-weight: 600;
     }
     .text-container{
-        @include transition(all ease-out 0.4s);
+        @include transition(all linear 0.7s);
         font-family: "Lato", sans-serif;
         padding: 1rem 2rem;
         margin-bottom: 1.5rem;

@@ -656,7 +656,7 @@ img.blur {
 }
 
 .project-description > div {
-  transition: all ease-out 0.4s;
+  transition: all linear 0.7s;
   position: relative;
   max-height: 800px;
   min-width: 242px;
@@ -674,7 +674,7 @@ img.blur {
   font-weight: 600;
 }
 .project-description > div .text-container {
-  transition: all ease-out 0.4s;
+  transition: all linear 0.7s;
   font-family: "Lato", sans-serif;
   padding: 1rem 2rem;
   margin-bottom: 1.5rem;
