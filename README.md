@@ -10,7 +10,7 @@ I purposely did not use any frameworks, like React, jQuery, Vue, Bootstrap etc, 
     - To update content on this page, I must directly manipulate the HTML and push the changes. However, since this is a personal page, meant to be maintained by me, this was considered a non-issue
 
 3. This page is hosted on Github Pages. 
-    - This page is not meant to handle and incredible amount of traffic (greater than 50,000 page loads a month)
+    - This page is not meant to handle an incredible amount of traffic (greater than 50,000 page loads a month)
 
 4. There are no automated tests to test functionality or content loading, aside from Github Pages own build tests. 
     - This was not considered a serious issue since this a single static page. Manual testing was considered the more time efficient solution in this scenario. 
