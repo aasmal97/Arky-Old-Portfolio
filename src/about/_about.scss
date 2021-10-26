@@ -18,7 +18,7 @@
     z-index: 3;
 }
 #about.lightMode{
-    background-color: $bg-secondary-light-color; 
+    background-color: $text-container-color; 
 }
 
 #about>h2{
@@ -59,7 +59,7 @@
     @include transition(opacity ease 0.5s);
 }
 .item.lightMode{
-    background-color: $bg-secondary-light-color; 
+    background-color:$text-container-color;
 }
 .item::before, .item::after{
     box-sizing: inherit;

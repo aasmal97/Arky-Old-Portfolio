@@ -3,7 +3,6 @@
     width: 100%;
     height: 100%;
     @include box-shadow(0px, -0.5px, 2px, 0.3px, rgb(0, 0, 0));
-   
 }
 #skillsBtn{
     width: 100%;
@@ -80,7 +79,7 @@
 }
 
 #skillsList.lightMode, #skillsBtn.lightMode{
-    background-color: $bg-secondary-light-color;
+    background-color: $text-container-color;
 }
 
 #skillsList.darkMode, #skillsBtn.darkMode{
