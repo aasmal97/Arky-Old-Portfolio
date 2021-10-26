@@ -1,6 +1,10 @@
 # Overview:
 This is my portofilo page, meant to display all of my projects, skills, and a little bit of my life story. It was built using Vanilla JS, SCSS and HTML.
-I purposely did not use any frameworks, like React, jQuery, Vue, Bootstrap etc, or unneccesary libraries because this was a challenge to myself. I wanted to test how difficult it was to build a modern-looking single page site, solely using native Javascript and mostly native CSS. SCSS (CSS Preprocesser) was used to compile and organize CSS.
+
+# Goal
+To build a modern looking Portfolio Page without using any frameworks, like React, jQuery, Vue, Bootstrap etc, or unneccesary libraries.
+
+I wanted to see for myself how difficult it was to build a modern-looking single page site, solely using native Javascript and mostly native CSS. SCSS (CSS Preprocesser) was used to compile and organize CSS.
 
 # Limitations
 1. Ensuring compability on Safari was difficult as I do not own an Apple Device (phone or laptop). 
