@@ -15,13 +15,10 @@ let timelineCounter = 0
 let timeItemsLength = Object.keys(timeItems).length 
 
 const disableScoll =()=>{
-    //disable scroll completely
-    $body.style.overflow = "hidden";
-    $body.style.width = "100%";
+    bodyScrollLock.disableBodyScroll(timeline);
 }
 const enableScoll = () =>{ 
-    $body.style.removeProperty("overflow");
-    $body.style.removeProperty("width");
+    bodyScrollLock.clearAllBodyScrollLocks();
 }
 const scrollLock = new IntersectionObserver(function(entries) {
     let remainder = (timelineCounter+1)%4
