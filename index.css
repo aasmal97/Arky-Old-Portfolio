@@ -7,12 +7,17 @@
     font-size: 120%;
   }
 }
+html {
+  width: 100vw;
+}
+
 body {
   position: relative;
   padding: 0;
   margin: 0;
-  width: 100%;
+  width: 100vw;
   overflow: overlay;
+  overflow-x: hidden;
 }
 
 body::-webkit-scrollbar {
@@ -522,7 +527,7 @@ img.blur {
   width: 100%;
   min-width: 0px;
   justify-content: space-between;
-  color: black;
+  color: white;
 }
 #carousel h1 {
   font-family: "Ubuntu", sans-serif;
@@ -553,6 +558,7 @@ img.blur {
   align-items: center;
   transition: all linear 0.95s;
   height: 100%;
+  width: 100%;
   overflow: hidden !important;
 }
 

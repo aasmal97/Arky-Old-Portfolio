@@ -9,7 +9,7 @@
     width: 100%;
     min-width: 0px;
     justify-content: space-between;
-    color: black; 
+    color: white; 
  
     h1 {
         font-family: 'Ubuntu', sans-serif;
@@ -37,6 +37,7 @@
     @include centerElement;
     @include transition (all linear 0.95s);
     height: 100%;
+    width: 100%;
     overflow: hidden !important;
 }
 

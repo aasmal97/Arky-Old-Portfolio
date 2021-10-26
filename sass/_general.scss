@@ -3,13 +3,16 @@
         font-size: 120%;
         }
     }
-
+html{
+    width: 100vw;
+}
 body{
     position: relative;
     padding: 0;
     margin: 0;
-    width: 100%;
+    width: 100vw;
     overflow: overlay; 
+    overflow-x: hidden;
 }
 
   body::-webkit-scrollbar {
