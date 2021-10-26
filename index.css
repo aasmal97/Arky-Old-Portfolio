@@ -553,8 +553,8 @@ img.blur {
   align-items: center;
   transition: all linear 0.95s;
   height: 100%;
-  width: 100%;
-  overflow: hidden;
+  width: 69vw;
+  overflow: hidden !important;
 }
 
 .caro-item {
