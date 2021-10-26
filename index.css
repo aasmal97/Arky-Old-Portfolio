@@ -520,6 +520,7 @@ img.blur {
   min-height: calc(100vh - 70px);
   height: 100%;
   width: 100%;
+  min-width: 0px;
   justify-content: space-between;
   color: black;
 }
@@ -1267,9 +1268,5 @@ img.blur {
   .project-description > div {
     min-width: 0px !important;
     width: 50px !important;
-  }
-
-  .caro-btns {
-    width: 10vw !important;
   }
 }/*# sourceMappingURL=index.css.map */
