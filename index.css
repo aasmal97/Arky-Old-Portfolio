@@ -2,296 +2,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap");
-@media screen and (min-width: 1025px) {
-  #about {
-    font-size: 200%;
-  }
-
-  #timeline {
-    padding: 0 15vw;
-    font-size: 60%;
-  }
-
-  .item {
-    width: 25vw;
-  }
-
-  .verLines {
-    padding: 0 17.5vw;
-    width: 25vw;
-  }
-
-  .verLines > .lines {
-    height: 5vw;
-  }
-
-  #bgProfilePic > div:first-child {
-    font-size: 300%;
-  }
-
-  #name {
-    text-align: center;
-  }
-
-  #navToggler {
-    display: none;
-  }
-
-  #navbar {
-    box-shadow: 0px 0.5px 2px 0.5px black;
-    -webkit-box-shadow: 0px 0.5px 2px 0.5px black;
-    -moz-box-shadow: 0px 0.5px 2px 0.5px black;
-    -ms-box-shadow: 0px 0.5px 2px 0.5px black;
-  }
-
-  #navLinkContainer {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-end;
-    background-color: rgba(255, 255, 255, 0);
-  }
-
-  #navLinkContainer > a {
-    width: 12%;
-    height: 40px;
-    border-radius: 30px 30px 30px 30px;
-    -webkit-border-radius: 30px 30px 30px 30px;
-    -moz-border-radius: 30px 30px 30px 30px;
-    -ms-border-radius: 30px 30px 30px 30px;
-    margin: 10px;
-  }
-
-  #caroContainer {
-    width: 69vw;
-  }
-
-  .caro-img, .project-description > div {
-    width: 70%;
-  }
-}
-@media screen and (max-width: 1400px) {
-  .caro-img, .project-description > div {
-    width: 90%;
-  }
-}
-@media screen and (max-width: 1025px) {
-  #about {
-    font-size: 150%;
-  }
-
-  #timeline {
-    font-size: 50%;
-  }
-
-  .item {
-    width: 35vw;
-  }
-
-  .verLines {
-    padding: 0 10vw;
-    width: 30vw;
-  }
-
-  .verLines > .lines {
-    height: 4vw;
-  }
-
-  #bgProfilePic > div:first-child {
-    font-size: 250%;
-  }
-
-  #carousel h1 {
-    margin-top: 2rem !important;
-    font-size: 1.5rem !important;
-  }
-
-  .caro-item h2 {
-    font-size: 1.2rem !important;
-    margin-top: 1.3rem !important;
-    margin-bottom: 1rem !important;
-    text-align: center;
-    align-items: flex-start;
-  }
-  .caro-item .caro-item-content {
-    flex-direction: column;
-  }
-  .caro-item .caro-item-content .caro-img-container {
-    align-self: flex-start;
-    height: 40%;
-    margin-top: 1.5rem;
-    margin-right: 0;
-  }
-  .caro-item .caro-item-content .caro-img-container .caro-img, .caro-item .caro-item-content .caro-img-container .project-description > div {
-    height: 100%;
-  }
-  .caro-item .caro-item-content .project-description {
-    height: 100%;
-    width: 100%;
-    margin-bottom: 2rem;
-  }
-  .caro-item .caro-item-content .project-description .text-container, .caro-item .caro-item-content .project-description h3 {
-    font-size: 0.9rem;
-  }
-
-  #caroContainer {
-    width: 69vw;
-  }
-
-  .caro-img, .project-description > div {
-    width: 100%;
-  }
-
-  #caroContainer {
-    width: 40vw;
-  }
-
-  #navbar {
-    justify-content: flex-end;
-  }
-
-  #navLinkContainer {
-    border-radius: 0 0 0 0;
-    -webkit-border-radius: 0 0 0 0;
-    -moz-border-radius: 0 0 0 0;
-    -ms-border-radius: 0 0 0 0;
-    position: absolute;
-    flex-direction: column;
-    width: 100%;
-    box-shadow: 0px 1px 0.8px 0.2px rgba(0, 0, 0, 0.623);
-    -webkit-box-shadow: 0px 1px 0.8px 0.2px rgba(0, 0, 0, 0.623);
-    -moz-box-shadow: 0px 1px 0.8px 0.2px rgba(0, 0, 0, 0.623);
-    -ms-box-shadow: 0px 1px 0.8px 0.2px rgba(0, 0, 0, 0.623);
-  }
-
-  #navLinkContainer.lightMode {
-    background-color: #851d30;
-    border: 1.5px solid #851d30;
-    color: black;
-    border: 0px;
-  }
-
-  #navLinkContainer.darkMode {
-    background-color: #333333;
-    border: 1.5px solid #333333;
-    border: 0px;
-  }
-
-  #navLinkContainer > a {
-    border-radius: 0px 0px 0px 0px;
-    -webkit-border-radius: 0px 0px 0px 0px;
-    -moz-border-radius: 0px 0px 0px 0px;
-    -ms-border-radius: 0px 0px 0px 0px;
-    margin: 5px 0;
-    border: 0px;
-    height: 40px;
-  }
-
-  #navLinkContainer > a:last-child {
-    margin-bottom: 40px;
-  }
-
-  #navLinkContainer.show {
-    max-height: 300px;
-    overflow: visible;
-  }
-
-  #navLinkContainer.hidden {
-    overflow: hidden;
-    max-height: 0px;
-  }
-
-  #navLinkContainer > a.show {
-    visibility: visible;
-    opacity: 1;
-  }
-
-  #navLinkContainer > a.hidden {
-    visibility: hidden;
-    opacity: 0;
-    transition: all 0.3s linear;
-  }
-}
-@media screen and (max-width: 650px) {
-  #timeline {
-    font-size: 55%;
-  }
-
-  #bgProfilePic {
-    flex-direction: column;
-  }
-  #bgProfilePic div {
-    width: 100% !important;
-    height: 50%;
-  }
-  #bgProfilePic div:first-child {
-    margin: 0.3rem 0;
-  }
-  #bgProfilePic div:first-child a {
-    font-size: 0.8rem !important;
-    margin-bottom: 1rem !important;
-  }
-
-  #socialMedia {
-    margin-top: 1rem !important;
-    height: 2rem !important;
-    justify-content: center !important;
-  }
-  #socialMedia a {
-    width: 3rem !important;
-  }
-  #socialMedia img {
-    -o-object-fit: contain;
-       object-fit: contain;
-  }
-
-  #bgProfilePic > div:first-child {
-    font-size: 1.7rem;
-  }
-
-  #carousel h1 {
-    margin-top: 2rem !important;
-    font-size: 1.5rem !important;
-  }
-
-  .caro-item h2 {
-    font-size: 1.2rem !important;
-    margin-top: 1.3rem !important;
-    margin-bottom: 1rem !important;
-    text-align: center;
-    align-items: flex-start;
-  }
-  .caro-item .caro-item-content {
-    flex-direction: column;
-  }
-  .caro-item .caro-item-content .caro-img-container {
-    align-self: flex-start;
-    height: 40%;
-    margin-top: 1.5rem;
-    margin-right: 0;
-  }
-  .caro-item .caro-item-content .caro-img-container .caro-img, .caro-item .caro-item-content .caro-img-container .project-description > div {
-    height: 100%;
-  }
-  .caro-item .caro-item-content .project-description {
-    height: 100%;
-    width: 100%;
-    margin-bottom: 2rem;
-  }
-  .caro-item .caro-item-content .project-description .text-container, .caro-item .caro-item-content .project-description h3 {
-    font-size: 0.9rem;
-  }
-
-  #caroContainer {
-    width: 69vw;
-  }
-
-  .caro-img, .project-description > div {
-    width: 100%;
-  }
-}
 @-moz-document url-prefix() {
   body {
     font-size: 120%;
@@ -622,15 +332,19 @@ img.blur {
 }
 #about {
   position: relative;
-  padding-top: 4rem;
+  padding-top: 3rem;
   width: 100%;
   height: calc(100% - 60px);
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  font-family: "Roboto", sans-serif;
   z-index: 3;
+}
+
+#about > h2 {
+  font-size: 2.5rem;
+  font-family: "Ubuntu", sans-serif;
 }
 
 #timeline {
@@ -639,8 +353,18 @@ img.blur {
   align-items: center;
   height: 100%;
   width: 100%;
+  padding-top: 3rem;
   flex-direction: column;
-  padding: 2vw 0;
+  font-family: "Lato", sans-serif;
+}
+#timeline a:hover {
+  opacity: 0.7;
+}
+#timeline a:link {
+  color: #0004ff;
+}
+#timeline a:visited {
+  color: #7e62b4;
 }
 
 #timeline > .itemRow {
@@ -924,8 +648,9 @@ img.blur {
 .project-description > div {
   transition: all ease-out 0.4s;
   position: relative;
-  width: 100%;
   max-height: 800px;
+  min-width: 242px;
+  width: 100%;
 }
 .project-description > div h3 {
   font-family: "Ubuntu", sans-serif;
@@ -994,7 +719,7 @@ img.blur {
   background-color: white;
 }
 .caro-item-content.lightMode .project-description > div h3 {
-  background-color: #851d30;
+  background-color: #242582;
 }
 .caro-item-content.lightMode .project-description > div .expand-container-btn {
   box-shadow: inset 0px -1.5px 1px 0.15px black;
@@ -1190,10 +915,12 @@ img.blur {
   align-items: center;
   padding: 0;
   font-size: 1rem;
+  font-family: "Lato", sans-serif;
   box-shadow: 0px -0.5px 2px 0.5px black;
   -webkit-box-shadow: 0px -0.5px 2px 0.5px black;
   -moz-box-shadow: 0px -0.5px 2px 0.5px black;
   -ms-box-shadow: 0px -0.5px 2px 0.5px black;
+  text-align: center;
 }
 #footer p {
   margin: 0.5rem;
@@ -1204,6 +931,18 @@ img.blur {
 #footer p:last-child {
   margin-bottom: 1.7rem;
 }
+#footer a {
+  font-weight: 800;
+}
+#footer a:hover {
+  opacity: 0.7;
+}
+#footer a:link {
+  color: #0004ff;
+}
+#footer a:visited {
+  color: #a983f0;
+}
 
 #footer.lightMode {
   background-color: #851d30;
@@ -1213,4 +952,305 @@ img.blur {
 #footer.darkMode {
   background-color: #333333;
   color: white;
+}
+
+@media screen and (min-width: 1025px) {
+  #about {
+    font-size: 200%;
+  }
+
+  #timeline {
+    font-size: 60%;
+  }
+
+  .item {
+    width: 25vw;
+  }
+
+  .verLines {
+    padding: 0 17.5vw;
+    width: 25vw;
+  }
+
+  .verLines > .lines {
+    height: 5vw;
+  }
+
+  #bgProfilePic > div:first-child {
+    font-size: 300%;
+  }
+
+  #name {
+    text-align: center;
+  }
+
+  #navToggler {
+    display: none;
+  }
+
+  #navbar {
+    box-shadow: 0px 0.5px 2px 0.5px black;
+    -webkit-box-shadow: 0px 0.5px 2px 0.5px black;
+    -moz-box-shadow: 0px 0.5px 2px 0.5px black;
+    -ms-box-shadow: 0px 0.5px 2px 0.5px black;
+  }
+
+  #navLinkContainer {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: rgba(255, 255, 255, 0);
+  }
+
+  #navLinkContainer > a {
+    width: 12%;
+    height: 40px;
+    border-radius: 30px 30px 30px 30px;
+    -webkit-border-radius: 30px 30px 30px 30px;
+    -moz-border-radius: 30px 30px 30px 30px;
+    -ms-border-radius: 30px 30px 30px 30px;
+    margin: 10px;
+  }
+
+  #caroContainer {
+    width: 69vw;
+  }
+
+  .caro-img, .project-description > div {
+    width: 70%;
+  }
+
+  .project-description > div {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 1400px) {
+  .caro-img, .project-description > div {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 1025px) {
+  #about > h2 {
+    font-size: 2rem;
+  }
+
+  .item {
+    width: 35vw;
+  }
+
+  .verLines {
+    padding: 0 10vw;
+    width: 30vw;
+  }
+
+  .verLines > .lines {
+    height: 4vw;
+  }
+
+  #bgProfilePic > div:first-child {
+    font-size: 250%;
+  }
+
+  #carousel h1 {
+    margin-top: 2rem !important;
+    font-size: 1.5rem !important;
+  }
+
+  .caro-item h2 {
+    font-size: 1.2rem !important;
+    margin-top: 1.3rem !important;
+    margin-bottom: 1rem !important;
+    text-align: center;
+    align-items: flex-start;
+  }
+  .caro-item .caro-item-content {
+    flex-direction: column;
+  }
+  .caro-item .caro-item-content .caro-img-container {
+    align-self: flex-start;
+    height: 40%;
+    margin-top: 1.5rem;
+    margin-right: 0;
+  }
+  .caro-item .caro-item-content .caro-img-container .caro-img, .caro-item .caro-item-content .caro-img-container .project-description > div {
+    height: 100%;
+  }
+  .caro-item .caro-item-content .project-description {
+    height: 100%;
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+  .caro-item .caro-item-content .project-description .text-container, .caro-item .caro-item-content .project-description h3 {
+    font-size: 0.9rem;
+  }
+  .caro-item .caro-item-content .project-description div {
+    min-width: 0;
+  }
+
+  #caroContainer {
+    width: 69vw;
+  }
+
+  .caro-img, .project-description > div {
+    width: 100%;
+  }
+
+  #caroContainer {
+    width: 40vw;
+  }
+
+  #navbar {
+    justify-content: flex-end;
+  }
+
+  #navLinkContainer {
+    border-radius: 0 0 0 0;
+    -webkit-border-radius: 0 0 0 0;
+    -moz-border-radius: 0 0 0 0;
+    -ms-border-radius: 0 0 0 0;
+    position: absolute;
+    flex-direction: column;
+    width: 100%;
+    box-shadow: 0px 1px 0.8px 0.2px rgba(0, 0, 0, 0.623);
+    -webkit-box-shadow: 0px 1px 0.8px 0.2px rgba(0, 0, 0, 0.623);
+    -moz-box-shadow: 0px 1px 0.8px 0.2px rgba(0, 0, 0, 0.623);
+    -ms-box-shadow: 0px 1px 0.8px 0.2px rgba(0, 0, 0, 0.623);
+  }
+
+  #navLinkContainer.lightMode {
+    background-color: #851d30;
+    border: 1.5px solid #851d30;
+    color: black;
+    border: 0px;
+  }
+
+  #navLinkContainer.darkMode {
+    background-color: #333333;
+    border: 1.5px solid #333333;
+    border: 0px;
+  }
+
+  #navLinkContainer > a {
+    border-radius: 0px 0px 0px 0px;
+    -webkit-border-radius: 0px 0px 0px 0px;
+    -moz-border-radius: 0px 0px 0px 0px;
+    -ms-border-radius: 0px 0px 0px 0px;
+    margin: 5px 0;
+    border: 0px;
+    height: 40px;
+  }
+
+  #navLinkContainer > a:last-child {
+    margin-bottom: 40px;
+  }
+
+  #navLinkContainer.show {
+    max-height: 300px;
+    overflow: visible;
+  }
+
+  #navLinkContainer.hidden {
+    overflow: hidden;
+    max-height: 0px;
+  }
+
+  #navLinkContainer > a.show {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  #navLinkContainer > a.hidden {
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s linear;
+  }
+}
+@media screen and (max-width: 650px) {
+  #about > h2 {
+    font-size: 1.6rem;
+  }
+
+  #timeline {
+    padding-top: 2rem;
+    font-size: 0.9rem;
+  }
+
+  #bgProfilePic {
+    flex-direction: column;
+  }
+  #bgProfilePic div {
+    width: 100% !important;
+    height: 50%;
+  }
+  #bgProfilePic div:first-child {
+    margin: 0.3rem 0;
+  }
+  #bgProfilePic div:first-child a {
+    font-size: 0.8rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+  #socialMedia {
+    margin-top: 1rem !important;
+    height: 2rem !important;
+    justify-content: center !important;
+  }
+  #socialMedia a {
+    width: 3rem !important;
+  }
+  #socialMedia img {
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+
+  #bgProfilePic > div:first-child {
+    font-size: 1.7rem;
+  }
+
+  #carousel h1 {
+    margin-top: 2rem !important;
+    font-size: 1.5rem !important;
+  }
+
+  .caro-item h2 {
+    font-size: 1.2rem !important;
+    margin-top: 1.3rem !important;
+    margin-bottom: 1rem !important;
+    text-align: center;
+    align-items: flex-start;
+  }
+  .caro-item .caro-item-content {
+    flex-direction: column;
+  }
+  .caro-item .caro-item-content .caro-img-container {
+    align-self: flex-start;
+    height: 40%;
+    margin-top: 1.5rem;
+    margin-right: 0;
+  }
+  .caro-item .caro-item-content .caro-img-container .caro-img, .caro-item .caro-item-content .caro-img-container .project-description > div {
+    height: 100%;
+  }
+  .caro-item .caro-item-content .project-description {
+    height: 100%;
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+  .caro-item .caro-item-content .project-description .text-container, .caro-item .caro-item-content .project-description h3 {
+    font-size: 0.9rem;
+  }
+  .caro-item .caro-item-content .project-description div {
+    min-width: 0;
+  }
+
+  #caroContainer {
+    width: 69vw;
+  }
+
+  .caro-img, .project-description > div {
+    width: 100%;
+  }
 }/*# sourceMappingURL=index.css.map */

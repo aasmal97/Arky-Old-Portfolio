@@ -5,6 +5,9 @@
     .caro-img{
         width: 70%;
     }
+    .project-description>div{
+        width: 100%;
+    }
 }
 
 @mixin carousel-sm{
@@ -41,6 +44,9 @@
                 .text-container, h3{
                     font-size: 0.9rem;
                 }
+                div{
+                    min-width: 0;   
+                }
             }
         }
     }
@@ -49,7 +55,8 @@
     }
     .caro-img{
         width: 100%;
-    }   
+    }
+    
 }
 @mixin carousel-md {
     @include carousel-sm;

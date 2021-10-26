@@ -10,23 +10,34 @@
 
 #about{
     position: relative;
-    //padding-bottom: 5rem;
-    padding-top: 4rem;
+    padding-top: 3rem;
     width: 100%;
     height: calc(100% - 60px);
     @include centerElement;
     flex-direction: column;
-    font-family: $font;
-    // @include box-shadow(0px, -0.5px, 2px, 0.25px, rgb(0, 0, 0));
     z-index: 3;
 }
-
+#about>h2{
+    font-size: 2.5rem;
+    font-family: "Ubuntu", sans-serif;
+}
 
 #timeline{
     @include centerElement;
     @include fullSize;
+    padding-top: 3rem;
     flex-direction: column;
-    padding: 2vw 0;
+    font-family: "Lato", sans-serif;
+    a:hover{
+        opacity: 0.7;
+    }
+    a:link{
+        color: rgb(0, 4, 255);
+    }
+    a:visited{
+        color: rgb(126, 98, 180);
+    }
+
 }
 #timeline>.itemRow{
     @include centerElement;
@@ -39,7 +50,6 @@
     padding: 1vw 4vw;
     box-sizing: border-box;
     @include transition(opacity ease 0.5s);
-
 }
 .item::before, .item::after{
     box-sizing: inherit;

@@ -4,7 +4,6 @@
         font-size: 200%;
     }
     #timeline{
-        padding: 0 15vw;
         font-size: 60%;
     }
 
@@ -22,12 +21,11 @@
 }
 @mixin timeline-md {
     //timeline padding
-    #about{
-       font-size: 150%;
-   }
-   #timeline{
-       font-size: 50%;
-   }
+    #about>h2{
+        font-size: 2rem;
+       
+    }
+
    .item{
        width: 35vw;
    }
@@ -42,7 +40,11 @@
 }
 
 @mixin timeline-sm {
+    #about>h2{
+        font-size: 1.6rem;
+    }
     #timeline{
-        font-size: 55%;
+        padding-top: 2rem;
+        font-size: 0.9rem;
     }
 }

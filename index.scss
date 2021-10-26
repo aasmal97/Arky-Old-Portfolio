@@ -4,8 +4,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
 @import "./sass/variables";
 
-@import "./sass/breakpoints";
-
 @import "./sass/general";
 
 @import "./sass/profilePic";
@@ -21,5 +19,7 @@
 @import "./src/skills/skills";
 
 @import "./src/footer/footer";
+
+@import "./sass/breakpoints";
 
 
