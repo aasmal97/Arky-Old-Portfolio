@@ -520,9 +520,8 @@ img.blur {
   min-height: calc(100vh - 70px);
   height: 100%;
   width: 100%;
-  max-width: 100vw;
   justify-content: space-between;
-  color: white;
+  color: black;
 }
 #carousel h1 {
   font-family: "Ubuntu", sans-serif;
@@ -824,9 +823,10 @@ img.blur {
   background-color: rgba(51, 51, 51, 0);
   border: 0px;
   cursor: pointer;
-  font-size: 300%;
+  font-size: 3rem;
   width: 15vw;
   color: white;
+  text-align: center;
 }
 
 .caro-btns:hover {
@@ -1267,5 +1267,9 @@ img.blur {
   .project-description > div {
     min-width: 0px !important;
     width: 50px !important;
+  }
+
+  .caro-btns {
+    width: 10vw !important;
   }
 }/*# sourceMappingURL=index.css.map */
