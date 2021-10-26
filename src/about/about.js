@@ -42,9 +42,10 @@ const scrollLock = new IntersectionObserver(function(entries) {
             if($body.style.overflow !== "hidden"){
                 disableScoll();
                 $body.style.position = "relative"
-                window.scrollTo({
-                    top: offset
+                window.scroll({
+                    top: offset,
                 })
+                console.log(offset)
                 console.log($body.style.overflow !== "hidden")
             } 
             if(timelineCounter+1<4){
