@@ -7,7 +7,7 @@
     }
     .project-description>div{
         width: 100%;
-        min-width: 242px;
+        // min-width: 242px;
     }
 }
 
@@ -61,12 +61,12 @@
     #caroContainer{
         width: 40vw ;
     }
-    .project-description>div{
-        min-width: 242px;
-    }
+    // .project-description>div{
+    //     min-width: 242px;
+    // }
 }
 @mixin carousel-container-sm {
-    .project-description>div{
-        min-width: 0px !important;   
-    }
+    // .project-description>div{
+    //     min-width: 0px !important;   
+    // }
 }

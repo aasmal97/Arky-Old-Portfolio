@@ -1040,7 +1040,6 @@ img.blur {
 
   .project-description > div {
     width: 100%;
-    min-width: 242px;
   }
 }
 @media screen and (max-width: 1400px) {
@@ -1113,10 +1112,6 @@ img.blur {
 
   #caroContainer {
     width: 40vw;
-  }
-
-  .project-description > div {
-    min-width: 242px;
   }
 
   #navbar {
@@ -1267,9 +1262,5 @@ img.blur {
 
   .caro-img, .project-description > div {
     width: 100%;
-  }
-
-  .project-description > div {
-    min-width: 0px !important;
   }
 }/*# sourceMappingURL=index.css.map */
