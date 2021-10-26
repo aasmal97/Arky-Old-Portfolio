@@ -141,6 +141,7 @@
         margin: 1px 1px 0 1px;
         padding: 0.7rem;
         color: $font-light-color;
+        font-weight: 600;
     }
     .text-container{
         @include transition(all ease-out 0.4s);
@@ -183,7 +184,7 @@
     .caro-img-container{
         .caro-img{
             @include box-shadow(inset 0px, 0px, 2px, 0.3px, black);
-            background-color: $bg-light-color;
+            background-color: $text-container-color;
             img{
                 background-color: $primary-light-color;
             }
@@ -191,14 +192,15 @@
     }
     .project-description>div{
         @include box-shadow(inset 0px, 0px, 2px, 0.3px, black);
-        background-color: $bg-light-color;
+        background-color: $text-container-color;
         h3{
             //background-color: $primary-light-color;
-            background-color:rgb(36, 37, 130)
+            background-color: $primary-dark-color;
+            
         }
         .expand-container-btn{
             @include box-shadow(inset 0px, -1.5px, 1px, 0.15px, rgb(0, 0, 0));
-            background-color: $bg-light-color;
+            background-color: $text-container-color;
         }
     }
 }
@@ -260,7 +262,7 @@
 }
 
 #caroIndicators>.caroIndicators>.dot{
-    border: 1.5px solid $bg-light-color;
+    border: 1.5px solid $font-light-color;
 }
 
 #caroIndicators>.caroIndicators>.active{

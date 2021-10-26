@@ -43,6 +43,7 @@
     #navLinkContainer.lightMode{
         @include lightModeBtns;
         border: 0px;
+        background-color: $navbar-light-color;
     }
     #navLinkContainer.darkMode{
         @include darkModeBtns;

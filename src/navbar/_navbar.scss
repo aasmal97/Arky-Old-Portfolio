@@ -13,14 +13,17 @@
 #navbar.lightMode{
     @include lightModeBtns;
     border: 0px;
+    background-color: $navbar-light-color;
 }
 #navbar.darkMode{
     @include darkModeBtns;
     border: 0px;
 }
 #navLinkContainer{
+    
     top: 69px;
 }
+
 #navLinkContainer>a{
     @include centerElement;
     text-decoration: none;

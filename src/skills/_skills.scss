@@ -39,7 +39,7 @@
 
 #skillsBtn.lightMode>span:hover{
     background-color: $primary-light-color;
-    color: $bg-light-color;
+    color: $font-light-color;
     border: 1.5px solid $primary-light-color; 
 }
 
@@ -80,7 +80,7 @@
 }
 
 #skillsList.lightMode, #skillsBtn.lightMode{
-    // background-color: $bg-secondary-light-color;
+    background-color: $bg-secondary-light-color;
 }
 
 #skillsList.darkMode, #skillsBtn.darkMode{

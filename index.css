@@ -29,7 +29,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .lightMode {
-  background-color: white;
+  background-color: #f76c6c;
   color: black;
   transition: all 0.3s ease;
 }
@@ -75,7 +75,7 @@ img.blur {
 }
 
 #bgProfilePic.lightMode {
-  background-color: lightgray;
+  background-color: #a8d0e6;
 }
 
 #bgProfilePic.darkMode {
@@ -116,8 +116,8 @@ img.blur {
 
 #bgProfilePic > div:first-child > a:hover, #bgProfilePic > div:first-child > a:active {
   background-color: white;
-  color: #851d30;
-  border: 1.5px solid #851d30;
+  color: #374785;
+  border: 1.5px solid #374785;
 }
 
 #bgProfilePic > div:first-child.lightMode {
@@ -170,10 +170,11 @@ img.blur {
 }
 
 #navbar.lightMode {
-  background-color: #851d30;
-  border: 1.5px solid #851d30;
+  background-color: #374785;
+  border: 1.5px solid #374785;
   color: black;
   border: 0px;
+  background-color: #24305e;
 }
 
 #navbar.darkMode {
@@ -221,8 +222,8 @@ img.blur {
 
 .nav_links.lightMode:hover, .lightMode#navToggler:hover {
   background-color: white;
-  color: #851d30;
-  border: 1.5px solid #851d30;
+  color: #374785;
+  border: 1.5px solid #374785;
 }
 
 .nav_links.darkMode:hover, .darkMode#navToggler:hover {
@@ -252,8 +253,8 @@ img.blur {
 
 .themeToggler:hover, #navToggler:hover {
   background-color: white;
-  color: #851d30;
-  border: 1.5px solid #851d30;
+  color: #374785;
+  border: 1.5px solid #374785;
 }
 
 #navToggler {
@@ -342,6 +343,10 @@ img.blur {
   z-index: 3;
 }
 
+#about.lightMode {
+  background-color: #a8d0e6;
+}
+
 #about > h2 {
   font-size: 2.5rem;
   font-family: "Ubuntu", sans-serif;
@@ -380,6 +385,10 @@ img.blur {
   padding: 1vw 4vw;
   box-sizing: border-box;
   transition: opacity ease 0.5s;
+}
+
+.item.lightMode {
+  background-color: #a8d0e6;
 }
 
 .item::before, .item::after {
@@ -421,13 +430,13 @@ img.blur {
 }
 
 .item.lightMode.show::before {
-  border-top-color: #851d30;
-  border-right-color: #851d30;
+  border-top-color: #374785;
+  border-right-color: #374785;
 }
 
 .item.lightMode.show::after {
-  border-left-color: #851d30;
-  border-bottom-color: #851d30;
+  border-left-color: #374785;
+  border-bottom-color: #374785;
 }
 
 .item.darkMode.show::after {
@@ -456,7 +465,7 @@ img.blur {
 }
 
 .lines.lightMode {
-  background-color: #851d30;
+  background-color: #374785;
 }
 
 .lines.darkMode {
@@ -521,7 +530,7 @@ img.blur {
 }
 
 #carousel.lightMode {
-  background-color: #851d30;
+  background-color: #374785;
 }
 
 #carousel.darkMode {
@@ -661,6 +670,7 @@ img.blur {
   margin: 1px 1px 0 1px;
   padding: 0.7rem;
   color: white;
+  font-weight: 600;
 }
 .project-description > div .text-container {
   transition: all ease-out 0.4s;
@@ -709,7 +719,7 @@ img.blur {
   background-color: white;
 }
 .caro-item-content.lightMode .caro-img-container .caro-img img, .caro-item-content.lightMode .caro-img-container .project-description > div img {
-  background-color: #851d30;
+  background-color: #374785;
 }
 .caro-item-content.lightMode .project-description > div {
   box-shadow: inset 0px 0px 2px 0.3px black;
@@ -719,7 +729,7 @@ img.blur {
   background-color: white;
 }
 .caro-item-content.lightMode .project-description > div h3 {
-  background-color: #242582;
+  background-color: #333333;
 }
 .caro-item-content.lightMode .project-description > div .expand-container-btn {
   box-shadow: inset 0px -1.5px 1px 0.15px black;
@@ -862,20 +872,20 @@ img.blur {
 }
 
 #skillsBtn.lightMode > span {
-  color: #851d30;
-  border: 1.5px solid #851d30;
+  color: #374785;
+  border: 1.5px solid #374785;
 }
 
 #skillsBtn.lightMode > span:hover {
-  background-color: #851d30;
+  background-color: #374785;
   color: white;
-  border: 1.5px solid #851d30;
+  border: 1.5px solid #374785;
 }
 
 #skillsBtn.darkMode > span:hover {
-  background-color: white;
+  background-color: #f76c6c;
   color: #292929;
-  border: 1.5px solid white;
+  border: 1.5px solid #f76c6c;
 }
 
 #skillsList {
@@ -905,6 +915,10 @@ img.blur {
 #skillsList.hidden > p {
   opacity: 0;
   visibility: hidden;
+}
+
+#skillsList.lightMode, #skillsBtn.lightMode {
+  background-color: #a8d0e6;
 }
 
 #footer {
@@ -945,7 +959,7 @@ img.blur {
 }
 
 #footer.lightMode {
-  background-color: #851d30;
+  background-color: #f76c6c;
   color: white;
 }
 
@@ -1121,10 +1135,11 @@ img.blur {
   }
 
   #navLinkContainer.lightMode {
-    background-color: #851d30;
-    border: 1.5px solid #851d30;
+    background-color: #374785;
+    border: 1.5px solid #374785;
     color: black;
     border: 0px;
+    background-color: #24305e;
   }
 
   #navLinkContainer.darkMode {
