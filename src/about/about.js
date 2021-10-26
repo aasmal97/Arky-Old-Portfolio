@@ -15,16 +15,13 @@ let timelineCounter = 0
 let timeItemsLength = Object.keys(timeItems).length 
 
 const disableScoll =()=>{
-    const navbar = document.querySelector("#navbar")
-    bodyScrollLock.disableBodyScroll(timeline);
-
-    // window.scrollTo({
-    //     top: el.top ,
-    // })
+    $body.style.overflow = "hidden";
+    $body.style.width = "100%";
     scrollDisabled = true
 }
 const enableScoll = () =>{ 
-    bodyScrollLock.clearAllBodyScrollLocks();
+    $body.style.removeProperty("overflow");
+    $body.style.removeProperty("width");
     scrollDisabled = false
 }
 const scrollLock = new IntersectionObserver(function(entries) {
@@ -39,15 +36,8 @@ const scrollLock = new IntersectionObserver(function(entries) {
             // If not, the accuracy of offset diminshes
             //setTimeout is set to 100 for the same reason. 
             let offset = window.pageYOffset
-            if($body.style.overflow !== "hidden"){
-                disableScoll();
-                $body.style.position = "relative"
-                window.scroll({
-                    top: offset,
-                })
-                console.log(offset)
-                console.log($body.style.overflow !== "hidden")
-            } 
+            disableScoll();
+         
             if(timelineCounter+1<4){
                 setTimeout(function(){
                     window.scrollTo({
@@ -67,7 +57,9 @@ const scrollLock = new IntersectionObserver(function(entries) {
             timeItems[0].classList.remove("hidden")
             timeItems[0].classList.add("show")
             //signal timeline animations can start playing
-        } 
+        } else {
+            enableScoll();
+        }
     }, { threshold: [0.3] });
 
 const timelineAnimate = () =>{
