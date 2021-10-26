@@ -7,7 +7,7 @@
     }
     .project-description>div{
         width: 100%;
-        // min-width: 242px;
+        min-width: 242px;
     }
 }
 
@@ -67,7 +67,7 @@
 }
 @mixin carousel-container-sm {
     .project-description>div{
-        min-width: 0px !important; 
+        min-width: 0px; 
         //width: 50px !important;  
     }
     // #carousel-items{

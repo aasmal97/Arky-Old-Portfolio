@@ -1046,6 +1046,7 @@ img.blur {
 
   .project-description > div {
     width: 100%;
+    min-width: 242px;
   }
 }
 @media screen and (max-width: 1400px) {
@@ -1275,6 +1276,6 @@ img.blur {
   }
 
   .project-description > div {
-    min-width: 0px !important;
+    min-width: 0px;
   }
 }/*# sourceMappingURL=index.css.map */
