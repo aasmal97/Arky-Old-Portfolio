@@ -15,8 +15,8 @@ let timelineCounter = 0
 let timeItemsLength = Object.keys(timeItems).length 
 
 const disableScoll =()=>{
-
     bodyScrollLock.disableBodyScroll(timeline);
+    $body.style.position = "relative"
 }
 const enableScoll = () =>{ 
     bodyScrollLock.clearAllBodyScrollLocks();
@@ -54,7 +54,10 @@ const scrollLock = new IntersectionObserver(function(entries) {
             timeItems[0].classList.add("show")
             //signal timeline animations can start playing
             scrollDisabled = true
-        } 
+        } else {
+            enableScoll();
+            scrollDisabled = false;
+        }
     }, { threshold: [0.3] });
 
 const timelineAnimate = () =>{
