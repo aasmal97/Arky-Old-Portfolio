@@ -17,6 +17,7 @@
             margin-top: 2rem !important;
             font-size: 1.5rem !important;
         }  
+        
     }
     .caro-item{
         h2{
@@ -43,13 +44,13 @@
                 width: 100%;
                 margin-bottom: 2rem;
                 .text-container, h3{
-                    font-size: 0.9rem;
+                    font-size: 0.8rem;
                 }
             }
         }
     }
     #caroContainer{
-        width: 69vw ;
+        width: 50vw ;
     }
     .caro-img{
         width: 100%;
@@ -66,11 +67,8 @@
     }
 }
 @mixin carousel-container-sm {
+
     .project-description>div{
-        min-width: 0px; 
-        //width: 50px !important;  
+        min-width: 0px !important; 
     }
-    // #carousel-items{
-    //     width: 69vw !important;
-    // }
 }

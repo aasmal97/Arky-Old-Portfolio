@@ -524,8 +524,7 @@ img.blur {
   display: flex;
   min-height: calc(100vh - 70px);
   height: 100%;
-  width: 100%;
-  min-width: 0px;
+  width: 100vw;
   justify-content: space-between;
   color: white;
 }
@@ -664,7 +663,7 @@ img.blur {
 .project-description > div {
   transition: all linear 0.7s;
   position: relative;
-  max-height: 800px;
+  max-height: 1000px;
   width: 100%;
 }
 .project-description > div h3 {
@@ -1106,11 +1105,11 @@ img.blur {
     margin-bottom: 2rem;
   }
   .caro-item .caro-item-content .project-description .text-container, .caro-item .caro-item-content .project-description h3 {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
 
   #caroContainer {
-    width: 69vw;
+    width: 50vw;
   }
 
   .caro-img, .project-description > div {
@@ -1264,11 +1263,11 @@ img.blur {
     margin-bottom: 2rem;
   }
   .caro-item .caro-item-content .project-description .text-container, .caro-item .caro-item-content .project-description h3 {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
 
   #caroContainer {
-    width: 69vw;
+    width: 50vw;
   }
 
   .caro-img, .project-description > div {
@@ -1276,6 +1275,6 @@ img.blur {
   }
 
   .project-description > div {
-    min-width: 0px;
+    min-width: 0px !important;
   }
 }/*# sourceMappingURL=index.css.map */
