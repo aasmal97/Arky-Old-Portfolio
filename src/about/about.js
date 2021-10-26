@@ -35,14 +35,18 @@ const scrollLock = new IntersectionObserver(function(entries) {
 	// isIntersecting is false when element and viewport don't overlap
         if(entries[0].isIntersecting === true){
             let el = entries[0].target.getBoundingClientRect()
-            if($body.style.overflow !== "hidden"){
-                disableScoll();
-                $body.style.position = "relative"
-            } 
             //after scrolling is disabled
             // If not, the accuracy of offset diminshes
             //setTimeout is set to 100 for the same reason. 
             let offset = window.pageYOffset
+            if($body.style.overflow !== "hidden"){
+                disableScoll();
+                $body.style.position = "relative"
+                window.scrollTo({
+                    top: offset
+                })
+                console.log($body.style.overflow !== "hidden")
+            } 
             if(timelineCounter+1<4){
                 setTimeout(function(){
                     window.scrollTo({
