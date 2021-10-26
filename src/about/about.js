@@ -15,8 +15,12 @@ let timelineCounter = 0
 let timeItemsLength = Object.keys(timeItems).length 
 
 const disableScoll =()=>{
+    const navbar = document.querySelector("#navbar")
     bodyScrollLock.disableBodyScroll(timeline);
-    $body.style.position = "relative"
+
+    // window.scrollTo({
+    //     top: el.top ,
+    // })
     scrollDisabled = true
 }
 const enableScoll = () =>{ 
@@ -31,7 +35,10 @@ const scrollLock = new IntersectionObserver(function(entries) {
 	// isIntersecting is false when element and viewport don't overlap
         if(entries[0].isIntersecting === true){
             let el = entries[0].target.getBoundingClientRect()
-            disableScoll() 
+            if($body.style.overflow !== "hidden"){
+                disableScoll();
+                $body.style.position = "relative"
+            } 
             //after scrolling is disabled
             // If not, the accuracy of offset diminshes
             //setTimeout is set to 100 for the same reason. 
@@ -42,14 +49,14 @@ const scrollLock = new IntersectionObserver(function(entries) {
                         top: el.top + offset - navbar.offsetHeight,
                         behavior: 'smooth',
                     }) 
-                },100)
+                },200)
             } else {
                 setTimeout(()=>{
                     window.scrollTo({
                         top: row.top + offset - navbar.offsetHeight-10,
                         behavior: 'smooth',
                     }) 
-                }, 100)
+                }, 200)
             }
             //Show first timeline item
             timeItems[0].classList.remove("hidden")
@@ -59,6 +66,7 @@ const scrollLock = new IntersectionObserver(function(entries) {
     }, { threshold: [0.3] });
 
 const timelineAnimate = () =>{
+    const navbar = document.querySelector("#navbar")
     let timeLines = document.querySelectorAll(".lines")
     let offset = window.pageYOffset
     //activates only when about section is in viewport
@@ -77,7 +85,7 @@ const timelineAnimate = () =>{
             //reveals the line
             timeLines[timelineCounter-1].classList.remove("hidden")
             timeLines[timelineCounter-1].classList.add("show")
-
+            console.log(navbar.offsetHeight)
             //scrolls down after 4 timeline items (2 rows)
             if(timelineCounter%4===0){
                 let el = timelineRow[timelineCounter/2].getBoundingClientRect()
