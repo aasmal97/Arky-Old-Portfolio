@@ -45,9 +45,6 @@
                 .text-container, h3{
                     font-size: 0.9rem;
                 }
-                div{
-                    min-width: 0;   
-                }
             }
         }
     }
@@ -66,5 +63,10 @@
     }
     .project-description>div{
         min-width: 242px;
+    }
+}
+@mixin carousel-container-sm {
+    .project-description>div{
+        min-width: 0px !important;   
     }
 }

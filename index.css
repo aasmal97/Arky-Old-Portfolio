@@ -1102,9 +1102,6 @@ img.blur {
   .caro-item .caro-item-content .project-description .text-container, .caro-item .caro-item-content .project-description h3 {
     font-size: 0.9rem;
   }
-  .caro-item .caro-item-content .project-description div {
-    min-width: 0;
-  }
 
   #caroContainer {
     width: 69vw;
@@ -1263,9 +1260,6 @@ img.blur {
   .caro-item .caro-item-content .project-description .text-container, .caro-item .caro-item-content .project-description h3 {
     font-size: 0.9rem;
   }
-  .caro-item .caro-item-content .project-description div {
-    min-width: 0;
-  }
 
   #caroContainer {
     width: 69vw;
@@ -1273,5 +1267,9 @@ img.blur {
 
   .caro-img, .project-description > div {
     width: 100%;
+  }
+
+  .project-description > div {
+    min-width: 0px !important;
   }
 }/*# sourceMappingURL=index.css.map */
