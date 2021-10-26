@@ -23,7 +23,7 @@ I purposely did not use any frameworks, like React, jQuery, Vue, Bootstrap etc, 
 2. Smooth scrolling on Safari would not work as intended
    - Use smooth scrolling polyfill library. 
         - This replaces behavior: smooth, to request Animation Frame on browers that don't support behavior: scroll (i.e Safari)
-3. Resizing too fast caused page layout to break due to missing timings
+3. Resizing too fast caused page layout to break due to missed timings
    - Use debounce function from lodash library
         - For an interval, prevents functions  to run, in window resize listners after event is fired. After the interval, the lastest event that was fired in that interval, is the one that runs. 
 # Libraries used: 
