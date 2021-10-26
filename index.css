@@ -522,6 +522,7 @@ img.blur {
   width: 100%;
   justify-content: space-between;
   color: white;
+  overflow: hidden;
 }
 #carousel h1 {
   font-family: "Ubuntu", sans-serif;
