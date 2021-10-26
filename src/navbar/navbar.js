@@ -1,8 +1,9 @@
 import urlUpdate from "../general/urlUpdate.js"
 import { smoothScroll, hrefRegex } from "../general/smoothScroll.js"
 import { imgThemeLoad } from "../general/lazyLoad.js"
-import { aboutScrollLock, timelineObserver } from "../about/about.js"
+import { aboutScrollLock, timelineObserver, enableScoll } from "../about/about.js"
 import {toggleSkills, skills} from "../skills/techSkills.js"
+
 //Dark mode toggler
 const themeBtn = document.querySelector("#themeBtn")
 const lightMode = document.querySelectorAll(".lightMode")
@@ -123,6 +124,7 @@ function navOnScroll(){
 function navLinksScroll(e){
     let newFocus = e.target.href.match(hrefRegex)[0];
     e.preventDefault()
+    enableScoll();
     if(newFocus !== "#about"){
         //Allows for scrolling smoothly without scroll being disabled
         document.querySelector("body").classList.remove("stopScroll")

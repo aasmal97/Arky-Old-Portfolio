@@ -17,9 +17,11 @@ let timeItemsLength = Object.keys(timeItems).length
 const disableScoll =()=>{
     bodyScrollLock.disableBodyScroll(timeline);
     $body.style.position = "relative"
+    scrollDisabled = true
 }
 const enableScoll = () =>{ 
     bodyScrollLock.clearAllBodyScrollLocks();
+    scrollDisabled = false
 }
 const scrollLock = new IntersectionObserver(function(entries) {
     let remainder = (timelineCounter+1)%4
@@ -53,11 +55,7 @@ const scrollLock = new IntersectionObserver(function(entries) {
             timeItems[0].classList.remove("hidden")
             timeItems[0].classList.add("show")
             //signal timeline animations can start playing
-            scrollDisabled = true
-        } else {
-            enableScoll();
-            scrollDisabled = false;
-        }
+        } 
     }, { threshold: [0.3] });
 
 const timelineAnimate = () =>{
@@ -142,5 +140,6 @@ export {
     generateLines as generateLines, 
     timelineAnimate as timelineAnimate,  
     determineAge as determineAge,
-    timlineObserver as timelineObserver
+    timlineObserver as timelineObserver,
+    enableScoll as enableScoll
 }
