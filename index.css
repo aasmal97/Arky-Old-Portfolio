@@ -1120,6 +1120,10 @@ img.blur {
     width: 40vw;
   }
 
+  .project-description > div {
+    min-width: 242px;
+  }
+
   #navbar {
     justify-content: flex-end;
   }
@@ -1272,10 +1276,5 @@ img.blur {
 
   .project-description > div {
     min-width: 0px !important;
-    width: 50px !important;
-  }
-
-  #carousel-items {
-    width: 69vw !important;
   }
 }/*# sourceMappingURL=index.css.map */
