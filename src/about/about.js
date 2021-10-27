@@ -36,21 +36,22 @@ const scrollLock = new IntersectionObserver(function(entries) {
             // If not, the accuracy of offset diminshes
             //setTimeout is set to 100 for the same reason. 
             let offset = window.pageYOffset
-            disableScoll();
-         
             if(timelineCounter+1<4){
                 setTimeout(function(){
                     window.scrollTo({
                         top: el.top + offset - navbar.offsetHeight,
                         behavior: 'smooth',
                     }) 
+                    disableScoll();
                 },200)
             } else {
                 setTimeout(()=>{
+                    enableScoll();
                     window.scrollTo({
                         top: row.top + offset - navbar.offsetHeight-10,
                         behavior: 'smooth',
                     }) 
+                    disableScoll();
                 }, 200)
             }
             //Show first timeline item
@@ -85,10 +86,12 @@ const timelineAnimate = () =>{
             //scrolls down after 4 timeline items (2 rows)
             if(timelineCounter%4===0){
                 let el = timelineRow[timelineCounter/2].getBoundingClientRect()
+                enableScoll()
                 window.scrollTo({
                     top: el.top + offset - navbar.offsetHeight - 10,
                     behavior: 'smooth',
                 })
+                disableScoll()
             }  
             //disable firing too fast, for performance and animation complete
             scrollDisabled = false
