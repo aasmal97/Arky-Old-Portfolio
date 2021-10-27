@@ -16,6 +16,9 @@
     @include profilePic-lg;
     @include navbar-lg;
     @include carousel-lg;
+    body{
+        overflow: overlay;
+    }
 }
 @media screen and (max-width: 1400px){
     .caro-img{

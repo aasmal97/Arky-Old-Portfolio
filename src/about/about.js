@@ -99,7 +99,7 @@ const timelineAnimate = () =>{
             scrollDisabled = false
             setTimeout(function(){
                 disableScoll()
-            },500)
+            },250)
         }
     }
 }
