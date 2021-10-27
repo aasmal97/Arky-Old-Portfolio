@@ -26,7 +26,7 @@ document.addEventListener("scroll", function() {
     hidePopUp();
     navOnScroll();
 });
-document.addEventListener("touchmove", function(e){
+document.addEventListener("touchstart", function(e){
     timelineAnimate(e)
 })
 window.addEventListener("load", function(e){

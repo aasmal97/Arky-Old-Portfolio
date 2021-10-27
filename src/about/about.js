@@ -36,6 +36,7 @@ const scrollLock = new IntersectionObserver(function(entries) {
             // If not, the accuracy of offset diminshes
             //setTimeout is set to 100 for the same reason. 
             let offset = window.pageYOffset
+         
             if(timelineCounter+1<4){
                 setTimeout(function(){
                     window.scrollTo({
@@ -45,7 +46,6 @@ const scrollLock = new IntersectionObserver(function(entries) {
                     disableScoll();
                 },200)
             } else {
-                enableScoll();
                 setTimeout(()=>{
                     window.scrollTo({
                         top: row.top + offset - navbar.offsetHeight-10,
@@ -54,6 +54,7 @@ const scrollLock = new IntersectionObserver(function(entries) {
                     disableScoll();
                 }, 200)
             }
+            
             //Show first timeline item
             timeItems[0].classList.remove("hidden")
             timeItems[0].classList.add("show")
@@ -84,18 +85,18 @@ const timelineAnimate = () =>{
             timeLines[timelineCounter-1].classList.remove("hidden")
             timeLines[timelineCounter-1].classList.add("show")
             //scrolls down after 4 timeline items (2 rows)
-           
             if(timelineCounter%4===0){
                 let el = timelineRow[timelineCounter/2].getBoundingClientRect()
-                 //disable firing too fast, for performance and animation complete
-                enableScoll()
-                window.scrollTo({
-                    top: el.top + offset - navbar.offsetHeight - 10,
-                    behavior: 'smooth',
-                })
-
+                enableScoll();
+                setTimeout(()=>{
+                    window.scrollTo({
+                        top: el.top + offset - navbar.offsetHeight - 10,
+                        behavior: 'smooth',
+                    })
+                }, 200)
             }  
-        
+            //disable firing too fast, for performance and animation complete
+            scrollDisabled = false
             setTimeout(function(){
                 disableScoll()
             },500)
