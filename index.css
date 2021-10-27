@@ -17,7 +17,6 @@ body {
   margin: 0;
   width: 100vw;
   overflow: overlay;
-  overflow-x: hidden;
 }
 
 body::-webkit-scrollbar {

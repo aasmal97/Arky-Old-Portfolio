@@ -82,7 +82,6 @@ const timelineAnimate = () =>{
             //reveals the line
             timeLines[timelineCounter-1].classList.remove("hidden")
             timeLines[timelineCounter-1].classList.add("show")
-            console.log(navbar.offsetHeight)
             //scrolls down after 4 timeline items (2 rows)
             if(timelineCounter%4===0){
                 let el = timelineRow[timelineCounter/2].getBoundingClientRect()
