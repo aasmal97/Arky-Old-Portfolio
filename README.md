@@ -35,7 +35,7 @@ I wanted to see for myself how difficult it was to build a modern-looking single
 # End Verdict
 This was tougher than I imagined. 
 
-Even though Vanilla JS (using ES6) and CSS3 have come a long way in making modern web development easier, using powerful tools like React, Bootstrap, Vue, etc, are essential to developing web applications quickly, despite potentially sacrificing some performance along the way. This can also make complex web development much easier as code can be more modular and maintainable, as despite my attempts to make this site's code modular, it was still not as a modular as the aforementioned frameworks.
+Even though Vanilla JS (using ES6) and CSS3 have come a long way in making modern web development easier, using powerful tools like React, Bootstrap, Vue, etc, are essential to develop web applications quickly, despite potentially sacrificing some performance along the way. This can also make complex web development much easier as code can be more modular and maintainable, as despite my attempts to make this site's code modular, it was still not as a modular as the aforementioned frameworks.
 
 However, developing in native JS and CSS, were great for learning and strengthing my knowledge of the fundamentals. I now understand the aforementioned tools more in depth and makes using them incredibly easy.
 
