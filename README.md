@@ -29,9 +29,8 @@ I wanted to see for myself how difficult it was to build a modern-looking single
    - Use debounce function from lodash library
         - For an interval, prevents functions  to run, in window resize listners after event is fired. After the interval, the lastest event that was fired in that interval, is the one that runs. 
 # Libraries used: 
-1. [body-scroll-lock](https://github.com/willmcpo/body-scroll-lock)
-2. [Smooth Scrolling Polyfill](https://github.com/iamdustan/smoothscroll)
-3. [lodash](https://lodash.com)
+1. [Smooth Scrolling Polyfill](https://github.com/iamdustan/smoothscroll)
+2. [lodash](https://lodash.com)
 
 # End Verdict
 This was tougher than I imagined. 
