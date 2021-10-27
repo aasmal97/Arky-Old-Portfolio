@@ -42,7 +42,7 @@
     @include navbar-md;
     body::-webkit-scrollbar {
         width: 8px;
-      }
+    }
     
     body::-webkit-scrollbar-thumb {
     background-color: rgb(119, 119, 119);
@@ -56,12 +56,12 @@
     @include carousel-sm;
     @include carousel-container-sm;
     body::-webkit-scrollbar {
-        width: 0;
+        width: auto;
       }
     
     body::-webkit-scrollbar-thumb {
         background-color: rgb(119, 119, 119);
-        @include border-radius(0px, 0px);
+        border-radius: auto;
         padding-right: 0;
     }
 }

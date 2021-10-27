@@ -1293,15 +1293,12 @@ img.blur {
   }
 
   body::-webkit-scrollbar {
-    width: 0;
+    width: auto;
   }
 
   body::-webkit-scrollbar-thumb {
     background-color: #777777;
-    border-radius: 0px 0px 0px 0px;
-    -webkit-border-radius: 0px 0px 0px 0px;
-    -moz-border-radius: 0px 0px 0px 0px;
-    -ms-border-radius: 0px 0px 0px 0px;
+    border-radius: auto;
     padding-right: 0;
   }
 }/*# sourceMappingURL=index.css.map */
