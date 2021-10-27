@@ -26,9 +26,7 @@ document.addEventListener("scroll", function() {
     hidePopUp();
     navOnScroll();
 });
-document.addEventListener("touchstart", function(e){
-    timelineAnimate(e)
-})
+
 window.addEventListener("load", function(e){
     determineAge()
     navOnLoad()
@@ -95,7 +93,9 @@ skillsBtn.addEventListener("click", function(e){
 timeline.addEventListener("touchend", function(e){
     timelineAnimate(e)
 })
-
+timeline.addEventListener("touchstart", function(e){
+    timelineAnimate(e)
+})
 
 //intersection observers 
 aboutScrollLock.observe(document.querySelector("#about"));
