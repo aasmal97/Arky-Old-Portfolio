@@ -45,8 +45,8 @@ const scrollLock = new IntersectionObserver(function(entries) {
                     disableScoll();
                 },200)
             } else {
+                enableScoll();
                 setTimeout(()=>{
-                    enableScoll();
                     window.scrollTo({
                         top: row.top + offset - navbar.offsetHeight-10,
                         behavior: 'smooth',
@@ -84,19 +84,20 @@ const timelineAnimate = () =>{
             timeLines[timelineCounter-1].classList.remove("hidden")
             timeLines[timelineCounter-1].classList.add("show")
             //scrolls down after 4 timeline items (2 rows)
+           
             if(timelineCounter%4===0){
                 let el = timelineRow[timelineCounter/2].getBoundingClientRect()
+                 //disable firing too fast, for performance and animation complete
                 enableScoll()
                 window.scrollTo({
                     top: el.top + offset - navbar.offsetHeight - 10,
                     behavior: 'smooth',
                 })
-                disableScoll()
+
             }  
-            //disable firing too fast, for performance and animation complete
-            scrollDisabled = false
+        
             setTimeout(function(){
-                scrollDisabled = true
+                disableScoll()
             },500)
         }
     }
