@@ -17,19 +17,6 @@ body {
   overflow-x: hidden;
 }
 
-body::-webkit-scrollbar {
-  width: 8px;
-}
-
-body::-webkit-scrollbar-thumb {
-  background-color: #777777;
-  border-radius: 50px 50px 50px 50px;
-  -webkit-border-radius: 50px 50px 50px 50px;
-  -moz-border-radius: 50px 50px 50px 50px;
-  -ms-border-radius: 50px 50px 50px 50px;
-  padding-right: 1px;
-}
-
 .lightMode {
   background-color: #fafae7;
   color: black;
@@ -1048,6 +1035,19 @@ img.blur {
   body {
     overflow: overlay;
   }
+
+  body::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  body::-webkit-scrollbar-thumb {
+    background-color: #777777;
+    border-radius: 50px 50px 50px 50px;
+    -webkit-border-radius: 50px 50px 50px 50px;
+    -moz-border-radius: 50px 50px 50px 50px;
+    -ms-border-radius: 50px 50px 50px 50px;
+    padding-right: 1px;
+  }
 }
 @media screen and (max-width: 1400px) {
   .caro-img, .project-description > div {
@@ -1191,6 +1191,19 @@ img.blur {
     opacity: 0;
     transition: all 0.3s linear;
   }
+
+  body::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  body::-webkit-scrollbar-thumb {
+    background-color: #777777;
+    border-radius: 50px 50px 50px 50px;
+    -webkit-border-radius: 50px 50px 50px 50px;
+    -moz-border-radius: 50px 50px 50px 50px;
+    -ms-border-radius: 50px 50px 50px 50px;
+    padding-right: 1px;
+  }
 }
 @media screen and (max-width: 650px) {
   #about > h2 {
@@ -1277,5 +1290,18 @@ img.blur {
 
   .project-description > div {
     min-width: 0px !important;
+  }
+
+  body::-webkit-scrollbar {
+    width: 0;
+  }
+
+  body::-webkit-scrollbar-thumb {
+    background-color: #777777;
+    border-radius: 0px 0px 0px 0px;
+    -webkit-border-radius: 0px 0px 0px 0px;
+    -moz-border-radius: 0px 0px 0px 0px;
+    -ms-border-radius: 0px 0px 0px 0px;
+    padding-right: 0;
   }
 }/*# sourceMappingURL=index.css.map */

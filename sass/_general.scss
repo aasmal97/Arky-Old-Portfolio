@@ -13,15 +13,6 @@ body{
     overflow-x: hidden;
 }
 
-  body::-webkit-scrollbar {
-    width: 8px;
-  }
-
-  body::-webkit-scrollbar-thumb {
-    background-color: rgb(119, 119, 119);
-    @include border-radius(50px, 50px);
-    padding-right: 1px;
-  }
 
 
   .lightMode{
