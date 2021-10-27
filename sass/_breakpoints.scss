@@ -16,18 +16,6 @@
     @include profilePic-lg;
     @include navbar-lg;
     @include carousel-lg;
-    body{
-        overflow: overlay;
-    }
-    body::-webkit-scrollbar {
-        width: 8px;
-      }
-    
-    body::-webkit-scrollbar-thumb {
-    background-color: rgb(119, 119, 119);
-    @include border-radius(50px, 50px);
-    padding-right: 1px;
-    }
     
 }
 @media screen and (max-width: 1400px){
@@ -40,28 +28,10 @@
     @include profilePic-md;
     @include carousel-md;
     @include navbar-md;
-    body::-webkit-scrollbar {
-        width: 8px;
-    }
-    
-    body::-webkit-scrollbar-thumb {
-    background-color: rgb(119, 119, 119);
-    @include border-radius(50px, 50px);
-    padding-right: 1px;
-    }
 }
 @media screen and (max-width: 650px){
     @include timeline-sm;
     @include profilePic-sm;
     @include carousel-sm;
     @include carousel-container-sm;
-    body::-webkit-scrollbar {
-        width: auto;
-      }
-    
-    body::-webkit-scrollbar-thumb {
-        background-color: rgb(119, 119, 119);
-        border-radius: auto;
-        padding-right: 0;
-    }
 }
