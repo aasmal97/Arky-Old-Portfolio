@@ -3,15 +3,14 @@
         font-size: 120%;
         }
     }
-html{
-    width: 100vw;
+html, body{
+    padding: 0;
+    margin: 0;
+    
 }
 body{
     position: relative;
-    padding: 0;
-    margin: 0;
-    width: 100vw;
-
+    overflow-x: hidden;
 }
 
   body::-webkit-scrollbar {
