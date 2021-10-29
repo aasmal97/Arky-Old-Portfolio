@@ -113,7 +113,7 @@ const containerBehavior = (e) => {
 //expand text in cards
 const createExpandBtns=(container)=>{
     //dont create additional buttons when called multiple times, and btn exists
-    if(container.querySelector("expand-container-btn")) return
+    if(container.querySelector(".expand-container-btn")) return
 
     let expandBtn = document.createElement("button")
     let btnIcon = document.createElement("i")
@@ -125,16 +125,20 @@ const createExpandBtns=(container)=>{
     expandBtn.append(btnIcon)
     container.append(expandBtn)
     expandBtn.addEventListener("click", containerBehavior)
+
+    container.classList.add("expand")
 }
 //cleanup listeners
 const removeExpandBtns=(container)=>{
     //dont remove btns when there are none
-    if(!container.querySelector("expand-container-btn")) return
+    if(!container.querySelector(".expand-container-btn")) return
 
     const btn = container.querySelector("button")
     container.parentNode.classList.remove("hide")
     btn.removeEventListener("click", containerBehavior)
     btn.remove()
+
+    container.classList.remove("expand")
 }
 //condition to give container expansion
 const checkOverflow = () =>{

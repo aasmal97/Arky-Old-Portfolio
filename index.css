@@ -704,6 +704,20 @@ img.blur {
   color: rgba(0, 0, 0, 0.459);
 }
 
+.project-description > div.hide .text-container.expand::after {
+  bottom: 0;
+  left: 25px;
+  content: "";
+  position: absolute;
+  width: calc(100% - 50px);
+  height: 1px;
+  z-index: 1;
+  box-shadow: 0 -30px 60px 12px rgba(0, 0, 0, 0.671);
+  -webkit-box-shadow: 0 -30px 60px 12px rgba(0, 0, 0, 0.671);
+  -moz-box-shadow: 0 -30px 60px 12px rgba(0, 0, 0, 0.671);
+  -ms-box-shadow: 0 -30px 60px 12px rgba(0, 0, 0, 0.671);
+}
+
 .project-description > div.hide {
   max-height: 225px;
 }

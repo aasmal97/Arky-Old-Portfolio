@@ -163,13 +163,27 @@
     font-size: 1.5rem;
     padding: 0.75rem;
     @include border-radius(0, 5px);
+    z-index: 2;
     &:hover,
     &:active{
         cursor: pointer;
         color: rgba(0, 0, 0, 0.459);
     }
-    z-index: 2;
+    
 }
+.project-description>div.hide{
+    .text-container.expand::after{
+        bottom: 0;
+        left: 25px;
+        content: "";
+        position: absolute;
+        width: calc(100% - 50px);
+        height: 1px;
+        z-index: 1;
+        @include box-shadow(0, -30px, 60px, 12px, rgba(0, 0, 0, 0.671));
+    }
+}
+
 
 .project-description>div.hide{
     max-height: 225px;
