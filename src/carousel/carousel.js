@@ -145,6 +145,7 @@ const checkOverflow = () =>{
     const descriptContainers = projectDescription[currCaroIndex].querySelectorAll(".text-container")
     for(let container of descriptContainers){
         if(container.scrollHeight > container.clientHeight) createExpandBtns(container)
+        else if (container.clientHeight > 225) createExpandBtns(container)
         else removeExpandBtns(container)
     }
 }

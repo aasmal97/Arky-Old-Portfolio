@@ -35,7 +35,6 @@ window.addEventListener("load", function(e){
 })
 const resize = () =>{
     navOnLoad();
-    checkOverflow();
 }
 const debounceResize = _.debounce(resize, 150)
 window.addEventListener("resize",function(){
